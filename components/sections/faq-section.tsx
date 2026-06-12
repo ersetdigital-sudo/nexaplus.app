@@ -16,20 +16,21 @@ export function FAQSection() {
   return (
     <SectionWrapper id="faq" className="bg-slate-50">
       <div className="mx-auto max-w-3xl">
-        <h2 className="mb-12 text-center font-bold text-slate-900">
+        <h2 className="mb-10 text-center font-bold text-slate-900">
           Pertanyaan Umum
         </h2>
 
-        <Accordion type="single" collapsible>
-          {faqItems.map((item) => (
-            <AccordionItem key={item.id} value={item.id}>
-              <AccordionTrigger className="text-left text-slate-900">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {/* Accordion wrapper with shared border + radius */}
+        <div className="overflow-hidden rounded-xl border border-slate-200">
+          <Accordion type="single" collapsible>
+            {faqItems.map((item) => (
+              <AccordionItem key={item.id} value={item.id}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
 
       <script
