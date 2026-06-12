@@ -1,28 +1,28 @@
 "use client";
 
 import {
-  Palette,
-  Smartphone,
-  Search,
   Zap,
-  Shield,
+  Palette,
+  Search,
+  Smartphone,
   MessageCircle,
+  CreditCard,
   Headphones,
-  Monitor,
+  Phone,
 } from "lucide-react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { AnimatedCard } from "@/components/shared/animated-card";
 import { benefits } from "@/data/benefits";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Palette,
-  Smartphone,
-  Search,
   Zap,
-  Shield,
+  Palette,
+  Search,
+  Smartphone,
   MessageCircle,
+  CreditCard,
   Headphones,
-  Monitor,
+  Phone,
 };
 
 export function BenefitsSection() {

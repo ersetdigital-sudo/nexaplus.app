@@ -12,9 +12,13 @@ export function PricingSection() {
   return (
     <SectionWrapper id="harga" className="bg-white">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
-          Paket Harga
+        <h2 className="mb-4 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+          Paket Harga Transparan, Tanpa Biaya Tersembunyi
         </h2>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-base text-slate-600">
+          Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda. Semua
+          paket sudah termasuk hosting 1 tahun dan SSL gratis.
+        </p>
 
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
           {pricingTiers.map((tier) => {
@@ -80,6 +84,13 @@ export function PricingSection() {
             );
           })}
         </div>
+
+        {/* Custom note */}
+        <p className="mt-10 text-center text-sm text-slate-600">
+          Butuh paket custom atau kebutuhan khusus (sekolah, pemerintahan,
+          organisasi)? Konsultasikan dulu — kami buatkan penawaran sesuai
+          kebutuhan Anda.
+        </p>
       </div>
     </SectionWrapper>
   );

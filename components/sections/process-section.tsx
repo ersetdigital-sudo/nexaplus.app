@@ -12,11 +12,8 @@ export function ProcessSection() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <h2 className="text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
-            Proses Kerja Kami
+            Proses Pengerjaan yang Jelas
           </h2>
-          <p className="mt-3 text-slate-600">
-            Dari konsultasi hingga launching, semuanya transparan dan terstruktur.
-          </p>
         </div>
 
         {/* Desktop: card grid */}

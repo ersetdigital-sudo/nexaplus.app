@@ -7,32 +7,32 @@ export interface ProcessStep {
 export const processSteps: ProcessStep[] = [
   {
     number: 1,
-    title: 'Konsultasi',
-    description: 'Diskusi kebutuhan dan tujuan website Anda bersama tim ahli kami.',
+    title: 'Konsultasi Kebutuhan',
+    description: 'Kami memahami tujuan dan kebutuhan bisnis Anda.',
   },
   {
     number: 2,
     title: 'Perencanaan',
-    description: 'Menyusun struktur, fitur, dan timeline pengerjaan website.',
+    description: 'Menentukan struktur, fitur, dan tampilan website.',
   },
   {
     number: 3,
     title: 'Desain',
-    description: 'Membuat desain UI/UX yang menarik sesuai identitas brand Anda.',
+    description: 'Membuat tampilan yang sesuai dengan identitas bisnis.',
   },
   {
     number: 4,
-    title: 'Development',
-    description: 'Pengembangan website dengan teknologi modern dan performa tinggi.',
+    title: 'Pengembangan',
+    description: 'Website dibangun dan dioptimalkan.',
   },
   {
     number: 5,
     title: 'Revisi',
-    description: 'Penyesuaian berdasarkan feedback hingga sesuai harapan Anda.',
+    description: 'Penyempurnaan berdasarkan masukan Anda.',
   },
   {
     number: 6,
     title: 'Launching',
-    description: 'Website siap online dengan domain, hosting, dan dukungan teknis.',
+    description: 'Website siap digunakan dan dapat diakses publik.',
   },
 ];

@@ -27,7 +27,7 @@ export function ServicesSection() {
     <SectionWrapper id="layanan" className="bg-slate-50">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
-          Layanan Pembuatan Website
+          Solusi Website untuk Berbagai Kebutuhan
         </h2>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

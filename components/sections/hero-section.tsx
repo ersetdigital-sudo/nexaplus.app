@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, Eye } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
@@ -8,8 +8,8 @@ import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
 export function HeroSection() {
   const whatsappUrl = getDefaultWhatsAppUrl();
 
-  const handleScrollToPortfolio = () => {
-    const el = document.getElementById("portfolio");
+  const handleScrollToHarga = () => {
+    const el = document.getElementById("harga");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -19,20 +19,25 @@ export function HeroSection() {
         {/* Badge */}
         <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-medium text-blue-700">
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-          #1 Jasa Website Profesional
+          Berhenti Bergantung pada Marketplace
         </span>
 
         {/* Heading */}
         <h1 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
-          Jasa Pembuatan Website Profesional untuk{" "}
-          <span className="gradient-text">Bisnis Modern</span>
+          Miliki Website Toko Online Sendiri yang Cepat, Profesional, dan Mudah Ditemukan di{" "}
+          <span className="gradient-text">Google.</span>
         </h1>
 
         {/* Supporting paragraph */}
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg md:mt-6 md:px-8 lg:text-xl">
-          Kami membantu UMKM, seller marketplace dan perusahaan memiliki website
-          profesional yang cepat, SEO Friendly dan menghasilkan lebih banyak
-          pelanggan.
+          NexaPlus membantu UMKM dan seller marketplace membangun website toko
+          online sendiri agar memiliki aset digital yang benar-benar dimiliki,
+          lebih profesional, dan siap berkembang dalam jangka panjang.
+        </p>
+
+        {/* Price line */}
+        <p className="mt-4 text-sm font-medium text-blue-600">
+          Mulai dari Rp1.500.000
         </p>
 
         {/* CTA buttons */}
@@ -46,10 +51,9 @@ export function HeroSection() {
             size="lg"
             variant="outline"
             className="w-full sm:w-auto"
-            onClick={handleScrollToPortfolio}
+            onClick={handleScrollToHarga}
           >
-            <Eye className="mr-2 h-4 w-4" aria-hidden="true" />
-            Lihat Portfolio
+            Lihat Paket Harga
           </Button>
         </div>
 

@@ -1,33 +1,39 @@
 "use client";
 
-import { AlertTriangle, TrendingUp, Database, ShieldX } from "lucide-react";
+import { AlertTriangle, TrendingUp, Database, ShieldX, RefreshCw } from "lucide-react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { AnimatedCard } from "@/components/shared/animated-card";
 
 const painPoints = [
   {
     icon: AlertTriangle,
-    title: "Risiko Suspend Akun",
+    title: "Pelanggan Mengingat Marketplace",
     explanation:
-      "Akun marketplace bisa disuspend kapan saja tanpa peringatan yang jelas.",
+      "Pelanggan lebih mengingat marketplace daripada brand Anda.",
   },
   {
     icon: TrendingUp,
-    title: "Biaya Marketplace Naik",
+    title: "Biaya Admin Terus Naik",
     explanation:
-      "Potongan dan biaya iklan marketplace terus meningkat setiap tahun.",
+      "Biaya admin terus bertambah setiap tahun.",
   },
   {
     icon: Database,
-    title: "Sulit Bangun Database",
+    title: "Data Pelanggan Bukan Milik Anda",
     explanation:
-      "Data pelanggan dimiliki marketplace, bukan Anda sebagai penjual.",
+      "Data pelanggan tidak sepenuhnya Anda miliki.",
   },
   {
     icon: ShieldX,
-    title: "Tidak Punya Aset Digital",
+    title: "Persaingan Harga Ketat",
     explanation:
-      "Toko di marketplace bukan aset, sewaktu-waktu bisa hilang.",
+      "Persaingan harga semakin ketat.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Algoritma Bisa Berubah Kapan Saja",
+    explanation:
+      "Satu perubahan algoritma bisa langsung memengaruhi penjualan.",
   },
 ];
 
@@ -35,11 +41,17 @@ export function ProblemSection() {
   return (
     <SectionWrapper id="masalah">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
-          Masih Bergantung Pada Marketplace?
+        <h2 className="mb-4 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+          Marketplace Bagus untuk Memulai. Tapi Tidak Ideal untuk Selamanya.
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <p className="mx-auto mb-12 max-w-3xl text-center text-base text-slate-600 md:text-lg">
+          Banyak pemilik usaha mengalami hal yang sama. Anda sudah mengeluarkan
+          biaya iklan. Anda sudah mengumpulkan banyak pelanggan. Anda sudah
+          membangun reputasi toko. Namun pada akhirnya:
+        </p>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {painPoints.map((point) => {
             const Icon = point.icon;
             return (
@@ -61,8 +73,8 @@ export function ProblemSection() {
         </div>
 
         <p className="mt-10 rounded-xl border border-blue-100 bg-blue-50 px-6 py-5 text-center text-base text-slate-700 md:text-lg">
-          Solusinya? Miliki website sendiri sebagai aset digital jangka panjang
-          yang sepenuhnya Anda kendalikan.
+          Jika bisnis ingin berkembang lebih besar, memiliki website sendiri
+          bukan lagi pilihan tambahan. Itu kebutuhan.
         </p>
       </div>
     </SectionWrapper>

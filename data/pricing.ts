@@ -12,7 +12,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: 'starter',
     name: 'Starter',
-    targetAudience: 'Landing Page',
+    targetAudience: 'Cocok untuk: Landing Page / Promosi Produk',
     price: 'Rp 1.500.000',
     features: [
       'Desain 1 halaman responsif',
@@ -28,7 +28,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: 'professional',
     name: 'Professional',
-    targetAudience: 'Company Profile',
+    targetAudience: 'Cocok untuk: Company Profile / Bisnis Profesional',
     price: 'Rp 3.500.000',
     features: [
       'Desain hingga 5 halaman',
@@ -46,7 +46,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: 'business',
     name: 'Business',
-    targetAudience: 'Website Toko Online',
+    targetAudience: 'Cocok untuk: Website Toko Online / E-commerce',
     price: 'Rp 6.000.000',
     features: [
       'Desain hingga 10 halaman',

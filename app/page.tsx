@@ -1,6 +1,7 @@
 import { HeroSection } from '@/components/sections/hero-section';
 import { TrustSection } from '@/components/sections/trust-section';
 import { ProblemSection } from '@/components/sections/problem-section';
+import { SolutionSection } from '@/components/sections/solution-section';
 import { ServicesSection } from '@/components/sections/services-section';
 import { BenefitsSection } from '@/components/sections/benefits-section';
 import { TechStackSection } from '@/components/sections/tech-stack-section';
@@ -28,6 +29,7 @@ export default function Home() {
       <HeroSection />
       <TrustSection />
       <ProblemSection />
+      <SolutionSection />
       <ServicesSection />
       <BenefitsSection />
       <TechStackSection />

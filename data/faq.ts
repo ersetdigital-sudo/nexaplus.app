@@ -7,38 +7,38 @@ export interface FAQItem {
 export const faqItems: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'Berapa lama proses pembuatan website?',
+    question: 'Berapa biaya pembuatan website?',
     answer:
-      'Proses pembuatan website memakan waktu 7 hingga 14 hari kerja tergantung kompleksitas proyek. Website sederhana seperti landing page bisa selesai dalam 7 hari, sementara toko online membutuhkan waktu lebih lama untuk integrasi fitur.',
+      'Biaya menyesuaikan kebutuhan. Paket tersedia mulai Rp1.500.000 untuk landing page, Rp3.500.000 untuk company profile, dan Rp6.000.000 untuk toko online.',
   },
   {
     id: 'faq-2',
-    question: 'Apakah website sudah termasuk hosting dan domain?',
+    question: 'Berapa lama proses pengerjaan?',
     answer:
-      'Ya, semua paket sudah termasuk hosting premium selama 1 tahun dan SSL gratis. Untuk domain, kami bantu proses pembelian dan konfigurasi. Perpanjangan hosting dan domain dilakukan setiap tahun dengan biaya terpisah.',
+      'Rata-rata 7 hingga 21 hari tergantung kompleksitas website yang dibutuhkan.',
   },
   {
     id: 'faq-3',
-    question: 'Apakah website bisa diedit sendiri setelah jadi?',
+    question: 'Apakah website sudah SEO Friendly?',
     answer:
-      'Tentu bisa. Kami menyediakan panel admin yang mudah digunakan untuk mengelola konten seperti produk, artikel, dan gambar. Kami juga memberikan panduan lengkap agar Anda bisa mengupdate website secara mandiri.',
+      'Ya. Struktur website telah dioptimalkan agar mudah ditemukan mesin pencari seperti Google.',
   },
   {
     id: 'faq-4',
-    question: 'Apakah website sudah SEO friendly?',
+    question: 'Apakah saya mendapatkan domain dan hosting?',
     answer:
-      'Ya, semua website yang kami buat sudah dioptimasi untuk SEO. Termasuk struktur heading yang benar, meta tag, kecepatan loading optimal, dan mobile friendly. Ini membantu website Anda lebih mudah ditemukan di Google.',
+      'Ya. Hosting dan SSL sudah termasuk pada semua paket yang tersedia selama 1 tahun pertama.',
   },
   {
     id: 'faq-5',
-    question: 'Bagaimana sistem pembayarannya?',
+    question: 'Apakah website bisa dibuka di HP?',
     answer:
-      'Pembayaran dilakukan dalam dua tahap. Tahap pertama sebesar 50% di awal sebagai tanda jadi. Sisanya 50% dibayarkan setelah website selesai dan Anda menyetujui hasilnya. Kami menerima transfer bank dan e-wallet.',
+      'Tentu. Semua website dirancang responsif dan mobile friendly agar tampil optimal di semua perangkat.',
   },
   {
     id: 'faq-6',
-    question: 'Apakah ada garansi setelah website selesai?',
+    question: 'Apa manfaat memiliki website dibanding hanya berjualan di marketplace?',
     answer:
-      'Kami memberikan garansi maintenance selama 30 hari setelah website diluncurkan. Selama periode ini, kami memperbaiki bug dan melakukan penyesuaian minor tanpa biaya tambahan. Support teknis tetap tersedia setelah masa garansi.',
+      'Website membantu bisnis membangun brand sendiri, memiliki data pelanggan, meningkatkan kredibilitas, dan mengurangi ketergantungan pada platform marketplace.',
   },
 ];
