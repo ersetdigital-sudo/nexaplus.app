@@ -270,3 +270,5 @@
 {"timestamp":"01:02:52.264","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
 {"timestamp":"01:04:23.126","source":"Server","level":"LOG","message":"✓ Compiled in 25.1s"}
 {"timestamp":"01:05:26.708","source":"Server","level":"LOG","message":"✓ Compiled in 1763ms"}
+{"timestamp":"01:27:40.198","source":"Server","level":"LOG","message":"✓ Finished filesystem cache database compaction in 11.8s"}
+{"timestamp":"01:28:17.051","source":"Server","level":"LOG","message":"✓ Compiled in 1676ms"}
