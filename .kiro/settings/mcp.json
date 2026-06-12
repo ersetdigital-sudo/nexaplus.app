@@ -1,7 +1,14 @@
 {
   "mcpServers": {
     "supabase": {
-      "url": "https://mcp.supabase.com/mcp?project_ref=suzymhcdetwxhysfzhvz&features=docs,account,database,debugging,development,functions,branching,storage"
+      "url": "https://mcp.supabase.com/mcp?project_ref=suzymhcdetwxhysfzhvz&features=docs,account,database,debugging,development,functions,branching,storage",
+      "autoApprove": [
+        "list_tables",
+        "get_project_url",
+        "get_publishable_keys",
+        "apply_migration",
+        "execute_sql"
+      ]
     }
   }
 }
