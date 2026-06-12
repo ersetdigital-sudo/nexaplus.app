@@ -100,3 +100,9 @@
 {"timestamp":"00:23:25.186","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/dinas-pariwisata-bandung.webp\" \"received\" null"}
 {"timestamp":"00:23:25.229","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/sdn-5-jakarta.webp\" \"received\" null"}
 {"timestamp":"00:23:25.240","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/yayasan-peduli-anak.webp\" \"received\" null"}
+{"timestamp":"00:25:36.724","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:25:36.827","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/hero-mockup.webp\" \"received\" null"}
+{"timestamp":"00:25:40.291","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/pt-maju-bersama.webp\" \"received\" null"}
+{"timestamp":"00:25:40.302","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/skincare-glow.webp\" \"received\" null"}
+{"timestamp":"00:25:40.373","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/tokoku-elektronik.webp\" \"received\" null"}
+{"timestamp":"00:27:59.233","source":"Server","level":"LOG","message":"✓ Compiled in 1993ms"}
