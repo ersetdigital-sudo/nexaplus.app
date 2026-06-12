@@ -272,3 +272,27 @@
 {"timestamp":"01:05:26.708","source":"Server","level":"LOG","message":"✓ Compiled in 1763ms"}
 {"timestamp":"01:27:40.198","source":"Server","level":"LOG","message":"✓ Finished filesystem cache database compaction in 11.8s"}
 {"timestamp":"01:28:17.051","source":"Server","level":"LOG","message":"✓ Compiled in 1676ms"}
+{"timestamp":"01:30:40.294","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"01:30:40.306","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"01:30:40.307","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"01:30:40.313","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"01:30:40.611","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"01:31:52.353","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"01:31:52.401","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"01:31:52.404","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"01:31:52.407","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"01:36:22.019","source":"Server","level":"LOG","message":"✓ Compiled in 20.9s"}
+{"timestamp":"01:36:43.522","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"01:37:02.830","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"01:37:02.973","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"01:37:02.997","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"01:37:03.086","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"01:37:21.061","source":"Server","level":"LOG","message":"✓ Compiled in 9.9s"}
+{"timestamp":"01:38:25.434","source":"Server","level":"LOG","message":"✓ Compiled in 6.4s"}
+{"timestamp":"01:39:10.758","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"01:39:45.785","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"01:39:45.881","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"01:39:45.979","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"01:39:46.263","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"01:40:09.861","source":"Server","level":"LOG","message":"✓ Compiled in 47.8s"}
+{"timestamp":"01:40:19.699","source":"Server","level":"LOG","message":"✓ Finished writing to filesystem cache in 14.3s"}

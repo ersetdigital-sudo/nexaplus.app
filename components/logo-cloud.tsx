@@ -3,16 +3,14 @@ import { InfiniteSlider } from "@/components/infinite-slider";
 export function LogoCloud() {
 	return (
 		<div className="mask-[linear-gradient(to_right,transparent,black,transparent)] overflow-hidden py-4">
-			<InfiniteSlider gap={42} reverse speed={80} speedOnHover={25}>
+			<InfiniteSlider gap={56} reverse speed={70} speedOnHover={25}>
 				{logos.map((logo) => (
 					<img
 						alt={logo.alt}
-						className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
-						height="auto"
+						className="pointer-events-none h-9 w-auto select-none opacity-80 transition-opacity hover:opacity-100 md:h-11"
 						key={`logo-${logo.alt}`}
 						loading="lazy"
 						src={logo.src}
-						width="auto"
 					/>
 				))}
 			</InfiniteSlider>
@@ -22,35 +20,35 @@ export function LogoCloud() {
 
 const logos = [
 	{
-		src: "https://storage.efferd.com/logo/nvidia-wordmark.svg",
-		alt: "Nvidia Logo",
+		src: "https://cdn.simpleicons.org/nextdotjs/white",
+		alt: "Next.js",
 	},
 	{
-		src: "https://storage.efferd.com/logo/supabase-wordmark.svg",
-		alt: "Supabase Logo",
+		src: "https://cdn.simpleicons.org/react/61DAFB",
+		alt: "React",
 	},
 	{
-		src: "https://storage.efferd.com/logo/openai-wordmark.svg",
-		alt: "OpenAI Logo",
+		src: "https://cdn.simpleicons.org/typescript/3178C6",
+		alt: "TypeScript",
 	},
 	{
-		src: "https://storage.efferd.com/logo/turso-wordmark.svg",
-		alt: "Turso Logo",
+		src: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+		alt: "Tailwind CSS",
 	},
 	{
-		src: "https://storage.efferd.com/logo/vercel-wordmark.svg",
-		alt: "Vercel Logo",
+		src: "https://cdn.simpleicons.org/vercel/white",
+		alt: "Vercel",
 	},
 	{
-		src: "https://storage.efferd.com/logo/github-wordmark.svg",
-		alt: "GitHub Logo",
+		src: "https://cdn.simpleicons.org/framer/EC4899",
+		alt: "Framer Motion",
 	},
 	{
-		src: "https://storage.efferd.com/logo/claude-wordmark.svg",
-		alt: "Claude AI Logo",
+		src: "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+		alt: "Node.js",
 	},
 	{
-		src: "https://storage.efferd.com/logo/clerk-wordmark.svg",
-		alt: "Clerk Logo",
+		src: "https://cdn.simpleicons.org/postgresql/4169E1",
+		alt: "PostgreSQL",
 	},
 ];

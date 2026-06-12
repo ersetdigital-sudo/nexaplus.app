@@ -3,6 +3,7 @@ import { TrustSection } from '@/components/sections/trust-section';
 import { ProblemSection } from '@/components/sections/problem-section';
 import { ServicesSection } from '@/components/sections/services-section';
 import { BenefitsSection } from '@/components/sections/benefits-section';
+import { TechStackSection } from '@/components/sections/tech-stack-section';
 import { PortfolioSection } from '@/components/sections/portfolio-section';
 import { ProcessSection } from '@/components/sections/process-section';
 import { TestimonialSection } from '@/components/sections/testimonial-section';
@@ -29,6 +30,7 @@ export default function Home() {
       <ProblemSection />
       <ServicesSection />
       <BenefitsSection />
+      <TechStackSection />
       <PortfolioSection />
       <ProcessSection />
       <TestimonialSection />
