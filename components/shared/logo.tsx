@@ -16,7 +16,7 @@ export function Logo({ className, showText = true }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        <rect width="40" height="40" rx="10" fill="#6366F1" />
+        <rect width="40" height="40" rx="10" fill="#2563EB" />
         {/* < bracket */}
         <path
           d="M16 14L10 20L16 26"
