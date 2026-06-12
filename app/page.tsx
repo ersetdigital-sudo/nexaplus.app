@@ -8,7 +8,6 @@ import { TechStackSection } from '@/components/sections/tech-stack-section';
 import { PortfolioSection } from '@/components/sections/portfolio-section';
 import { ProcessSection } from '@/components/sections/process-section';
 import { TestimonialSection } from '@/components/sections/testimonial-section';
-import { PricingSection } from '@/components/sections/pricing-section';
 import { FAQSection } from '@/components/sections/faq-section';
 import { BlogSection } from '@/components/sections/blog-section';
 import { FinalCtaSection } from '@/components/sections/final-cta-section';
@@ -36,7 +35,6 @@ export default function Home() {
       <PortfolioSection />
       <ProcessSection />
       <TestimonialSection />
-      <PricingSection />
       <FAQSection />
       <BlogSection />
       <FinalCtaSection />

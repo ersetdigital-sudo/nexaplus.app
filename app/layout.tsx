@@ -24,14 +24,24 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Profesional | NexaPlus",
+  title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
   description:
-    "Jasa pembuatan website profesional untuk UMKM, perusahaan, toko online, landing page dan company profile. SEO Friendly, cepat dan mobile friendly.",
+    "NexaPlus adalah jasa pembuatan website profesional di Indonesia. Melayani toko online, landing page, company profile, website sekolah, dan organisasi. Mulai dari Rp 500.000, termasuk hosting dan SSL gratis.",
   metadataBase: new URL("https://nexaplus.app"),
+  keywords: [
+    "jasa pembuatan website",
+    "jasa pembuatan website profesional",
+    "jasa bikin website toko online",
+    "jasa website company profile",
+    "jasa website sekolah",
+    "jasa website UMKM",
+    "buat website bisnis",
+    "web developer Indonesia",
+  ],
   openGraph: {
-    title: "Jasa Pembuatan Website Profesional | NexaPlus",
+    title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
     description:
-      "Jasa pembuatan website profesional untuk UMKM, perusahaan, toko online, landing page dan company profile. SEO Friendly, cepat dan mobile friendly.",
+      "Jasa pembuatan website profesional untuk UMKM, toko online, company profile, sekolah, dan organisasi di Indonesia. Mulai dari Rp 500.000.",
     url: "https://nexaplus.app",
     siteName: "NexaPlus",
     images: [
@@ -72,13 +82,20 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                organizationSchema,
+                localBusinessSchema,
+                {
+                  "@type": "WebSite",
+                  "name": "NexaPlus",
+                  "url": "https://nexaplus.app",
+                  "description": "Jasa pembuatan website profesional di Indonesia",
+                  "publisher": { "@type": "Organization", "name": "NexaPlus" }
+                }
+              ]
+            }),
           }}
         />
       </head>

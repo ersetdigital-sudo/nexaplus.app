@@ -4,12 +4,12 @@ import { Fingerprint, Database, Search, Coins, Megaphone, Settings } from "lucid
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 
 const benefits = [
-  { icon: Fingerprint, title: "Brand Milik Sendiri", desc: "Bangun identitas brand yang kuat tanpa tertutupi nama marketplace." },
-  { icon: Database, title: "Data Pelanggan Sendiri", desc: "Miliki database pelanggan untuk remarketing dan loyalitas jangka panjang." },
-  { icon: Search, title: "Optimasi Google (SEO)", desc: "Website Anda bisa muncul di halaman pertama Google secara organik." },
-  { icon: Coins, title: "Bebas Biaya Komisi", desc: "Tidak ada potongan penjualan. Semua keuntungan 100% milik Anda." },
-  { icon: Megaphone, title: "Promosi Tanpa Batas", desc: "Jalankan kampanye marketing tanpa dibatasi algoritma platform." },
-  { icon: Settings, title: "Kendali Penuh Bisnis", desc: "Atur tampilan, harga, dan strategi bisnis sesuai keinginan Anda." },
+  { icon: Fingerprint, title: "Brand Lebih Profesional", desc: "Bangun identitas brand yang kuat dan terpercaya di mata pelanggan." },
+  { icon: Search, title: "Muncul di Pencarian Google", desc: "Website Anda bisa ditemukan calon pelanggan melalui pencarian organik." },
+  { icon: Database, title: "Data Pelanggan Milik Sendiri", desc: "Kumpulkan data pelanggan untuk remarketing dan loyalitas jangka panjang." },
+  { icon: Coins, title: "Tanpa Biaya Komisi", desc: "Tidak ada potongan penjualan. Semua keuntungan 100% milik Anda." },
+  { icon: Megaphone, title: "Bebas dari Algoritma Platform", desc: "Kembangkan bisnis tanpa bergantung pada perubahan aturan marketplace." },
+  { icon: Settings, title: "Kendali Penuh Bisnis", desc: "Atur tampilan, harga, dan strategi bisnis sesuai kebutuhan Anda." },
 ];
 
 export function SolutionSection() {
@@ -18,10 +18,12 @@ export function SolutionSection() {
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center">
           <h2 className="font-bold text-slate-900">
-            Saatnya Memiliki Aset Digital Sendiri.
+            Solusi yang Lebih Baik
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-600 md:text-base">
-            Website bukan sekadar tempat menampilkan produk. Website adalah pusat bisnis digital yang memberikan kendali penuh kepada Anda.
+            Website bukan hanya tempat menampilkan produk atau layanan. Website
+            adalah pusat bisnis digital yang bekerja 24 jam untuk membantu calon
+            pelanggan mengenal, mempercayai, dan menghubungi bisnis Anda.
           </p>
         </div>
 
@@ -45,7 +47,7 @@ export function SolutionSection() {
         </div>
 
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-slate-500">
-          Kendalikan bisnis Anda sendiri tanpa bergantung pada perubahan algoritma atau biaya admin marketplace.
+          Kami membantu mulai dari perencanaan, desain, pengembangan, hingga website siap digunakan.
         </p>
       </div>
     </SectionWrapper>

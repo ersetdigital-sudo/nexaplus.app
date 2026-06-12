@@ -42,13 +42,15 @@ export function ProblemSection() {
     <SectionWrapper id="masalah">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-4 text-center font-bold text-slate-900">
-          Marketplace Bagus untuk Memulai. Tapi Tidak Ideal untuk Selamanya.
+          Masalah yang Sering Dihadapi Bisnis
         </h2>
 
         <p className="mx-auto mb-12 max-w-3xl text-center text-base text-slate-600 md:text-lg">
-          Banyak pemilik usaha mengalami hal yang sama. Anda sudah mengeluarkan
-          biaya iklan. Anda sudah mengumpulkan banyak pelanggan. Anda sudah
-          membangun reputasi toko. Namun pada akhirnya:
+          Masih mengandalkan marketplace sebagai satu-satunya sumber penjualan?
+          Persaingan semakin ketat, biaya semakin besar, dan pelanggan lebih
+          mengingat nama marketplace dibanding brand Anda sendiri. Ketika
+          algoritma berubah atau biaya admin meningkat, bisnis Anda ikut
+          terkena dampaknya.
         </p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -73,8 +75,8 @@ export function ProblemSection() {
         </div>
 
         <p className="mt-10 rounded-xl border border-blue-100 bg-blue-50 px-6 py-5 text-center text-base text-slate-700 md:text-lg">
-          Jika bisnis ingin berkembang lebih besar, memiliki website sendiri
-          bukan lagi pilihan tambahan. Itu kebutuhan.
+          Jika ingin membangun bisnis yang lebih kuat dalam jangka panjang,
+          Anda membutuhkan aset digital yang benar-benar milik sendiri.
         </p>
       </div>
     </SectionWrapper>

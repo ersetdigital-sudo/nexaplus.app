@@ -127,7 +127,7 @@ export function generateLocalBusinessSchema(): SchemaLocalBusiness {
       '@type': 'PostalAddress',
       addressCountry: 'ID',
     },
-    priceRange: 'Rp 500.000 - Rp 15.000.000',
+    priceRange: 'Rp 500.000 - Rp 4.000.000',
   };
 }
 

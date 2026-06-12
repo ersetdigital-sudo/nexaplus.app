@@ -8,8 +8,8 @@ import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
 export function HeroSection() {
   const whatsappUrl = getDefaultWhatsAppUrl();
 
-  const handleScrollToHarga = () => {
-    const el = document.getElementById("harga");
+  const handleScrollToLayanan = () => {
+    const el = document.getElementById("layanan");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -19,25 +19,21 @@ export function HeroSection() {
         {/* Badge */}
         <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-medium text-blue-700">
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-          Berhenti Bergantung pada Marketplace
+          Dipercaya 80+ Bisnis di Indonesia
         </span>
 
         {/* Heading */}
         <h1 className="mt-6 font-extrabold leading-tight tracking-tight text-slate-900">
-          Miliki Website Toko Online Sendiri yang Cepat, Profesional, dan Mudah Ditemukan di{" "}
-          <span className="gradient-text">Google.</span>
+          Bisnis Anda Layak Punya Website Profesional yang Bekerja{" "}
+          <span className="gradient-text">24 Jam.</span>
         </h1>
 
         {/* Supporting paragraph */}
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg md:mt-6 md:px-8 lg:text-xl">
-          NexaPlus membantu UMKM dan seller marketplace membangun website toko
-          online sendiri agar memiliki aset digital yang benar-benar dimiliki,
-          lebih profesional, dan siap berkembang dalam jangka panjang.
-        </p>
-
-        {/* Price line */}
-        <p className="mt-4 text-sm font-medium text-blue-600">
-          Mulai dari Rp1.500.000
+          NexaPlus adalah jasa pembuatan website profesional yang membantu bisnis
+          tampil lebih terpercaya, mudah ditemukan di Google, dan siap menerima
+          pelanggan kapan saja. Kami urus semuanya dari awal sampai online,
+          sehingga Anda bisa fokus mengembangkan bisnis.
         </p>
 
         {/* CTA buttons */}
@@ -51,9 +47,9 @@ export function HeroSection() {
             size="lg"
             variant="outline"
             className="w-full sm:w-auto"
-            onClick={handleScrollToHarga}
+            onClick={handleScrollToLayanan}
           >
-            Lihat Paket Harga
+            Lihat Layanan
           </Button>
         </div>
 

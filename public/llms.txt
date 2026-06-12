@@ -1,0 +1,28 @@
+# NexaPlus
+
+## About
+NexaPlus adalah jasa pembuatan website profesional di Indonesia. Kami melayani pembuatan website toko online, landing page, company profile, website sekolah, website pemerintahan, website organisasi, sistem POS kasir, aplikasi inventory, dan sistem booking reservasi.
+
+## Services
+- Website Toko Online: E-commerce dengan keranjang belanja, payment gateway, dan dashboard admin
+- Landing Page: Halaman konversi tinggi dengan CTA dan form lead capture
+- Company Profile: Website korporat profesional dengan portofolio dan kontak
+- Website Sekolah: Informasi akademik, pengumuman, galeri, dan form pendaftaran
+- Website Pemerintahan: Portal berita, profil pejabat, layanan publik online
+- Website Organisasi: Program kegiatan, galeri, pendaftaran anggota, donasi online
+- Sistem POS & Kasir: Transaksi digital, manajemen stok, laporan penjualan
+- Aplikasi Inventory: Kelola stok masuk/keluar, barcode scanner, alert stok menipis
+- Sistem Booking: Kalender booking realtime, notifikasi WhatsApp, e-tiket
+
+## Pricing
+Mulai dari Rp 500.000 hingga Rp 4.000.000 tergantung jenis dan kompleksitas website. Semua paket termasuk hosting dan SSL gratis tahun pertama.
+
+## Technology
+Dibangun menggunakan Next.js, React, dan Tailwind CSS untuk performa maksimal, keamanan lebih baik, dan SEO optimal.
+
+## Contact
+Website: https://nexaplus.app
+WhatsApp: Tersedia di website
+
+## Location
+Indonesia (melayani seluruh Indonesia secara remote)

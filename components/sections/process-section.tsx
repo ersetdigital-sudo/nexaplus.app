@@ -18,6 +18,19 @@ const stepColors = [
 export function ProcessSection() {
   const prefersReducedMotion = useReducedMotion();
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Proses Pembuatan Website di NexaPlus",
+    "description": "Langkah-langkah pembuatan website profesional bersama NexaPlus dari konsultasi hingga launching.",
+    "step": processSteps.map((step) => ({
+      "@type": "HowToStep",
+      "position": step.number,
+      "name": step.title,
+      "text": step.description,
+    })),
+  };
+
   return (
     <SectionWrapper id="proses" className="bg-white">
       <div className="mx-auto max-w-5xl">
@@ -69,6 +82,11 @@ export function ProcessSection() {
           })}
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
     </SectionWrapper>
   );
 }
