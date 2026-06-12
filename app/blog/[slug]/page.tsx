@@ -29,7 +29,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.excerpt,
       type: 'article',
       publishedTime: post.publishedDate.toISOString(),
-      images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
     },
     alternates: {
       canonical: `https://nexaplus.app/blog/${post.slug}`,
