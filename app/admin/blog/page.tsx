@@ -1,16 +1,37 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+"use client";
+
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { DeleteBlogButton } from "./delete-button";
 
-export const dynamic = "force-dynamic";
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  published: boolean;
+  created_at: string;
+}
 
-export default async function AdminBlogPage() {
-  const supabase = await createServerSupabaseClient();
-  const { data: posts } = await supabase
-    .from("blog_posts")
-    .select("*")
-    .order("created_at", { ascending: false });
+export default function AdminBlogPage() {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchPosts = async () => {
+    const supabase = createClient();
+    const { data } = await supabase
+      .from("blog_posts")
+      .select("*")
+      .order("created_at", { ascending: false });
+    setPosts(data || []);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   return (
     <div>
@@ -29,7 +50,11 @@ export default async function AdminBlogPage() {
       </div>
 
       <div className="mt-6 rounded-xl border border-slate-200 bg-white overflow-hidden">
-        {posts && posts.length > 0 ? (
+        {loading ? (
+          <div className="px-5 py-12 text-center">
+            <div className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+          </div>
+        ) : posts.length > 0 ? (
           <table className="w-full">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50">
@@ -70,7 +95,7 @@ export default async function AdminBlogPage() {
                       >
                         Edit
                       </Link>
-                      <DeleteBlogButton id={post.id} title={post.title} />
+                      <DeleteBlogButton id={post.id} title={post.title} onDeleted={fetchPosts} />
                     </div>
                   </td>
                 </tr>

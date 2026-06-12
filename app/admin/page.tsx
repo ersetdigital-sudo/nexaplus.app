@@ -1,19 +1,27 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+"use client";
+
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 import { FileText, Image } from "lucide-react";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
+export default function AdminDashboardPage() {
+  const [blogCount, setBlogCount] = useState(0);
+  const [portfolioCount, setPortfolioCount] = useState(0);
 
-export default async function AdminDashboardPage() {
-  const supabase = await createServerSupabaseClient();
+  useEffect(() => {
+    const supabase = createClient();
 
-  const { count: blogCount } = await supabase
-    .from("blog_posts")
-    .select("*", { count: "exact", head: true });
+    supabase
+      .from("blog_posts")
+      .select("*", { count: "exact", head: true })
+      .then(({ count }) => setBlogCount(count || 0));
 
-  const { count: portfolioCount } = await supabase
-    .from("portfolio_items")
-    .select("*", { count: "exact", head: true });
+    supabase
+      .from("portfolio_items")
+      .select("*", { count: "exact", head: true })
+      .then(({ count }) => setPortfolioCount(count || 0));
+  }, []);
 
   return (
     <div>
@@ -30,7 +38,7 @@ export default async function AdminDashboardPage() {
               <FileText className="h-6 w-6 text-blue-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-slate-900">{blogCount || 0}</p>
+              <p className="text-2xl font-bold text-slate-900">{blogCount}</p>
               <p className="text-sm text-slate-500">Blog Posts</p>
             </div>
           </div>
@@ -45,7 +53,7 @@ export default async function AdminDashboardPage() {
               <Image className="h-6 w-6 text-purple-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-slate-900">{portfolioCount || 0}</p>
+              <p className="text-2xl font-bold text-slate-900">{portfolioCount}</p>
               <p className="text-sm text-slate-500">Portfolio Items</p>
             </div>
           </div>

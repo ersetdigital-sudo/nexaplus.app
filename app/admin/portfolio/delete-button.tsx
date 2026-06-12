@@ -1,18 +1,16 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/navigation";
 import { Trash2 } from "lucide-react";
 
-export function DeletePortfolioButton({ id, name }: { id: string; name: string }) {
-  const router = useRouter();
+export function DeletePortfolioButton({ id, name, onDeleted }: { id: string; name: string; onDeleted?: () => void }) {
   const supabase = createClient();
 
   const handleDelete = async () => {
     if (!confirm(`Hapus portfolio "${name}"?`)) return;
 
     await supabase.from("portfolio_items").delete().eq("id", id);
-    router.refresh();
+    onDeleted?.();
   };
 
   return (

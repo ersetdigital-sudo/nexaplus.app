@@ -1,24 +1,37 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { notFound } from "next/navigation";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 import { PortfolioEditor } from "../../editor";
 
-export const dynamic = "force-dynamic";
+export default function EditPortfolioPage() {
+  const params = useParams();
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-interface EditPortfolioPageProps {
-  params: Promise<{ id: string }>;
-}
+  useEffect(() => {
+    const supabase = createClient();
+    supabase
+      .from("portfolio_items")
+      .select("*")
+      .eq("id", params.id)
+      .single()
+      .then(({ data }) => {
+        setItem(data);
+        setLoading(false);
+      });
+  }, [params.id]);
 
-export default async function EditPortfolioPage({ params }: EditPortfolioPageProps) {
-  const { id } = await params;
-  const supabase = await createServerSupabaseClient();
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+      </div>
+    );
+  }
 
-  const { data: item } = await supabase
-    .from("portfolio_items")
-    .select("*")
-    .eq("id", id)
-    .single();
-
-  if (!item) notFound();
+  if (!item) return <p className="text-slate-500">Portfolio tidak ditemukan.</p>;
 
   return <PortfolioEditor item={item} />;
 }
