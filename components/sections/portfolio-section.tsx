@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -40,13 +39,12 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
       onBlur={() => setIsHovered(false)}
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden">
-        <Image
-          src={item.screenshot}
-          alt={`Screenshot ${item.name}`}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+        {/* Gradient placeholder with initial */}
+        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-600/40 via-purple-600/30 to-pink-600/40 transition-transform duration-300 group-hover:scale-105">
+          <span className="text-4xl font-bold text-white/80">
+            {item.name.charAt(0)}
+          </span>
+        </div>
 
         {/* Hover overlay */}
         <motion.div

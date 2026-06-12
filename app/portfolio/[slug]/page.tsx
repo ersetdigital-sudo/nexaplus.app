@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { portfolioItems } from '@/data/portfolio';
 import { Badge } from '@/components/ui/badge';
@@ -46,15 +45,8 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-lg">
-        <Image
-          src={item.screenshot}
-          alt={item.name}
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 896px"
-        />
+      <div className="relative mb-8 flex aspect-video w-full items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-indigo-600/40 via-purple-600/30 to-pink-600/40">
+        <span className="text-6xl font-bold text-white/70">{item.name.charAt(0)}</span>
       </div>
       <header className="mb-6">
         <div className="mb-3">

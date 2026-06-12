@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { blogPosts, type BlogCategory } from "@/data/blog-posts";
@@ -56,14 +55,12 @@ export function BlogSection() {
                 href={`/blog/${post.slug}`}
                 className="group overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10"
               >
-                <div className="relative aspect-video w-full overflow-hidden">
-                  <Image
-                    src={post.coverImage}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-indigo-600/40 via-purple-600/30 to-pink-600/40">
+                  <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
+                    <span className="px-4 text-center text-lg font-bold text-white/70">
+                      {post.category}
+                    </span>
+                  </div>
                 </div>
                 <div className="p-5">
                   <div className="mb-3 flex items-center justify-between">
