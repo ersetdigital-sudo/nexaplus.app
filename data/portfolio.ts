@@ -4,7 +4,8 @@ export type ServiceCategory =
   | 'Company Profile'
   | 'Website Sekolah'
   | 'Website Pemerintahan'
-  | 'Website Organisasi';
+  | 'Website Organisasi'
+  | 'Tour & Travel';
 
 export interface PortfolioItem {
   slug: string;
@@ -67,7 +68,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     slug: 'octaf-kreasi',
     name: 'Octaf Kreasi',
-    category: 'Toko Online',
+    category: 'Tour & Travel',
     screenshot: '/images/portfolio/octaf-kreasi.webp',
     description:
       'Platform tour & travel Indonesia dengan fitur pencarian destinasi, booking online, wishlist, review traveler, dan lebih dari 500 destinasi wisata dari Raja Ampat hingga Labuan Bajo.',

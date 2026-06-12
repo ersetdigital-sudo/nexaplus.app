@@ -1,79 +1,70 @@
 "use client";
 
 import { MessageSquare, ClipboardList, Palette, Code2, RefreshCw, Rocket } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { processSteps } from "@/data/process-steps";
 
 const stepIcons = [MessageSquare, ClipboardList, Palette, Code2, RefreshCw, Rocket];
+const stepColors = [
+  "from-blue-500 to-blue-600",
+  "from-sky-500 to-sky-600",
+  "from-violet-500 to-violet-600",
+  "from-indigo-500 to-indigo-600",
+  "from-cyan-500 to-cyan-600",
+  "from-emerald-500 to-emerald-600",
+];
 
 export function ProcessSection() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <SectionWrapper id="proses" className="bg-white">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         <div className="mb-12 text-center">
           <h2 className="font-bold text-slate-900">
             Proses Pengerjaan yang Jelas
           </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 md:text-base">
+            Dari konsultasi hingga launching, setiap tahap transparan dan terstruktur.
+          </p>
         </div>
 
-        {/* Desktop: card grid */}
-        <div className="hidden md:grid md:grid-cols-3 md:gap-6 lg:gap-8">
+        {/* Steps grid — 2 cols on mobile, 3 cols on desktop */}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
           {processSteps.map((step, index) => {
             const Icon = stepIcons[index];
+            const gradient = stepColors[index];
+
             return (
-              <div
+              <motion.div
                 key={step.number}
-                className="group relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-blue-200"
+                className="relative flex flex-col items-center rounded-[12px] border border-[#E4E4E7] bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md md:p-6"
+                initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
+                whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
               >
-                {/* Step number badge */}
-                <div className="absolute -top-3 left-6 flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white shadow-sm">
+                {/* Step number */}
+                <span className="absolute -top-2.5 right-4 flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[10px] font-bold text-slate-500">
                   {step.number}
+                </span>
+
+                {/* Icon */}
+                <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-sm md:h-12 md:w-12`}>
+                  <Icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true" />
                 </div>
 
-                <div className="mt-3 flex flex-col items-start gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-100">
-                    <Icon className="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <h3 className="card-title font-semibold text-slate-900">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-slate-600">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                {/* Title */}
+                <h3 className="card-title mt-3 font-semibold text-slate-900">
+                  {step.title}
+                </h3>
 
-        {/* Mobile: vertical stepper */}
-        <div className="flex flex-col gap-0 md:hidden">
-          {processSteps.map((step, index) => {
-            const Icon = stepIcons[index];
-            return (
-              <div key={step.number} className="relative flex gap-4 pb-8 last:pb-0">
-                {/* Vertical line */}
-                {index < processSteps.length - 1 && (
-                  <div className="absolute left-[22px] top-12 h-[calc(100%-48px)] w-0.5 bg-blue-100" />
-                )}
-
-                {/* Icon circle */}
-                <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm">
-                  <Icon className="h-5 w-5" />
-                </div>
-
-                <div className="pt-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-semibold text-blue-600">Step {step.number}</span>
-                  </div>
-                  <h3 className="card-title mt-0.5 font-semibold text-slate-900">
-                    {step.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
+                {/* Description — hidden on mobile for cleaner look, show on md+ */}
+                <p className="mt-1.5 hidden text-xs leading-relaxed text-slate-500 md:block">
+                  {step.description}
+                </p>
+              </motion.div>
             );
           })}
         </div>
