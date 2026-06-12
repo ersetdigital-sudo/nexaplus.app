@@ -31,7 +31,7 @@ export const siteConfig = {
     phone: '+6281573059442',
     email: 'hello@nexaplus.app',
     socialLinks: [
-      { platform: 'Instagram', url: 'https://instagram.com/nexaplus.app', icon: 'instagram' },
+      { platform: 'Instagram', url: 'https://www.instagram.com/nexaplus.app/', icon: 'instagram' },
       { platform: 'Facebook', url: 'https://facebook.com/nexaplus', icon: 'facebook' },
       { platform: 'LinkedIn', url: 'https://linkedin.com/company/nexaplus', icon: 'linkedin' },
     ],
