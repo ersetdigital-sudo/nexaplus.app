@@ -106,3 +106,60 @@
 {"timestamp":"00:25:40.302","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/skincare-glow.webp\" \"received\" null"}
 {"timestamp":"00:25:40.373","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/tokoku-elektronik.webp\" \"received\" null"}
 {"timestamp":"00:27:59.233","source":"Server","level":"LOG","message":"✓ Compiled in 1993ms"}
+{"timestamp":"00:29:25.009","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/sdn-5-jakarta.webp\" \"received\" null"}
+{"timestamp":"00:29:26.872","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/yayasan-peduli-anak.webp\" \"received\" null"}
+{"timestamp":"00:29:26.911","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/dinas-pariwisata-bandung.webp\" \"received\" null"}
+{"timestamp":"00:29:27.442","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:29:27.877","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/hero-mockup.webp\" \"received\" null"}
+{"timestamp":"00:29:35.293","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/tokoku-elektronik.webp\" \"received\" null"}
+{"timestamp":"00:29:35.390","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/skincare-glow.webp\" \"received\" null"}
+{"timestamp":"00:29:35.458","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/dinas-pariwisata-bandung.webp\" \"received\" null"}
+{"timestamp":"00:29:35.985","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/pt-maju-bersama.webp\" \"received\" null"}
+{"timestamp":"00:29:36.151","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/sdn-5-jakarta.webp\" \"received\" null"}
+{"timestamp":"00:29:38.039","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"00:29:38.042","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"00:29:38.060","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/yayasan-peduli-anak.webp\" \"received\" null"}
+{"timestamp":"00:29:38.418","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"00:29:38.504","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"00:29:41.921","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/optimasi-kecepatan.webp\" \"received\" null"}
+{"timestamp":"00:29:41.925","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/tips-seo-2024.webp\" \"received\" null"}
+{"timestamp":"00:29:41.940","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/pilih-jasa-website.webp\" \"received\" null"}
+{"timestamp":"00:29:41.952","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/umkm-website.webp\" \"received\" null"}
+{"timestamp":"00:29:41.958","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/jualan-tanpa-marketplace.webp\" \"received\" null"}
+{"timestamp":"00:29:41.971","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/fitur-toko-online.webp\" \"received\" null"}
+{"timestamp":"00:29:44.781","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"00:29:44.792","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"00:29:44.803","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"00:29:44.918","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"00:34:12.609","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:34:13.804","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/hero-mockup.webp\" \"received\" null"}
+{"timestamp":"00:34:25.061","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/tokoku-elektronik.webp\" \"received\" null"}
+{"timestamp":"00:34:25.145","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/skincare-glow.webp\" \"received\" null"}
+{"timestamp":"00:34:25.633","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/pt-maju-bersama.webp\" \"received\" null"}
+{"timestamp":"00:34:32.747","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/yayasan-peduli-anak.webp\" \"received\" null"}
+{"timestamp":"00:34:32.763","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/sdn-5-jakarta.webp\" \"received\" null"}
+{"timestamp":"00:34:32.797","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/dinas-pariwisata-bandung.webp\" \"received\" null"}
+{"timestamp":"00:34:35.455","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"00:34:35.920","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"00:34:36.102","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"00:34:38.209","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"00:39:39.673","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/pilih-jasa-website.webp\" \"received\" null"}
+{"timestamp":"00:39:39.703","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/tips-seo-2024.webp\" \"received\" null"}
+{"timestamp":"00:39:39.706","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/umkm-website.webp\" \"received\" null"}
+{"timestamp":"00:39:40.160","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/jualan-tanpa-marketplace.webp\" \"received\" null"}
+{"timestamp":"00:39:40.168","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/optimasi-kecepatan.webp\" \"received\" null"}
+{"timestamp":"00:39:40.187","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/fitur-toko-online.webp\" \"received\" null"}
+{"timestamp":"00:39:42.088","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/pilih-jasa-website.webp\" \"received\" null"}
+{"timestamp":"00:39:44.020","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/tips-seo-2024.webp\" \"received\" null"}
+{"timestamp":"00:39:44.022","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/fitur-toko-online.webp\" \"received\" null"}
+{"timestamp":"00:39:44.067","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/optimasi-kecepatan.webp\" \"received\" null"}
+{"timestamp":"00:39:44.070","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/jualan-tanpa-marketplace.webp\" \"received\" null"}
+{"timestamp":"00:39:44.075","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/umkm-website.webp\" \"received\" null"}
+{"timestamp":"00:39:47.555","source":"Server","level":"LOG","message":"○ Compiling /blog/[slug] ..."}
+{"timestamp":"00:40:05.416","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
+{"timestamp":"00:42:19.282","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\" \"\\u001b[2m(file://C:/Users/chemz/Downloads/NEXA PLUS/nexaplus.app/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
+{"timestamp":"00:42:19.327","source":"Browser","level":"WARN","message":"\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\u001b[39m"}
+{"timestamp":"00:42:24.187","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:43:59.649","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:44:51.172","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:45:22.810","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}

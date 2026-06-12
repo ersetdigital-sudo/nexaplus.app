@@ -36,7 +36,7 @@ export function Footer() {
           {/* Brand / About Column */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="/images/logo.svg" alt="NexaPlus" className="h-9 w-auto" />
+              <img src="/images/logo.png" alt="NexaPlus" className="h-9 w-auto" />
             </div>
             <p className="text-sm text-gray-400">
               Jasa pembuatan website profesional untuk UMKM, perusahaan, dan
