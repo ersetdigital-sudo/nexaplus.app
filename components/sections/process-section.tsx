@@ -34,7 +34,7 @@ export function ProcessSection() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-100">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="card-title font-semibold text-slate-900">
                     {step.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-600">
@@ -66,7 +66,7 @@ export function ProcessSection() {
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-semibold text-blue-600">Step {step.number}</span>
                   </div>
-                  <h3 className="mt-0.5 text-base font-semibold text-slate-900">
+                  <h3 className="card-title mt-0.5 font-semibold text-slate-900">
                     {step.title}
                   </h3>
                   <p className="mt-1 text-sm leading-relaxed text-slate-600">

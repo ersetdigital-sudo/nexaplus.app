@@ -45,7 +45,7 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
+            <h3 className="!text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">
               Navigasi
             </h3>
             <ul className="space-y-2">
@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
+            <h3 className="!text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">
               Layanan
             </h3>
             <ul className="space-y-2">
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
+            <h3 className="!text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">
               Kontak
             </h3>
             <ul className="space-y-3">

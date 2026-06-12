@@ -69,7 +69,7 @@ export function BlogSection() {
                       {formatDate(post.publishedDate)}
                     </span>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold leading-tight text-slate-900">
+                  <h3 className="card-title mb-2 font-semibold text-slate-900">
                     {post.title}
                   </h3>
                   <p className="text-sm text-slate-600 line-clamp-2">

@@ -49,7 +49,7 @@ export function ServicesSection() {
                       />
                     </div>
                   )}
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="card-title-lg font-semibold text-slate-900">
                     {service.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-600">

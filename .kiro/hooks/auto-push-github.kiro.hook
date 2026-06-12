@@ -4,14 +4,13 @@
   "description": "Automatically pushes to origin main after any git commit is made, so Vercel deploys the latest changes.",
   "version": "1",
   "when": {
-    "type": "postToolUse",
-    "toolTypes": [
-      "shell"
-    ]
+    "type": "agentStop"
   },
   "then": {
     "type": "runCommand",
     "command": "cd \"c:\\Users\\chemz\\Downloads\\NEXA PLUS\\nexaplus.app\" && git push origin main",
     "timeout": 30
-  }
+  },
+  "workspaceFolderName": "nexaplus.app",
+  "shortName": "auto-push-github"
 }

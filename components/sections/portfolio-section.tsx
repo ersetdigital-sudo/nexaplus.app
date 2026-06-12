@@ -60,7 +60,7 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
       </div>
 
       <div className="p-4">
-        <h3 className="mb-2 text-lg font-semibold text-slate-900">{item.name}</h3>
+        <h3 className="card-title-lg mb-2 font-semibold text-slate-900">{item.name}</h3>
         <Badge variant="outline">{item.category}</Badge>
       </div>
     </Link>

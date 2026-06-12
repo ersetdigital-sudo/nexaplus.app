@@ -77,7 +77,7 @@ export function TestimonialSection() {
                   photo={testimonial.photo}
                 />
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900">
+                  <h3 className="!text-sm font-semibold text-slate-900">
                     {testimonial.name}
                   </h3>
                   <p className="text-xs text-slate-500">
