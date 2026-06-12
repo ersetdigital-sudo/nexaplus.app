@@ -400,99 +400,127 @@ function PreviewCompany() {
 
 function PreviewSekolah() {
   return (
-    <div className="h-full bg-white flex flex-col">
-      {/* Top bar info */}
-      <div className="flex items-center justify-between bg-green-800 px-3 py-1">
+    <div className="h-full bg-[#f0f4f8] flex flex-col">
+      {/* Top info bar - dark blue */}
+      <div className="flex items-center justify-between bg-[#0a1628] px-3 py-0.5">
         <div className="flex items-center gap-2">
-          <span className="text-[5.5px] text-green-200">📞 0365 788 899</span>
-          <span className="text-[5.5px] text-green-200">✉️ info@sekolahnegeri.com</span>
+          <span className="text-[5px] text-blue-200">📞 0365 345 675</span>
+          <span className="text-[5px] text-blue-200">✉️ info@sekolahnegeri.com</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span className="text-[6px] text-green-200">𝕏</span>
-          <span className="text-[6px] text-green-200">f</span>
-          <span className="text-[6px] text-green-200">📷</span>
+        <div className="flex items-center gap-1">
+          <span className="h-2 w-2 rounded-full bg-blue-800 flex items-center justify-center text-[4px] text-blue-200">f</span>
+          <span className="h-2 w-2 rounded-full bg-blue-800 flex items-center justify-center text-[4px] text-blue-200">▶</span>
+          <span className="h-2 w-2 rounded-full bg-blue-800 flex items-center justify-center text-[4px] text-blue-200">📷</span>
         </div>
       </div>
-      {/* Navbar */}
-      <div className="flex items-center justify-between bg-white px-3 py-1.5 border-b border-slate-100 shadow-sm">
-        <div className="flex items-center gap-1.5">
-          <div className="h-5 w-5 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-            <span className="text-[6px] font-bold text-white">S</span>
+      {/* Navbar - white with logo + search + nav */}
+      <div className="flex items-center justify-between bg-white px-3 py-1.5 border-b border-slate-100">
+        <div className="flex items-center gap-1">
+          <div className="h-5 w-5 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-sm">
+            <span className="text-[5px] font-bold text-white">SD</span>
           </div>
           <div>
-            <span className="text-[8px] font-bold text-slate-900 block leading-none">Web Sekolah</span>
-            <span className="text-[4.5px] text-slate-400">SMA Negeri 1 Denpasar</span>
+            <span className="text-[7px] font-bold text-slate-900 block leading-none">SD Negeri 1</span>
+            <span className="text-[4px] text-slate-400">Baler Bale Agung</span>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[6px] text-slate-600 font-medium">Profil</span>
-          <span className="text-[6px] text-slate-600 font-medium">Akademik</span>
-          <span className="text-[6px] text-slate-600 font-medium">Berita</span>
-          <span className="text-[6px] text-slate-600 font-medium">Pengumuman</span>
-          <span className="text-[6px] text-slate-600 font-medium">Agenda</span>
-          <span className="text-[6px] text-slate-600 font-medium">Galeri</span>
-          <span className="rounded-md bg-green-600 px-1.5 py-0.5 text-[6px] font-bold text-white">PPDB</span>
-        </div>
-      </div>
-      {/* Hero slider */}
-      <div className="relative bg-gradient-to-br from-green-700 via-emerald-700 to-teal-700 px-4 py-5 overflow-hidden">
-        {/* Decorative overlay */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
-        <div className="absolute right-3 top-2 h-20 w-20 rounded-full bg-white/5" />
-        <div className="relative">
-          <p className="text-[11px] font-extrabold text-white leading-[1.2]">Program Belajar<br/>Unggul Mandiri 2025</p>
-          <p className="mt-1 text-[7px] text-green-100/90 leading-relaxed max-w-[75%]">Mewujudkan generasi unggul, berkarakter, dan siap bersaing di era global melalui pendidikan berkualitas</p>
-          <div className="mt-2 flex gap-1.5">
-            <span className="rounded-md bg-white px-2.5 py-0.5 text-[7px] font-bold text-green-700 shadow-sm">Selengkapnya</span>
-            <span className="rounded-md border border-white/40 px-2 py-0.5 text-[7px] text-white font-medium">Daftar PPDB →</span>
+        {/* Search */}
+        <div className="flex h-3.5 w-[80px] items-center rounded border border-slate-200 bg-slate-50 px-1.5">
+          <span className="text-[4.5px] text-slate-400 flex-1">Cari di sini...</span>
+          <div className="h-3 w-4 rounded-sm bg-blue-600 flex items-center justify-center">
+            <span className="text-[4px] text-white">🔍</span>
           </div>
         </div>
-        {/* Slider dots */}
-        <div className="absolute bottom-2 right-4 flex gap-1">
-          <span className="h-1.5 w-4 rounded-full bg-white" />
-          <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
-          <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
+      </div>
+      {/* Nav menu - blue */}
+      <div className="flex items-center justify-center gap-3 bg-[#1a3a7a] px-3 py-1">
+        {["Home","Profil Sekolah","Gallery","Prestasi","Fasilitas","Informasi","Kontak"].map((m, i) => (
+          <span key={m} className={`text-[5.5px] font-medium ${i === 0 ? "text-yellow-300" : "text-white/90"}`}>{m}</span>
+        ))}
+      </div>
+      {/* Hero - with photo background simulation */}
+      <div className="relative overflow-hidden">
+        {/* Simulated photo bg with blue overlay */}
+        <div className="relative h-[72px] bg-gradient-to-r from-[#1a3a7a] via-[#1a3a7a]/90 to-[#1a3a7a]/70">
+          {/* Fake student silhouettes/photo area on the right */}
+          <div className="absolute right-0 top-0 h-full w-[45%]">
+            <div className="h-full bg-gradient-to-l from-sky-200/30 to-transparent" />
+            {/* Simulated students in uniform */}
+            <div className="absolute bottom-0 right-2 flex gap-0.5">
+              <div className="h-10 w-4 rounded-t-full bg-white/15" />
+              <div className="h-12 w-4 rounded-t-full bg-white/20" />
+              <div className="h-11 w-4 rounded-t-full bg-white/15" />
+              <div className="h-9 w-4 rounded-t-full bg-white/10" />
+              <div className="h-10 w-4 rounded-t-full bg-white/15" />
+            </div>
+          </div>
+          <div className="relative px-3 py-3">
+            <p className="text-[10px] font-extrabold text-white leading-[1.2]">Program Unggulan<br/>Sekolah Kami.</p>
+            <p className="mt-1 text-[5.5px] text-blue-100/80 max-w-[55%] leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet eleifend nulla.</p>
+            <span className="mt-1.5 inline-block rounded bg-orange-500 px-2 py-0.5 text-[6px] font-bold text-white shadow-sm">Selengkapnya</span>
+          </div>
+          {/* Slider nav arrows */}
+          <div className="absolute bottom-2 right-3 flex gap-1">
+            <span className="flex h-3 w-3 items-center justify-center rounded-full bg-white/20 text-[5px] text-white">‹</span>
+            <span className="flex h-3 w-3 items-center justify-center rounded-full bg-white/30 text-[5px] text-white">›</span>
+          </div>
         </div>
       </div>
-      {/* Program Unggulan cards */}
-      <div className="px-3 py-2.5">
+      {/* Program Unggulan - 4 cards with icons */}
+      <div className="px-2.5 py-2">
         <div className="grid grid-cols-4 gap-1.5">
           {[
-            { icon: "💡", title: "Unggul Kreativitas", desc: "Program pengembangan kreasi siswa", color: "from-amber-50 to-yellow-50 border-amber-200" },
-            { icon: "📊", title: "Standar Tinggi", desc: "Kurikulum unggulan nasional", color: "from-blue-50 to-sky-50 border-blue-200" },
-            { icon: "🎓", title: "Kelulusan SNBP", desc: "Bimbingan seleksi universitas", color: "from-green-50 to-emerald-50 border-green-200" },
-            { icon: "🎭", title: "Budaya Lokal", desc: "Keunggulan budaya nusantara", color: "from-purple-50 to-violet-50 border-purple-200" },
+            { icon: "💡", title: "Unggul dalam Kreativitas" },
+            { icon: "📊", title: "Standart Belajar Tinggi" },
+            { icon: "🎓", title: "Unggul dalam Kelulusan PMDK" },
+            { icon: "🎭", title: "Menunjukkan keunggulan Budaya" },
           ].map((p) => (
-            <div key={p.title} className={`rounded-lg bg-gradient-to-br ${p.color} border p-1.5 text-center`}>
-              <span className="text-[11px]">{p.icon}</span>
-              <p className="text-[5.5px] font-bold text-slate-800 mt-0.5 leading-tight">{p.title}</p>
-              <p className="text-[4.5px] text-slate-500 mt-0.5 leading-snug">{p.desc}</p>
+            <div key={p.title} className="rounded-lg bg-white border border-slate-100 p-1.5 text-center shadow-sm">
+              <div className="mx-auto mb-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-50">
+                <span className="text-[9px]">{p.icon}</span>
+              </div>
+              <p className="text-[5px] font-bold text-slate-800 leading-tight">{p.title}</p>
+              <p className="text-[4px] text-slate-400 mt-0.5 leading-snug">Mewujudkan SMA Negeri 1 sebagai sekolah unggul</p>
             </div>
           ))}
         </div>
       </div>
-      {/* Berita Sekolah section */}
-      <div className="flex-1 px-3 pb-2 overflow-hidden">
-        <div className="flex items-center justify-between mb-1.5">
-          <p className="text-[7px] font-bold text-slate-900">📰 Berita Sekolah</p>
-          <span className="text-[5.5px] text-green-600 font-medium">Lihat Semua →</span>
+      {/* Berita Sekolah */}
+      <div className="flex-1 px-2.5 pb-2 overflow-hidden">
+        <div className="flex items-center justify-between mb-1">
+          <p className="text-[7px] font-bold text-slate-900">Berita Sekolah</p>
+          <span className="text-[5px] text-blue-600 font-medium">Lihat Semua →</span>
         </div>
-        <div className="grid grid-cols-3 gap-1.5">
-          {[
-            { title: "Simulasi Mitigasi Bencana Gempa Bumi Bagi Siswa", date: "10 Jun 2025" },
-            { title: "Pesta Demokrasi: Orasi Kandidat Ketua OSIS", date: "08 Jun 2025" },
-            { title: "Pameran Literasi: Minat Baca di Era Digital", date: "05 Jun 2025" },
-          ].map((news) => (
-            <div key={news.title} className="rounded-lg bg-white border border-slate-100 shadow-sm overflow-hidden">
-              <div className="h-8 bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center">
-                <div className="h-5 w-8 rounded bg-green-200/50" />
-              </div>
-              <div className="p-1.5">
-                <p className="text-[5px] text-green-600 font-medium">{news.date}</p>
-                <p className="text-[5.5px] font-medium text-slate-800 leading-tight mt-0.5 line-clamp-2">{news.title}</p>
-              </div>
+        <div className="flex gap-1.5">
+          {/* Main news card with image */}
+          <div className="w-[45%] rounded-lg bg-white border border-slate-100 shadow-sm overflow-hidden">
+            <div className="h-12 relative overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://theme.co.id/websekolah/wp-content/uploads/2024/11/sampel-1-380x250.webp" alt="" className="h-full w-full object-cover" />
             </div>
-          ))}
+            <div className="p-1.5">
+              <p className="text-[4.5px] text-slate-400">November 10, 2024</p>
+              <p className="text-[5.5px] font-bold text-slate-800 leading-tight mt-0.5">Simulasi dan Penyuluhan Mitigasi Bencana Alam Gempa Bumi</p>
+              <p className="text-[4.5px] text-slate-500 mt-0.5 leading-snug">Dalam suasana penuh semangat, sekolah menggelar simulasi bencana...</p>
+            </div>
+          </div>
+          {/* Side news list */}
+          <div className="flex-1 space-y-1">
+            {[
+              { img: "https://theme.co.id/websekolah/wp-content/uploads/2024/11/sampel-3-150x150.webp", title: "Pesta Demokrasi Orasi Kandidat Ketua OSIS", date: "Nov 10, 2024" },
+              { img: "https://theme.co.id/websekolah/wp-content/uploads/2024/11/sampel-4-150x150.webp", title: "Pengukuhan Pengurus Alumni Universitas 2020-2025", date: "Nov 10, 2024" },
+              { img: "https://theme.co.id/websekolah/wp-content/uploads/2024/11/sampel-5-150x150.webp", title: "Rumus matematika yang sering dipakai dan dilupakan", date: "Nov 10, 2024" },
+            ].map((news) => (
+              <div key={news.title} className="flex items-start gap-1.5 rounded bg-white border border-slate-50 p-1 shadow-sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={news.img} alt="" className="h-6 w-6 rounded object-cover flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <p className="text-[4px] text-slate-400">{news.date}</p>
+                  <p className="text-[5px] font-medium text-slate-800 leading-tight truncate">{news.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
