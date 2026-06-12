@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Phone, Mail } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
 import { siteConfig } from '@/data/site-config';
@@ -78,43 +77,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Social Links Column */}
           <div>
             <h3 className="!text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">
-              Kontak
+              Ikuti Kami
             </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href={`https://wa.me/${siteConfig.whatsapp.number}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-blue-600"
-                  aria-label="WhatsApp NexaPlus"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span>+{siteConfig.whatsapp.number}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-blue-600"
-                  aria-label="Email NexaPlus"
-                >
-                  <Mail className="h-4 w-4" />
-                  <span>{siteConfig.contact.email}</span>
-                </a>
-              </li>
-              <li>
-                <p className="text-sm text-slate-600">
-                  {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.region} {siteConfig.address.postalCode}
-                </p>
-              </li>
-            </ul>
-
-            {/* Social Links */}
-            <div className="mt-4 flex items-center gap-3">
+            <div className="flex items-center gap-3">
               {siteConfig.contact.socialLinks.map((social) => {
                 const Icon = getSocialIcon(social.platform);
                 return (
