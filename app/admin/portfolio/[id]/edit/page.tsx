@@ -2,6 +2,8 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import { PortfolioEditor } from "../../editor";
 
+export const dynamic = "force-dynamic";
+
 interface EditPortfolioPageProps {
   params: Promise<{ id: string }>;
 }

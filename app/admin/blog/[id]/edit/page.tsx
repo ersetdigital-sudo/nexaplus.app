@@ -2,6 +2,8 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import { BlogEditor } from "../../editor";
 
+export const dynamic = "force-dynamic";
+
 interface EditBlogPageProps {
   params: Promise<{ id: string }>;
 }

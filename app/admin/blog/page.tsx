@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { DeleteBlogButton } from "./delete-button";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminBlogPage() {
   const supabase = await createServerSupabaseClient();
   const { data: posts } = await supabase
