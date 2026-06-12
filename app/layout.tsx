@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
@@ -10,12 +10,11 @@ import {
   generateLocalBusinessSchema,
 } from "@/lib/schema-markup";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
-
-const inter = Inter({
+const lato = Lato({
   subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-lato",
 });
 
 export const viewport: Viewport = {
@@ -53,6 +52,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -64,7 +67,7 @@ export default function RootLayout({
   const localBusinessSchema = generateLocalBusinessSchema();
 
   return (
-    <html lang="id" className={cn("font-sans", inter.variable, geist.variable)}>
+    <html lang="id" className={cn("font-sans", lato.variable)}>
       <head>
         <script
           type="application/ld+json"
