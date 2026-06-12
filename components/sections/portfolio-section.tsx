@@ -60,9 +60,7 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
           <span className="h-2 w-2 rounded-full bg-red-400" />
           <span className="h-2 w-2 rounded-full bg-yellow-400" />
           <span className="h-2 w-2 rounded-full bg-green-400" />
-          <div className="ml-2 h-3 flex-1 rounded bg-slate-200 text-[8px] text-slate-400 flex items-center px-2 truncate">
-            {item.url || `nexaplus.app/portfolio/${item.slug}`}
-          </div>
+          <div className="ml-2 h-3 flex-1 rounded bg-slate-200" />
         </div>
 
         {/* Screenshot area */}
