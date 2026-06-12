@@ -44,4 +44,22 @@ export const testimonials: Testimonial[] = [
       'Website sekolah kami jadi lebih informatif dan mudah diakses oleh orang tua murid. NexaPlus memahami kebutuhan institusi pendidikan dengan baik.',
     rating: 5,
   },
+  {
+    id: 'testimonial-5',
+    name: 'Rina Maharani',
+    position: 'Owner Skincare Brand',
+    photo: '/images/testimonials/rina-maharani.webp',
+    review:
+      'Landing page dari NexaPlus berhasil meningkatkan konversi penjualan kami hingga 3x lipat. Desainnya menarik dan loading-nya sangat cepat.',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-6',
+    name: 'Hendra Wijaya',
+    position: 'CEO Startup Logistik',
+    photo: '/images/testimonials/hendra-wijaya.webp',
+    review:
+      'Tim NexaPlus sangat profesional dan komunikatif. Website company profile kami jadi terlihat premium dan kredibel di mata investor.',
+    rating: 5,
+  },
 ];
