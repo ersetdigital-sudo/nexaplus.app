@@ -6,8 +6,8 @@ export const siteConfig = {
     defaultMessage: 'Halo NexaPlus, saya tertarik dengan jasa pembuatan website.',
   },
   meta: {
-    title: 'Jasa Pembuatan Website Profesional | NexaPlus',
-    description: 'Jasa pembuatan website profesional untuk UMKM, perusahaan, toko online, landing page dan company profile. SEO Friendly, cepat dan mobile friendly.',
+    title: 'Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus',
+    description: 'NexaPlus adalah jasa pembuatan website profesional di Indonesia. Melayani toko online, landing page, company profile, website sekolah, dan organisasi. Mulai dari Rp 500.000, termasuk hosting dan SSL gratis.',
     ogImage: '/images/og-image.jpg',
   },
   colors: {

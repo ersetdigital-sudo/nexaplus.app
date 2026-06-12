@@ -96,9 +96,8 @@ function validateRequiredString(value: unknown, fieldName: string): string {
 /**
  * Generates Organization schema using site configuration.
  */
-export function generateOrganizationSchema(): SchemaOrganization {
+export function generateOrganizationSchema() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
@@ -115,9 +114,8 @@ export function generateOrganizationSchema(): SchemaOrganization {
 /**
  * Generates LocalBusiness schema using site configuration.
  */
-export function generateLocalBusinessSchema(): SchemaLocalBusiness {
+export function generateLocalBusinessSchema() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: siteConfig.name,
     description: siteConfig.meta.description,
