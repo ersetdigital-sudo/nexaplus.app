@@ -55,7 +55,7 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.25 }}
         >
-          <span className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white">
+          <span className="rounded-lg bg-indigo-500 px-5 py-2.5 text-sm font-medium text-white">
             Lihat Detail
           </span>
         </motion.div>

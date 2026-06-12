@@ -50,8 +50,9 @@ export function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#beranda" className="text-xl font-bold gradient-text">
-            NexaPlus
+          <a href="#beranda" className="flex items-center gap-2">
+            <img src="/images/logo.png" alt="NexaPlus Logo" className="h-8 w-8" />
+            <span className="text-xl font-bold gradient-text">NexaPlus</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -119,9 +120,12 @@ export function Navbar() {
               <div className="flex flex-col h-full p-6">
                 {/* Drawer Header */}
                 <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2">
+                  <img src="/images/logo.png" alt="NexaPlus Logo" className="h-7 w-7" />
                   <span className="text-lg font-bold gradient-text">
                     NexaPlus
                   </span>
+                </div>
                   <button
                     type="button"
                     className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 transition-colors"

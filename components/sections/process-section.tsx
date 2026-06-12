@@ -17,11 +17,11 @@ export function ProcessSection() {
             <div key={step.number} className="relative flex gap-4">
               {/* Connecting line */}
               {index < processSteps.length - 1 && (
-                <div className="absolute left-5 top-12 h-full w-px bg-blue-500/30" />
+                <div className="absolute left-5 top-12 h-full w-px bg-indigo-500/30" />
               )}
 
               {/* Numbered circle */}
-              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-sm font-bold text-white">
                 {step.number}
               </div>
 
@@ -41,7 +41,7 @@ export function ProcessSection() {
         <div className="hidden md:block">
           <div className="relative flex items-start justify-between">
             {/* Connecting line */}
-            <div className="absolute left-[calc(8.33%+20px)] right-[calc(8.33%+20px)] top-5 h-px bg-blue-500/30" />
+            <div className="absolute left-[calc(8.33%+20px)] right-[calc(8.33%+20px)] top-5 h-px bg-indigo-500/30" />
 
             {processSteps.map((step) => (
               <div
@@ -49,7 +49,7 @@ export function ProcessSection() {
                 className="relative flex w-1/6 flex-col items-center text-center"
               >
                 {/* Numbered circle */}
-                <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
+                <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500 text-sm font-bold text-white">
                   {step.number}
                 </div>
 

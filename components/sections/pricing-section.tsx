@@ -26,12 +26,12 @@ export function PricingSection() {
                 className={cn(
                   "relative flex flex-col rounded-xl border p-6 backdrop-blur-sm transition-all",
                   tier.isRecommended
-                    ? "scale-[1.02] border-blue-500 bg-white/5 shadow-lg shadow-blue-500/10 md:scale-105"
+                    ? "scale-[1.02] border-indigo-500 bg-white/5 shadow-lg shadow-indigo-500/10 md:scale-105"
                     : "border-white/8 bg-white/3"
                 )}
               >
                 {tier.isRecommended && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600">
+                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-500">
                     Populer
                   </Badge>
                 )}
@@ -55,7 +55,7 @@ export function PricingSection() {
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2">
                       <Check
-                        className="mt-0.5 h-4 w-4 shrink-0 text-blue-400"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400"
                         aria-hidden="true"
                       />
                       <span className="text-sm text-white/70">{feature}</span>
@@ -70,7 +70,7 @@ export function PricingSection() {
                   className={cn(
                     "mt-auto inline-flex w-full items-center justify-center rounded-lg px-4 py-3 text-sm font-medium text-white transition-colors",
                     tier.isRecommended
-                      ? "bg-blue-600 hover:bg-blue-700"
+                      ? "bg-indigo-500 hover:bg-indigo-600"
                       : "border border-white/20 bg-white/5 hover:bg-white/10"
                   )}
                 >

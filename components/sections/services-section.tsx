@@ -38,13 +38,13 @@ export function ServicesSection() {
             return (
               <AnimatedCard
                 key={service.id}
-                className="group relative overflow-hidden p-6 transition-all duration-300 hover:border-blue-500/50"
+                className="group relative overflow-hidden p-6 transition-all duration-300 hover:border-indigo-500/50"
               >
                 <div className="flex flex-col gap-4">
                   {Icon && (
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500/10">
                       <Icon
-                        className="h-6 w-6 text-blue-400"
+                        className="h-6 w-6 text-indigo-400"
                         aria-hidden="true"
                       />
                     </div>
@@ -59,7 +59,7 @@ export function ServicesSection() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-flex h-11 w-fit items-center rounded-lg bg-blue-600 px-6 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                    className="mt-2 inline-flex h-11 w-fit items-center rounded-lg bg-indigo-500 px-6 text-sm font-medium text-white transition-colors hover:bg-indigo-600"
                   >
                     Konsultasi Gratis
                   </a>

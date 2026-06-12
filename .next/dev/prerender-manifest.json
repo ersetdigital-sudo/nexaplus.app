@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "28e4de16f67840ab8f4802dde6dfc2bb",
-    "previewModeSigningKey": "f699a4d1bc56f45a8d2773e2998d3c14ec7e15005143fb50f756eff8c3562510",
-    "previewModeEncryptionKey": "4e46a8a5b22ec90265e461e5427e4d314ba4120411c1626580d31e5bc902c265"
-  }
-}
+{"version":4,"routes":{"/portfolio/tokoku-elektronik":{},"/portfolio/pt-maju-bersama":{},"/portfolio/skincare-glow":{},"/portfolio/sdn-5-jakarta":{},"/portfolio/dinas-pariwisata-bandung":{},"/portfolio/yayasan-peduli-anak":{}},"dynamicRoutes":{"/portfolio/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/portfolio/[slug]","routeRegex":"^\\/portfolio\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"28e4de16f67840ab8f4802dde6dfc2bb","previewModeSigningKey":"f699a4d1bc56f45a8d2773e2998d3c14ec7e15005143fb50f756eff8c3562510","previewModeEncryptionKey":"4e46a8a5b22ec90265e461e5427e4d314ba4120411c1626580d31e5bc902c265"}}

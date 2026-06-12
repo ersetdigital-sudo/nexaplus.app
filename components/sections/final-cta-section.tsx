@@ -8,7 +8,7 @@ export function FinalCtaSection() {
   return (
     <SectionWrapper
       id="kontak"
-      className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED]"
+      className="bg-gradient-to-r from-[#6366F1] to-[#EC4899]"
     >
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">

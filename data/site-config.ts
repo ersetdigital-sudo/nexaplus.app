@@ -11,10 +11,10 @@ export const siteConfig = {
     ogImage: '/images/og-image.jpg',
   },
   colors: {
-    background: '#050816',
-    primary: '#2563EB',
-    secondary: '#7C3AED',
-    accent: '#22D3EE',
+    background: '#0A0118',
+    primary: '#6366F1',
+    secondary: '#EC4899',
+    accent: '#06B6D4',
     text: '#FFFFFF',
   },
   fonts: {
