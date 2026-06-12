@@ -35,11 +35,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand / About Column */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <img src="/images/logo.png" alt="NexaPlus Logo" className="h-10 w-10" />
-              <span className="text-xl font-bold text-white">
-                {siteConfig.name}
-              </span>
+            <div className="flex items-center">
+              <img src="/images/logo.png" alt="NexaPlus" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-gray-400">
               Jasa pembuatan website profesional untuk UMKM, perusahaan, dan

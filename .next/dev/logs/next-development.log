@@ -76,3 +76,27 @@
 {"timestamp":"00:17:26.795","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/pt-maju-bersama.webp\" \"received\" null"}
 {"timestamp":"00:17:28.412","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/tokoku-elektronik.webp\" \"received\" null"}
 {"timestamp":"00:17:29.218","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/skincare-glow.webp\" \"received\" null"}
+{"timestamp":"00:17:29.726","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/yayasan-peduli-anak.webp\" \"received\" null"}
+{"timestamp":"00:17:29.740","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/sdn-5-jakarta.webp\" \"received\" null"}
+{"timestamp":"00:17:29.804","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/dinas-pariwisata-bandung.webp\" \"received\" null"}
+{"timestamp":"00:17:38.677","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/siti-rahayu.webp\" \"received\" null"}
+{"timestamp":"00:17:39.158","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/ahmad-fauzi.webp\" \"received\" null"}
+{"timestamp":"00:17:40.791","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/budi-santoso.webp\" \"received\" null"}
+{"timestamp":"00:17:40.983","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/testimonials/diana-putri.webp\" \"received\" null"}
+{"timestamp":"00:17:44.393","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/umkm-website.webp\" \"received\" null"}
+{"timestamp":"00:17:44.443","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/tips-seo-2024.webp\" \"received\" null"}
+{"timestamp":"00:17:44.955","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/pilih-jasa-website.webp\" \"received\" null"}
+{"timestamp":"00:18:58.811","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/jualan-tanpa-marketplace.webp\" \"received\" null"}
+{"timestamp":"00:18:58.854","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/optimasi-kecepatan.webp\" \"received\" null"}
+{"timestamp":"00:18:58.874","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/blog/fitur-toko-online.webp\" \"received\" null"}
+{"timestamp":"00:22:02.535","source":"Server","level":"LOG","message":"✓ Compiled in 6.3s"}
+{"timestamp":"00:22:11.683","source":"Server","level":"LOG","message":"✓ Compiled in 488ms"}
+{"timestamp":"00:22:32.104","source":"Server","level":"LOG","message":"✓ Compiled in 1336ms"}
+{"timestamp":"00:23:05.403","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/hero-mockup.webp\" \"received\" null"}
+{"timestamp":"00:23:05.716","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:23:20.192","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/pt-maju-bersama.webp\" \"received\" null"}
+{"timestamp":"00:23:20.210","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/tokoku-elektronik.webp\" \"received\" null"}
+{"timestamp":"00:23:20.228","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/skincare-glow.webp\" \"received\" null"}
+{"timestamp":"00:23:25.186","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/dinas-pariwisata-bandung.webp\" \"received\" null"}
+{"timestamp":"00:23:25.229","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/sdn-5-jakarta.webp\" \"received\" null"}
+{"timestamp":"00:23:25.240","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/images/portfolio/yayasan-peduli-anak.webp\" \"received\" null"}

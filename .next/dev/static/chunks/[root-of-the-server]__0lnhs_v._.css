@@ -914,6 +914,10 @@
     width: calc(var(--spacing) * 72);
   }
 
+  .w-auto {
+    width: auto;
+  }
+
   .w-fit {
     width: fit-content;
   }
