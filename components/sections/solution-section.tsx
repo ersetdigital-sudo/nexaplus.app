@@ -14,7 +14,7 @@ export function SolutionSection() {
   return (
     <SectionWrapper id="solusi" className="bg-slate-50">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="mb-4 text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+        <h2 className="mb-4 text-center font-bold text-slate-900">
           Saatnya Memiliki Aset Digital Sendiri.
         </h2>
 

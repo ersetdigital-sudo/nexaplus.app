@@ -12,7 +12,7 @@ export function PricingSection() {
   return (
     <SectionWrapper id="harga" className="bg-white">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-4 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+        <h2 className="mb-4 text-center font-bold text-slate-900">
           Paket Harga Transparan, Tanpa Biaya Tersembunyi
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-base text-slate-600">
@@ -30,7 +30,7 @@ export function PricingSection() {
                 className={cn(
                   "relative flex flex-col rounded-xl border p-6 transition-all",
                   tier.isRecommended
-                    ? "scale-[1.02] border-blue-600 bg-white shadow-lg shadow-blue-200/60 ring-2 ring-blue-100 md:scale-105"
+                    ? "border-blue-600 bg-white shadow-lg shadow-blue-200/60 ring-2 ring-blue-100 md:scale-105"
                     : "border-slate-200 bg-white shadow-sm"
                 )}
               >

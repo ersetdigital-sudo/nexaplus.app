@@ -28,7 +28,7 @@ export function SectionWrapper({
     <motion.section
       ref={ref}
       id={id}
-      className={cn("px-4 py-16 md:px-8 lg:py-24", className)}
+      className={cn("px-5 py-16 md:px-8 lg:py-24", className)}
       initial={shouldAnimate ? { opacity: 0, y: 30 } : undefined}
       animate={
         shouldAnimate

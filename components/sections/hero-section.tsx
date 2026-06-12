@@ -23,7 +23,7 @@ export function HeroSection() {
         </span>
 
         {/* Heading */}
-        <h1 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1 className="mt-6 font-extrabold leading-tight tracking-tight text-slate-900">
           Miliki Website Toko Online Sendiri yang Cepat, Profesional, dan Mudah Ditemukan di{" "}
           <span className="gradient-text">Google.</span>
         </h1>
@@ -58,8 +58,8 @@ export function HeroSection() {
         </div>
 
         {/* Framed mockup image */}
-        <div className="mt-12 w-full px-2 sm:px-0 md:mt-16">
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 p-2.5 shadow-xl sm:rounded-3xl sm:p-3.5 md:p-4">
+        <div className="mt-12 w-full px-0 sm:px-0 md:mt-16">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 p-1.5 shadow-xl sm:rounded-3xl sm:p-3.5 md:p-4">
             {/* Inner "screenshot" area */}
             <div className="overflow-hidden rounded-xl bg-white">
               {/* Browser chrome bar */}
@@ -71,7 +71,7 @@ export function HeroSection() {
               </div>
 
               {/* Mockup content */}
-              <div className="space-y-4 p-5 sm:p-6 md:p-8">
+              <div className="space-y-4 p-4 sm:p-6 md:p-8">
                 {/* Hero banner */}
                 <div className="h-32 rounded-lg bg-gradient-to-r from-blue-500 to-sky-400 sm:h-40 md:h-48" />
                 {/* Skeleton lines */}

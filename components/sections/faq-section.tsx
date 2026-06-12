@@ -16,7 +16,7 @@ export function FAQSection() {
   return (
     <SectionWrapper id="faq" className="bg-slate-50">
       <div className="mx-auto max-w-3xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+        <h2 className="mb-12 text-center font-bold text-slate-900">
           Pertanyaan Umum
         </h2>
 

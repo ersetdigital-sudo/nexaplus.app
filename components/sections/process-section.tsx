@@ -11,7 +11,7 @@ export function ProcessSection() {
     <SectionWrapper id="proses" className="bg-white">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
-          <h2 className="text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+          <h2 className="font-bold text-slate-900">
             Proses Pengerjaan yang Jelas
           </h2>
         </div>

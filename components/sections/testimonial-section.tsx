@@ -45,7 +45,7 @@ export function TestimonialSection() {
     <SectionWrapper id="testimoni" className="bg-slate-50">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
-          <h2 className="text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+          <h2 className="font-bold text-slate-900">
             Apa Kata Klien Kami
           </h2>
           <p className="mt-3 text-slate-600">

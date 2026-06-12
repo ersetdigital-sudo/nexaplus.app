@@ -41,7 +41,7 @@ export function ProblemSection() {
   return (
     <SectionWrapper id="masalah">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-4 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
+        <h2 className="mb-4 text-center font-bold text-slate-900">
           Marketplace Bagus untuk Memulai. Tapi Tidak Ideal untuk Selamanya.
         </h2>
 

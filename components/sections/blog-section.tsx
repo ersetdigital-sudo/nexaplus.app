@@ -28,12 +28,12 @@ export function BlogSection() {
   return (
     <SectionWrapper id="blog" className="bg-white">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 text-center text-3xl font-bold text-slate-900 md:text-4xl">
+        <h2 className="mb-8 text-center font-bold text-slate-900">
           Artikel Terbaru
         </h2>
 
         {/* Category filter buttons */}
-        <div className="mb-10 flex flex-wrap justify-center gap-2">
+        <div className="mb-10 flex flex-wrap justify-center gap-2 overflow-x-auto">
           {categories.map((category) => (
             <Button
               key={category}
