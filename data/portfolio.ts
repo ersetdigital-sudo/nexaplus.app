@@ -12,6 +12,7 @@ export interface PortfolioItem {
   category: ServiceCategory;
   screenshot: string;
   description: string;
+  url?: string;
 }
 
 export const portfolioItems: PortfolioItem[] = [
@@ -62,5 +63,14 @@ export const portfolioItems: PortfolioItem[] = [
     screenshot: '/images/portfolio/yayasan-peduli-anak.webp',
     description:
       'Website organisasi nonprofit dengan halaman program, laporan kegiatan, galeri dokumentasi, dan formulir donasi online yang aman.',
+  },
+  {
+    slug: 'octaf-kreasi',
+    name: 'Octaf Kreasi',
+    category: 'Toko Online',
+    screenshot: '/images/portfolio/octaf-kreasi.webp',
+    description:
+      'Platform tour & travel Indonesia dengan fitur pencarian destinasi, booking online, wishlist, review traveler, dan lebih dari 500 destinasi wisata dari Raja Ampat hingga Labuan Bajo.',
+    url: 'https://octafkreasi.com',
   },
 ];
