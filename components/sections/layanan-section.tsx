@@ -498,24 +498,6 @@ export function LayananSection() {
               ))}
             </ul>
 
-            {/* CTAs */}
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-[6px] bg-blue-600 px-5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-              >
-                <MessageCircle className="h-4 w-4" />
-                Konsultasi Gratis
-              </a>
-              <button
-                type="button"
-                className="inline-flex h-10 items-center rounded-[6px] border border-[#E4E4E7] bg-white px-5 text-sm font-medium text-slate-700 shadow-xs transition-colors hover:bg-slate-50"
-              >
-                Lihat Contoh →
-              </button>
-            </div>
           </div>
 
           {/* Right — Preview */}
