@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'NexaPlus - Jasa Pembuatan Website Profesional';
+export const alt = 'NexaPlus - Jasa Pembuatan Website Profesional untuk Bisnis di Indonesia';
 export const size = { width: 1200, height: 628 };
 export const contentType = 'image/png';
 

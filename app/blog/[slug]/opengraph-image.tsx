@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { blogPosts } from '@/data/blog-posts';
 
 export const runtime = 'edge';
-export const alt = 'NexaPlus Blog';
+export const alt = 'Artikel Blog NexaPlus - Jasa Pembuatan Website Profesional';
 export const size = { width: 1200, height: 628 };
 export const contentType = 'image/png';
 
