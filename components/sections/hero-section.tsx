@@ -113,14 +113,14 @@ export function HeroSection() {
                   </div>
                   <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4">
                     {[
-                      { color: "from-sky-100 to-blue-50", name: "Wireless Earbuds", price: "Rp 285.000", disc: "-37%" },
-                      { color: "from-purple-100 to-violet-50", name: "Smart Watch Pro", price: "Rp 425.000", disc: "-35%" },
-                      { color: "from-rose-100 to-pink-50", name: "Power Bank 20K", price: "Rp 189.000", disc: "-40%" },
-                      { color: "from-amber-100 to-yellow-50", name: "LED Ring Light", price: "Rp 145.000", disc: "-28%" },
+                      { color: "from-sky-100 to-blue-50", name: "Wireless Earbuds", price: "Rp 285.000", disc: "-37%", emoji: "🎧" },
+                      { color: "from-purple-100 to-violet-50", name: "Smart Watch Pro", price: "Rp 425.000", disc: "-35%", emoji: "⌚" },
+                      { color: "from-rose-100 to-pink-50", name: "Power Bank 20K", price: "Rp 189.000", disc: "-40%", emoji: "🔋" },
+                      { color: "from-amber-100 to-yellow-50", name: "LED Ring Light", price: "Rp 145.000", disc: "-28%", emoji: "💡" },
                     ].map((item) => (
                       <div key={item.name} className="rounded-xl border border-slate-100 bg-white shadow-sm overflow-hidden">
                         <div className={`relative h-14 bg-gradient-to-br ${item.color} flex items-center justify-center sm:h-20`}>
-                          <div className="h-8 w-8 rounded-lg bg-white/50 sm:h-12 sm:w-12" />
+                          <span className="text-2xl sm:text-3xl">{item.emoji}</span>
                           <span className="absolute left-1 top-1 rounded bg-red-500 px-1 py-0.5 text-[7px] font-bold text-white sm:text-[8px]">{item.disc}</span>
                         </div>
                         <div className="p-2 sm:p-2.5">
