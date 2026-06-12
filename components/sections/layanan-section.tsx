@@ -400,79 +400,100 @@ function PreviewCompany() {
 
 function PreviewSekolah() {
   return (
-    <div className="h-full bg-[#f8faf8] flex flex-col">
-      {/* Navbar */}
-      <div className="flex items-center justify-between bg-gradient-to-r from-green-700 to-emerald-600 px-3 py-2">
+    <div className="h-full bg-white flex flex-col">
+      {/* Top bar info */}
+      <div className="flex items-center justify-between bg-green-800 px-3 py-1">
+        <div className="flex items-center gap-2">
+          <span className="text-[5.5px] text-green-200">📞 0365 788 899</span>
+          <span className="text-[5.5px] text-green-200">✉️ info@sekolahnegeri.com</span>
+        </div>
         <div className="flex items-center gap-1.5">
-          <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white/20">
-            <span className="text-[7px]">🏫</span>
+          <span className="text-[6px] text-green-200">𝕏</span>
+          <span className="text-[6px] text-green-200">f</span>
+          <span className="text-[6px] text-green-200">📷</span>
+        </div>
+      </div>
+      {/* Navbar */}
+      <div className="flex items-center justify-between bg-white px-3 py-1.5 border-b border-slate-100 shadow-sm">
+        <div className="flex items-center gap-1.5">
+          <div className="h-5 w-5 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+            <span className="text-[6px] font-bold text-white">S</span>
           </div>
           <div>
-            <span className="text-[8px] font-bold text-white block leading-none">SDN 1 Cendekia</span>
-            <span className="text-[5px] text-green-200">Terakreditasi A</span>
+            <span className="text-[8px] font-bold text-slate-900 block leading-none">Web Sekolah</span>
+            <span className="text-[4.5px] text-slate-400">SMA Negeri 1 Denpasar</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[6.5px] text-green-100 font-medium">Profil</span>
-          <span className="text-[6.5px] text-green-100 font-medium">Akademik</span>
-          <span className="text-[6.5px] text-green-100 font-medium">Berita</span>
-          <span className="rounded bg-white px-1.5 py-0.5 text-[6.5px] font-bold text-green-700">PPDB 2025</span>
+          <span className="text-[6px] text-slate-600 font-medium">Profil</span>
+          <span className="text-[6px] text-slate-600 font-medium">Akademik</span>
+          <span className="text-[6px] text-slate-600 font-medium">Berita</span>
+          <span className="text-[6px] text-slate-600 font-medium">Pengumuman</span>
+          <span className="text-[6px] text-slate-600 font-medium">Agenda</span>
+          <span className="text-[6px] text-slate-600 font-medium">Galeri</span>
+          <span className="rounded-md bg-green-600 px-1.5 py-0.5 text-[6px] font-bold text-white">PPDB</span>
         </div>
       </div>
-      {/* Hero banner */}
-      <div className="relative bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 px-3 py-4 overflow-hidden">
-        <div className="absolute right-2 top-1 h-14 w-14 rounded-full bg-white/5" />
-        <div className="absolute right-6 bottom-0 h-8 w-8 rounded-full bg-white/10" />
+      {/* Hero slider */}
+      <div className="relative bg-gradient-to-br from-green-700 via-emerald-700 to-teal-700 px-4 py-5 overflow-hidden">
+        {/* Decorative overlay */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+        <div className="absolute right-3 top-2 h-20 w-20 rounded-full bg-white/5" />
         <div className="relative">
-          <span className="inline-block rounded-full bg-yellow-400/90 px-2 py-0.5 text-[5.5px] font-bold text-green-900">🎓 PPDB 2025/2026 DIBUKA!</span>
-          <p className="text-[11px] font-extrabold text-white mt-1 leading-tight">Selamat Datang di<br/>SDN 1 Cendekia</p>
-          <p className="text-[7px] text-green-100/90 mt-0.5">Mendidik generasi unggul, berkarakter, & berprestasi nasional</p>
+          <p className="text-[11px] font-extrabold text-white leading-[1.2]">Program Belajar<br/>Unggul Mandiri 2025</p>
+          <p className="mt-1 text-[7px] text-green-100/90 leading-relaxed max-w-[75%]">Mewujudkan generasi unggul, berkarakter, dan siap bersaing di era global melalui pendidikan berkualitas</p>
           <div className="mt-2 flex gap-1.5">
-            <span className="rounded-md bg-white px-2 py-0.5 text-[7px] font-bold text-green-700 shadow-sm">Daftar Sekarang</span>
-            <span className="rounded-md border border-white/40 px-2 py-0.5 text-[7px] text-white">Virtual Tour 360°</span>
+            <span className="rounded-md bg-white px-2.5 py-0.5 text-[7px] font-bold text-green-700 shadow-sm">Selengkapnya</span>
+            <span className="rounded-md border border-white/40 px-2 py-0.5 text-[7px] text-white font-medium">Daftar PPDB →</span>
           </div>
         </div>
+        {/* Slider dots */}
+        <div className="absolute bottom-2 right-4 flex gap-1">
+          <span className="h-1.5 w-4 rounded-full bg-white" />
+          <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
+          <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
+        </div>
       </div>
-      {/* Quick stats */}
-      <div className="grid grid-cols-4 divide-x divide-green-100 bg-white border-b border-slate-100 py-2">
-        {[
-          { icon: "👨‍🏫", val: "32", label: "Guru" },
-          { icon: "👨‍🎓", val: "480", label: "Siswa" },
-          { icon: "🏆", val: "25+", label: "Prestasi" },
-          { icon: "📚", val: "A", label: "Akreditasi" },
-        ].map((i) => (
-          <div key={i.label} className="text-center px-1">
-            <span className="text-[8px]">{i.icon}</span>
-            <p className="text-[9px] font-extrabold text-green-700 leading-none">{i.val}</p>
-            <p className="text-[5px] text-slate-500 font-medium">{i.label}</p>
-          </div>
-        ))}
+      {/* Program Unggulan cards */}
+      <div className="px-3 py-2.5">
+        <div className="grid grid-cols-4 gap-1.5">
+          {[
+            { icon: "💡", title: "Unggul Kreativitas", desc: "Program pengembangan kreasi siswa", color: "from-amber-50 to-yellow-50 border-amber-200" },
+            { icon: "📊", title: "Standar Tinggi", desc: "Kurikulum unggulan nasional", color: "from-blue-50 to-sky-50 border-blue-200" },
+            { icon: "🎓", title: "Kelulusan SNBP", desc: "Bimbingan seleksi universitas", color: "from-green-50 to-emerald-50 border-green-200" },
+            { icon: "🎭", title: "Budaya Lokal", desc: "Keunggulan budaya nusantara", color: "from-purple-50 to-violet-50 border-purple-200" },
+          ].map((p) => (
+            <div key={p.title} className={`rounded-lg bg-gradient-to-br ${p.color} border p-1.5 text-center`}>
+              <span className="text-[11px]">{p.icon}</span>
+              <p className="text-[5.5px] font-bold text-slate-800 mt-0.5 leading-tight">{p.title}</p>
+              <p className="text-[4.5px] text-slate-500 mt-0.5 leading-snug">{p.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      {/* Announcements & news */}
-      <div className="flex-1 px-2.5 py-2 space-y-1.5 overflow-hidden">
-        <div className="flex items-center justify-between">
-          <p className="text-[7px] font-bold text-slate-800">📢 Pengumuman & Berita</p>
+      {/* Berita Sekolah section */}
+      <div className="flex-1 px-3 pb-2 overflow-hidden">
+        <div className="flex items-center justify-between mb-1.5">
+          <p className="text-[7px] font-bold text-slate-900">📰 Berita Sekolah</p>
           <span className="text-[5.5px] text-green-600 font-medium">Lihat Semua →</span>
         </div>
-        {[
-          { date: "10 Jun", text: "Pendaftaran siswa baru gelombang 2 dibuka", tag: "PPDB", color: "bg-green-500" },
-          { date: "08 Jun", text: "Jadwal UAS semester genap 2025 telah dirilis", tag: "Akademik", color: "bg-blue-500" },
-          { date: "05 Jun", text: "Juara 1 Olimpiade Sains Nasional 2025", tag: "Prestasi", color: "bg-amber-500" },
-          { date: "01 Jun", text: "Kegiatan Jum'at Bersih & Go Green", tag: "Kegiatan", color: "bg-purple-500" },
-        ].map((a) => (
-          <div key={a.text} className="flex items-start gap-1.5 rounded-lg bg-white px-2 py-1.5 border border-slate-100 shadow-sm">
-            <div className="flex flex-col items-center min-w-[22px]">
-              <span className="text-[6px] font-bold text-slate-800 leading-none">{a.date.split(" ")[0]}</span>
-              <span className="text-[5px] text-slate-400">{a.date.split(" ")[1]}</span>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-1">
-                <span className={`${a.color} rounded px-1 py-0.5 text-[4.5px] font-bold text-white`}>{a.tag}</span>
+        <div className="grid grid-cols-3 gap-1.5">
+          {[
+            { title: "Simulasi Mitigasi Bencana Gempa Bumi Bagi Siswa", date: "10 Jun 2025" },
+            { title: "Pesta Demokrasi: Orasi Kandidat Ketua OSIS", date: "08 Jun 2025" },
+            { title: "Pameran Literasi: Minat Baca di Era Digital", date: "05 Jun 2025" },
+          ].map((news) => (
+            <div key={news.title} className="rounded-lg bg-white border border-slate-100 shadow-sm overflow-hidden">
+              <div className="h-8 bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center">
+                <div className="h-5 w-8 rounded bg-green-200/50" />
               </div>
-              <span className="text-[6.5px] text-slate-700 leading-tight block mt-0.5 truncate">{a.text}</span>
+              <div className="p-1.5">
+                <p className="text-[5px] text-green-600 font-medium">{news.date}</p>
+                <p className="text-[5.5px] font-medium text-slate-800 leading-tight mt-0.5 line-clamp-2">{news.title}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
