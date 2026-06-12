@@ -7,26 +7,36 @@ interface LogoProps {
 
 export function Logo({ className, showText = true }: LogoProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2", className)}>
-      {/* Icon mark — modern abstract "N" */}
+    <span className={cn("inline-flex items-center gap-2.5", className)}>
+      {/* Icon mark — rounded square with </> code symbol */}
       <svg
-        viewBox="0 0 36 36"
+        viewBox="0 0 40 40"
         className="h-9 w-9 shrink-0"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        <defs>
-          <linearGradient id="nexaLogoBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#2563EB" />
-            <stop offset="1" stopColor="#0EA5E9" />
-          </linearGradient>
-        </defs>
-        <rect width="36" height="36" rx="10" fill="url(#nexaLogoBg)" />
+        <rect width="40" height="40" rx="10" fill="#6366F1" />
+        {/* < bracket */}
         <path
-          d="M11 26V10L25 26V10"
+          d="M16 14L10 20L16 26"
           stroke="#FFFFFF"
-          strokeWidth="3"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* / slash */}
+        <path
+          d="M22 12L18 28"
+          stroke="#FFFFFF"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+        {/* > bracket */}
+        <path
+          d="M24 14L30 20L24 26"
+          stroke="#FFFFFF"
+          strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
