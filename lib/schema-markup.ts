@@ -120,6 +120,7 @@ export function generateLocalBusinessSchema() {
     name: siteConfig.name,
     description: siteConfig.meta.description,
     url: siteConfig.url,
+    image: `${siteConfig.url}/images/logo.png`,
     telephone: `+${siteConfig.whatsapp.number}`,
     address: {
       '@type': 'PostalAddress',
