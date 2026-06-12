@@ -18,15 +18,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
-const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
+const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
     variants: {
         variant: {
-            default: "bg-primary text-white shadow hover:bg-primary/90",
+            default: "bg-blue-600 text-white shadow hover:bg-blue-700",
             destructive: "bg-red-500 text-white shadow-sm hover:bg-red-500/90",
-            outline: "border border-white/10 bg-transparent shadow-sm hover:bg-white/5 hover:text-white",
-            secondary: "bg-secondary text-white shadow-sm hover:bg-secondary/80",
-            ghost: "hover:bg-white/5 hover:text-white",
-            link: "text-primary underline-offset-4 hover:underline"
+            outline: "border border-slate-300 bg-white text-slate-700 shadow-sm hover:bg-slate-50",
+            secondary: "bg-sky-500 text-white shadow-sm hover:bg-sky-600",
+            ghost: "text-slate-700 hover:bg-slate-100",
+            link: "text-blue-600 underline-offset-4 hover:underline"
         },
         size: {
             default: "h-10 px-4 py-2",
@@ -77,7 +77,7 @@ function NotFound() {
         className: "flex min-h-[70vh] flex-col items-center justify-center px-4 text-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-8xl font-bold tracking-tighter text-white sm:text-9xl",
+                className: "text-8xl font-bold tracking-tighter text-slate-900 sm:text-9xl",
                 children: "404"
             }, void 0, false, {
                 fileName: "[project]/app/not-found.tsx",
@@ -85,7 +85,7 @@ function NotFound() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-4 text-xl text-gray-400",
+                className: "mt-4 text-xl text-slate-600",
                 children: "Halaman tidak ditemukan"
             }, void 0, false, {
                 fileName: "[project]/app/not-found.tsx",
@@ -93,7 +93,7 @@ function NotFound() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-2 text-gray-500",
+                className: "mt-2 text-slate-500",
                 children: "Maaf, halaman yang Anda cari tidak tersedia atau telah dipindahkan."
             }, void 0, false, {
                 fileName: "[project]/app/not-found.tsx",

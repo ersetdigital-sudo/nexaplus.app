@@ -25,7 +25,7 @@ export function HeroSection() {
               <span className="gradient-text">Bisnis Modern</span>
             </h1>
 
-            <p className="mt-4 text-base text-text-muted sm:text-lg md:mt-6 md:text-xl max-w-2xl">
+            <p className="mt-4 text-base text-slate-600 sm:text-lg md:mt-6 md:text-xl max-w-2xl">
               Kami membantu UMKM, seller marketplace dan perusahaan memiliki
               website profesional yang cepat, SEO Friendly dan menghasilkan lebih
               banyak pelanggan.
@@ -56,33 +56,33 @@ export function HeroSection() {
           <div className="hidden md:block flex-1">
             <div className="relative">
               {/* Glow behind mockup */}
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-indigo-500/20 via-purple-500/10 to-pink-500/20 blur-2xl" />
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-blue-500/20 to-sky-400/20 blur-2xl" />
 
               {/* Browser window */}
-              <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl">
+              <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
                 {/* Browser top bar */}
-                <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
-                  <span className="h-3 w-3 rounded-full bg-red-400/80" />
-                  <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
-                  <span className="h-3 w-3 rounded-full bg-green-400/80" />
-                  <div className="ml-3 h-5 flex-1 rounded-md bg-white/10" />
+                <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-100 px-4 py-3">
+                  <span className="h-3 w-3 rounded-full bg-red-400" />
+                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <span className="h-3 w-3 rounded-full bg-green-400" />
+                  <div className="ml-3 h-5 flex-1 rounded-md bg-slate-200" />
                 </div>
 
                 {/* Browser content */}
                 <div className="space-y-4 p-6">
                   {/* Hero block */}
-                  <div className="h-28 rounded-lg bg-gradient-to-r from-indigo-500/40 to-pink-500/40" />
+                  <div className="h-28 rounded-lg bg-gradient-to-r from-blue-500 to-sky-400" />
                   {/* Text lines */}
-                  <div className="h-3 w-3/4 rounded bg-white/15" />
-                  <div className="h-3 w-1/2 rounded bg-white/10" />
+                  <div className="h-3 w-3/4 rounded bg-slate-200" />
+                  <div className="h-3 w-1/2 rounded bg-slate-100" />
                   {/* Card grid */}
                   <div className="grid grid-cols-3 gap-3 pt-2">
-                    <div className="h-20 rounded-lg bg-white/10" />
-                    <div className="h-20 rounded-lg bg-white/10" />
-                    <div className="h-20 rounded-lg bg-white/10" />
+                    <div className="h-20 rounded-lg bg-slate-100" />
+                    <div className="h-20 rounded-lg bg-slate-100" />
+                    <div className="h-20 rounded-lg bg-slate-100" />
                   </div>
                   {/* Button */}
-                  <div className="h-9 w-32 rounded-lg bg-gradient-to-r from-indigo-500 to-pink-500" />
+                  <div className="h-9 w-32 rounded-lg bg-gradient-to-r from-blue-500 to-sky-400" />
                 </div>
               </div>
             </div>

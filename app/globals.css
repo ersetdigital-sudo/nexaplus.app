@@ -5,12 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-background: #0A0118;
-  --color-primary: #6366F1;
-  --color-secondary: #EC4899;
+  --color-background: #FFFFFF;
+  --color-surface: #F8FAFC;
+  --color-primary: #2563EB;
+  --color-secondary: #0EA5E9;
   --color-accent: #06B6D4;
-  --color-text: #FFFFFF;
-  --color-text-muted: #A1A1AA;
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
@@ -42,17 +43,13 @@
   }
 }
 
-/* CSS custom properties for glassmorphism and reusable values */
+/* Reusable design tokens — light theme */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: 12px;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-radius: 12px;
-  --interactive-radius: 8px;
-  --gradient-primary: linear-gradient(135deg, #6366F1, #EC4899);
-  --gradient-accent: linear-gradient(135deg, #6366F1, #06B6D4);
+  --card-radius: 16px;
+  --interactive-radius: 10px;
+  --gradient-primary: linear-gradient(135deg, #2563EB, #0EA5E9);
+  --gradient-accent: linear-gradient(135deg, #2563EB, #06B6D4);
+  --soft-shadow: 0 10px 30px -12px rgba(37, 99, 235, 0.18);
 }
 
 /* Base styles — mobile-first approach */
@@ -61,8 +58,8 @@ html {
 }
 
 body {
-  background-color: #0A0118;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #0F172A;
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
@@ -70,20 +67,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glassmorphism utility classes */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-}
-
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--card-border);
+/* Soft card style for light theme */
+.soft-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: var(--card-radius);
+  box-shadow: var(--soft-shadow);
 }
 
 /* Gradient utilities */
@@ -104,7 +93,7 @@ body {
 
 /* Focus indicators for accessibility */
 :focus-visible {
-  outline: 2px solid #06B6D4;
+  outline: 2px solid #2563EB;
   outline-offset: 2px;
 }
 

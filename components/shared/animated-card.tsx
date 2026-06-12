@@ -20,7 +20,7 @@ export function AnimatedCard({
   return (
     <motion.div
       className={cn(
-        "rounded-xl border border-white/8 bg-white/3 backdrop-blur-sm",
+        "rounded-xl border border-slate-200 bg-white shadow-sm",
         className
       )}
       whileHover={

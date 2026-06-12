@@ -26,9 +26,9 @@ export function BlogSection() {
   const filteredPosts = filterBlogPosts(blogPosts, activeCategory).slice(0, 6);
 
   return (
-    <SectionWrapper id="blog">
+    <SectionWrapper id="blog" className="bg-white">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
+        <h2 className="mb-8 text-center text-3xl font-bold text-slate-900 md:text-4xl">
           Artikel Terbaru
         </h2>
 
@@ -53,11 +53,11 @@ export function BlogSection() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10"
+                className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-indigo-600/40 via-purple-600/30 to-pink-600/40">
+                <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-blue-600/30">
                   <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
-                    <span className="px-4 text-center text-lg font-bold text-white/70">
+                    <span className="px-4 text-center text-lg font-bold text-white/90">
                       {post.category}
                     </span>
                   </div>
@@ -65,14 +65,14 @@ export function BlogSection() {
                 <div className="p-5">
                   <div className="mb-3 flex items-center justify-between">
                     <Badge variant="secondary">{post.category}</Badge>
-                    <span className="text-xs text-white/60">
+                    <span className="text-xs text-slate-500">
                       {formatDate(post.publishedDate)}
                     </span>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold leading-tight">
+                  <h3 className="mb-2 text-lg font-semibold leading-tight text-slate-900">
                     {post.title}
                   </h3>
-                  <p className="text-sm text-white/70 line-clamp-2">
+                  <p className="text-sm text-slate-600 line-clamp-2">
                     {post.excerpt}
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export function BlogSection() {
             ))}
           </div>
         ) : (
-          <p className="text-center text-white/60">
+          <p className="text-center text-slate-600">
             Belum ada artikel untuk kategori ini
           </p>
         )}

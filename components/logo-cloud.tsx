@@ -20,7 +20,7 @@ export function LogoCloud() {
 
 const logos = [
 	{
-		src: "https://cdn.simpleicons.org/nextdotjs/white",
+		src: "https://cdn.simpleicons.org/nextdotjs/000000",
 		alt: "Next.js",
 	},
 	{
@@ -36,11 +36,11 @@ const logos = [
 		alt: "Tailwind CSS",
 	},
 	{
-		src: "https://cdn.simpleicons.org/vercel/white",
+		src: "https://cdn.simpleicons.org/vercel/000000",
 		alt: "Vercel",
 	},
 	{
-		src: "https://cdn.simpleicons.org/framer/EC4899",
+		src: "https://cdn.simpleicons.org/framer/0055FF",
 		alt: "Framer Motion",
 	},
 	{

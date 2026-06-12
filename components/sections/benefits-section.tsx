@@ -29,7 +29,7 @@ export function BenefitsSection() {
   return (
     <SectionWrapper id="keunggulan">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
           Mengapa Memilih NexaPlus?
         </h2>
 
@@ -40,22 +40,22 @@ export function BenefitsSection() {
             return (
               <AnimatedCard
                 key={benefit.id}
-                className="p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-indigo-500/5"
+                className="p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-200/50"
                 hoverScale={1.05}
               >
                 <div className="flex flex-col gap-3">
                   {Icon && (
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/10">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50">
                       <Icon
-                        className="h-5 w-5 text-indigo-400"
+                        className="h-5 w-5 text-blue-600"
                         aria-hidden="true"
                       />
                     </div>
                   )}
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-semibold text-slate-900">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-white/70">
+                  <p className="text-sm leading-relaxed text-slate-600">
                     {benefit.description}
                   </p>
                 </div>

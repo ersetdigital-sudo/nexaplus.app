@@ -10,9 +10,9 @@ import { portfolioItems } from "@/data/portfolio";
 
 export function PortfolioSection() {
   return (
-    <SectionWrapper id="portfolio">
+    <SectionWrapper id="portfolio" className="bg-white">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
           Portfolio Kami
         </h2>
 
@@ -32,7 +32,7 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
   return (
     <Link
       href={`/portfolio/${item.slug}`}
-      className="group relative block overflow-hidden rounded-xl border border-white/8 bg-white/3 backdrop-blur-sm"
+      className="group relative block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
@@ -40,8 +40,8 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         {/* Gradient placeholder with initial */}
-        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-600/40 via-purple-600/30 to-pink-600/40 transition-transform duration-300 group-hover:scale-105">
-          <span className="text-4xl font-bold text-white/80">
+        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-blue-600/30 transition-transform duration-300 group-hover:scale-105">
+          <span className="text-4xl font-bold text-white/90">
             {item.name.charAt(0)}
           </span>
         </div>
@@ -53,14 +53,14 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.25 }}
         >
-          <span className="rounded-lg bg-indigo-500 px-5 py-2.5 text-sm font-medium text-white">
+          <span className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white">
             Lihat Detail
           </span>
         </motion.div>
       </div>
 
       <div className="p-4">
-        <h3 className="mb-2 text-lg font-semibold text-white">{item.name}</h3>
+        <h3 className="mb-2 text-lg font-semibold text-slate-900">{item.name}</h3>
         <Badge variant="outline">{item.category}</Badge>
       </div>
     </Link>

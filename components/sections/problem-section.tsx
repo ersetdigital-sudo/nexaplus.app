@@ -35,7 +35,7 @@ export function ProblemSection() {
   return (
     <SectionWrapper id="masalah">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
           Masih Bergantung Pada Marketplace?
         </h2>
 
@@ -45,14 +45,14 @@ export function ProblemSection() {
             return (
               <AnimatedCard key={point.title} className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-500/10">
-                    <Icon className="h-5 w-5 text-red-400" aria-hidden="true" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-50">
+                    <Icon className="h-5 w-5 text-red-500" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="mb-1 text-lg font-semibold text-white">
+                    <h3 className="mb-1 text-lg font-semibold text-slate-900">
                       {point.title}
                     </h3>
-                    <p className="text-sm text-white/70">{point.explanation}</p>
+                    <p className="text-sm text-slate-600">{point.explanation}</p>
                   </div>
                 </div>
               </AnimatedCard>
@@ -60,7 +60,7 @@ export function ProblemSection() {
           })}
         </div>
 
-        <p className="mt-10 text-center text-base text-white/80 md:text-lg">
+        <p className="mt-10 rounded-xl border border-blue-100 bg-blue-50 px-6 py-5 text-center text-base text-slate-700 md:text-lg">
           Solusinya? Miliki website sendiri sebagai aset digital jangka panjang
           yang sepenuhnya Anda kendalikan.
         </p>

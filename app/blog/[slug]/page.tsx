@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <Badge variant="secondary">{post.category}</Badge>
             <time
               dateTime={post.publishedDate.toISOString()}
-              className="text-sm text-muted-foreground"
+              className="text-sm text-slate-600"
             >
               {post.publishedDate.toLocaleDateString('id-ID', {
                 year: 'numeric',
@@ -71,12 +71,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               })}
             </time>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             {post.title}
           </h1>
         </header>
         <div
-          className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-li:text-gray-300"
+          className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-li:text-slate-700"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>

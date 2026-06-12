@@ -22,7 +22,7 @@ function TestimonialPhoto({ name, photo }: { name: string; photo: string }) {
 
   if (hasError) {
     return (
-      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-lg font-bold text-white">
+      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-sky-400 text-lg font-bold text-white">
         {initials}
       </div>
     );
@@ -42,9 +42,9 @@ function TestimonialPhoto({ name, photo }: { name: string; photo: string }) {
 
 export function TestimonialSection() {
   return (
-    <SectionWrapper id="testimoni">
+    <SectionWrapper id="testimoni" className="bg-slate-50">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+        <h2 className="mb-12 text-center text-2xl font-bold text-slate-900 md:text-3xl lg:text-4xl">
           Apa Kata Klien Kami
         </h2>
 
@@ -58,10 +58,10 @@ export function TestimonialSection() {
                     photo={testimonial.photo}
                   />
                   <div>
-                    <h3 className="text-sm font-semibold text-white">
+                    <h3 className="text-sm font-semibold text-slate-900">
                       {testimonial.name}
                     </h3>
-                    <p className="text-xs text-white/60">
+                    <p className="text-xs text-slate-600">
                       {testimonial.position}
                     </p>
                   </div>
@@ -69,7 +69,7 @@ export function TestimonialSection() {
 
                 <StarRating rating={testimonial.rating} />
 
-                <p className="text-sm leading-relaxed text-white/70">
+                <p className="text-sm leading-relaxed text-slate-600">
                   &ldquo;{testimonial.review}&rdquo;
                 </p>
               </div>

@@ -44,8 +44,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-in-out ${
         isScrolled
-          ? 'bg-white/5 backdrop-blur-md border-b border-white/10'
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm'
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -62,7 +62,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-sm text-text-muted hover:text-white transition-colors duration-200"
+                className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -81,7 +81,7 @@ export function Navbar() {
           {/* Mobile Hamburger */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 transition-colors"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 transition-colors"
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
             aria-expanded={isDrawerOpen}
             aria-label="Menu navigasi"
@@ -111,7 +111,7 @@ export function Navbar() {
 
             {/* Drawer Panel */}
             <motion.div
-              className="fixed top-0 right-0 z-50 h-full w-72 bg-background border-l border-white/10 md:hidden"
+              className="fixed top-0 right-0 z-50 h-full w-72 bg-white border-l border-slate-200 md:hidden"
               variants={drawerVariants}
               initial="closed"
               animate="open"
@@ -123,7 +123,7 @@ export function Navbar() {
                   <Logo />
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 transition-colors"
+                    className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 transition-colors"
                     onClick={() => setIsDrawerOpen(false)}
                     aria-label="Menu navigasi"
                   >
@@ -138,7 +138,7 @@ export function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={(e) => handleLinkClick(e, link.href)}
-                      className="text-base text-text-muted hover:text-white transition-colors duration-200 py-2"
+                      className="text-base text-slate-700 hover:text-blue-600 transition-colors duration-200 py-2"
                     >
                       {link.label}
                     </a>

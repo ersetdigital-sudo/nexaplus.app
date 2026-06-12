@@ -13,20 +13,20 @@ const clientLogos = [
 
 export function TrustSection() {
   return (
-    <SectionWrapper id="trust" className="py-12 lg:py-16">
+    <SectionWrapper id="trust" className="bg-slate-50 py-12 lg:py-16">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-8 text-center text-sm text-white/60 md:text-base">
+        <p className="mb-8 text-center text-sm text-slate-600 md:text-base">
           Dipercaya oleh berbagai bisnis dan organisasi
         </p>
         <div className="flex items-center gap-6 overflow-x-auto px-4 md:justify-center md:overflow-x-visible md:px-0">
           {clientLogos.map((name) => (
             <div
               key={name}
-              className="flex h-12 w-28 shrink-0 items-center justify-center rounded-lg bg-white/5 opacity-60"
+              className="flex h-12 w-28 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-100"
               role="img"
               aria-label={`Logo ${name}`}
             >
-              <span className="text-xs text-white/50">{name}</span>
+              <span className="text-xs text-slate-400">{name}</span>
             </div>
           ))}
         </div>

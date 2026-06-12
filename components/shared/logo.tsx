@@ -35,7 +35,7 @@ export function Logo({ className, showText = true }: LogoProps) {
 
       {/* Wordmark */}
       {showText && (
-        <span className="text-xl font-bold tracking-tight text-white">
+        <span className="text-xl font-bold tracking-tight text-slate-900">
           Nexa<span className="bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">Plus</span>
         </span>
       )}

@@ -31,13 +31,13 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0A0118]">
+    <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand / About Column */}
           <div className="space-y-4">
             <Logo />
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-slate-600">
               Jasa pembuatan website profesional untuk UMKM, perusahaan, dan
               organisasi di Indonesia.
             </p>
@@ -45,7 +45,7 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
               Navigasi
             </h3>
             <ul className="space-y-2">
@@ -53,7 +53,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 transition-colors hover:text-white"
+                    className="text-sm text-slate-600 transition-colors hover:text-blue-600"
                   >
                     {link.label}
                   </Link>
@@ -64,13 +64,13 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
               Layanan
             </h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.id}>
-                  <span className="text-sm text-gray-400">
+                  <span className="text-sm text-slate-600">
                     {service.title}
                   </span>
                 </li>
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
               Kontak
             </h3>
             <ul className="space-y-3">
@@ -89,7 +89,7 @@ export function Footer() {
                   href={`https://wa.me/${siteConfig.whatsapp.number}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
+                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-blue-600"
                   aria-label="WhatsApp NexaPlus"
                 >
                   <Phone className="h-4 w-4" />
@@ -99,7 +99,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
+                  className="flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-blue-600"
                   aria-label="Email NexaPlus"
                 >
                   <Mail className="h-4 w-4" />
@@ -119,7 +119,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`NexaPlus di ${social.platform}`}
-                    className="text-gray-400 transition-colors hover:text-white"
+                    className="text-slate-500 transition-colors hover:text-blue-600"
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -130,8 +130,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 border-t border-white/10 pt-6 text-center">
-          <p className="text-sm text-gray-400">
+        <div className="mt-10 border-t border-slate-200 pt-6 text-center">
+          <p className="text-sm text-slate-600">
             © {new Date().getFullYear()} NexaPlus. All rights reserved.
           </p>
         </div>
