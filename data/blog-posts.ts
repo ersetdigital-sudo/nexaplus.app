@@ -1,4 +1,4 @@
-export type BlogCategory =
+﻿export type BlogCategory =
   | 'SEO'
   | 'Website'
   | 'Bisnis Online'
@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       'Pelajari strategi SEO terbaru untuk meningkatkan visibilitas website bisnis Anda di mesin pencari Google secara organik.',
     category: 'SEO',
-    publishedDate: new Date('2024-12-15'),
+    publishedDate: new Date('2026-06-10'),
     coverImage: '/images/blog/tips-seo-2024.webp',
     content: `## Tips SEO Website Bisnis agar Tampil di Halaman Pertama Google
 
@@ -54,7 +54,7 @@ Buat konten yang menjawab pertanyaan audiens Anda. Konten yang informatif dan be
     excerpt:
       'Website bukan lagi kemewahan bagi UMKM. Simak alasan mengapa bisnis kecil perlu hadir online dengan website profesional.',
     category: 'UMKM',
-    publishedDate: new Date('2024-12-10'),
+    publishedDate: new Date('2026-06-05'),
     coverImage: '/images/blog/umkm-website.webp',
     content: `## Mengapa UMKM Harus Punya Website di Era Digital
 
@@ -86,7 +86,7 @@ Biaya pembuatan website relatif terjangkau dibanding manfaat jangka panjang yang
     excerpt:
       'Jangan asal pilih jasa web developer. Ketahui kriteria penting yang harus diperhatikan sebelum memilih vendor website.',
     category: 'Website',
-    publishedDate: new Date('2024-12-05'),
+    publishedDate: new Date('2026-05-28'),
     coverImage: '/images/blog/pilih-jasa-website.webp',
     content: `## Cara Memilih Jasa Pembuatan Website yang Tepat
 
@@ -118,7 +118,7 @@ Pilih vendor yang responsif dan mudah dihubungi. Komunikasi yang baik memastikan
     excerpt:
       'Lepas dari ketergantungan marketplace dengan membangun toko online sendiri. Simak strategi lengkapnya di sini.',
     category: 'Bisnis Online',
-    publishedDate: new Date('2024-11-28'),
+    publishedDate: new Date('2026-05-20'),
     coverImage: '/images/blog/jualan-tanpa-marketplace.webp',
     content: `## Strategi Jualan Online Tanpa Bergantung Marketplace
 
@@ -150,7 +150,7 @@ Bekerja sama dengan micro-influencer di niche Anda untuk meningkatkan brand awar
     excerpt:
       'Toko online tanpa fitur ini akan kehilangan pelanggan. Pastikan website e-commerce Anda sudah memiliki semuanya.',
     category: 'Toko Online',
-    publishedDate: new Date('2024-11-20'),
+    publishedDate: new Date('2026-05-12'),
     coverImage: '/images/blog/fitur-toko-online.webp',
     content: `## Fitur Wajib yang Harus Ada di Toko Online Anda
 
@@ -186,7 +186,7 @@ Berikan fitur pelacakan pesanan agar pelanggan bisa memantau status pengiriman b
     excerpt:
       'Kecepatan website mempengaruhi ranking di Google. Pelajari teknik optimasi yang efektif untuk performa maksimal.',
     category: 'SEO',
-    publishedDate: new Date('2024-11-15'),
+    publishedDate: new Date('2026-05-05'),
     coverImage: '/images/blog/optimasi-kecepatan.webp',
     content: `## Cara Optimasi Kecepatan Website untuk Ranking SEO
 
