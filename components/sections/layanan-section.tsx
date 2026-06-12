@@ -165,61 +165,95 @@ function BrowserFrame({ url, children }: { url: string; children: React.ReactNod
 
 function PreviewToko() {
   return (
-    <div className="h-full bg-white">
-      {/* Top navbar */}
-      <div className="flex items-center justify-between bg-blue-600 px-3 py-1.5">
-        <span className="text-[9px] font-bold text-white">🛒 TokoKu</span>
-        <div className="flex items-center gap-2">
-          <span className="text-[7px] text-blue-100">Kategori</span>
-          <span className="text-[7px] text-blue-100">Promo</span>
-          <span className="text-[7px] text-blue-100">Akun</span>
-          <div className="relative">
-            <span className="text-[8px] text-white">🛒</span>
-            <span className="absolute -right-1 -top-1 flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-500 text-[5px] font-bold text-white">3</span>
+    <div className="h-full bg-[#f5f5f5] flex flex-col">
+      {/* Top navbar with gradient */}
+      <div className="bg-gradient-to-r from-indigo-600 via-blue-600 to-blue-500 px-2.5 py-1.5">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1">
+            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white/20">
+              <span className="text-[7px]">🛒</span>
+            </div>
+            <span className="text-[9px] font-bold text-white tracking-tight">ShopNesia</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <span className="text-[7px] text-blue-100">Kategori</span>
+            <span className="text-[7px] text-blue-100">Promo</span>
+            <div className="relative">
+              <span className="text-[9px] text-white">♡</span>
+            </div>
+            <div className="relative">
+              <span className="text-[9px] text-white">🛒</span>
+              <span className="absolute -right-1.5 -top-1 flex h-3 w-3 items-center justify-center rounded-full bg-red-500 text-[5px] font-bold text-white shadow-sm">3</span>
+            </div>
           </div>
         </div>
-      </div>
-      {/* Search bar */}
-      <div className="border-b border-slate-100 bg-blue-600 px-3 pb-2">
-        <div className="flex h-5 items-center rounded bg-white px-2">
-          <span className="text-[7px] text-slate-400">🔍 Cari produk, brand, atau kategori...</span>
+        {/* Search bar */}
+        <div className="mt-1.5 flex h-[18px] items-center rounded-full bg-white px-2.5 shadow-sm">
+          <svg className="h-2.5 w-2.5 text-slate-400 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <span className="text-[7px] text-slate-400">Cari produk, brand, atau kategori...</span>
         </div>
       </div>
       {/* Flash sale banner */}
-      <div className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-400 px-3 py-1.5">
-        <span className="text-[8px] font-bold text-white">⚡ FLASH SALE</span>
-        <span className="rounded bg-white/20 px-1 py-0.5 text-[7px] font-bold text-white">02:14:33</span>
-        <span className="ml-auto text-[7px] text-white/80">Lihat Semua →</span>
+      <div className="flex items-center gap-1.5 bg-gradient-to-r from-red-600 via-red-500 to-orange-400 px-2.5 py-1">
+        <span className="text-[7px] text-yellow-300">⚡</span>
+        <span className="text-[8px] font-extrabold text-white tracking-tight">FLASH SALE</span>
+        <div className="flex gap-0.5">
+          {["02","14","33"].map((t, i) => (
+            <span key={i} className="rounded bg-slate-900 px-1 py-0.5 text-[7px] font-bold text-white font-mono">{t}</span>
+          ))}
+        </div>
+        <span className="ml-auto text-[6px] text-white/80 font-medium">Lihat Semua ›</span>
+      </div>
+      {/* Category pills */}
+      <div className="flex gap-1 px-2.5 py-1.5 overflow-hidden">
+        {["🔥 Terlaris","📱 Elektronik","👕 Fashion","🏠 Rumah","🎮 Gaming"].map((c, i) => (
+          <span key={c} className={`whitespace-nowrap rounded-full px-2 py-0.5 text-[6px] font-medium ${i===0 ? "bg-blue-600 text-white" : "bg-white text-slate-600 border border-slate-200"}`}>{c}</span>
+        ))}
       </div>
       {/* Product grid */}
-      <div className="grid grid-cols-3 gap-1.5 p-2">
+      <div className="flex-1 grid grid-cols-3 gap-1.5 px-2.5 pb-2 overflow-hidden">
         {[
-          { name: "TWS Earbuds Pro", price: "Rp 285.000", orig: "Rp 450.000", rating: "4.8", sold: "2.1rb", discount: "-37%" },
-          { name: "Smartwatch X2", price: "Rp 425.000", orig: "Rp 650.000", rating: "4.9", sold: "980", discount: "-35%" },
-          { name: "Fast Charger 65W", price: "Rp 165.000", orig: "Rp 250.000", rating: "4.7", sold: "5.3rb", discount: "-34%" },
+          { name: "TWS Earbuds Pro Max", price: "285.000", orig: "450.000", rating: "4.8", sold: "2.1rb", disc: "37%", color: "from-blue-100 to-blue-50", emoji: "🎧" },
+          { name: "Smart Watch Ultra X2", price: "425.000", orig: "650.000", rating: "4.9", sold: "980", disc: "35%", color: "from-purple-100 to-purple-50", emoji: "⌚" },
+          { name: "GaN Charger 65W", price: "165.000", orig: "250.000", rating: "4.7", sold: "5.3rb", disc: "34%", color: "from-green-100 to-green-50", emoji: "🔌" },
         ].map((item) => (
-          <div key={item.name} className="rounded border border-slate-100 bg-white shadow-sm overflow-hidden">
-            <div className="relative h-12 bg-slate-100 flex items-center justify-center">
-              <div className="h-8 w-8 rounded bg-slate-200" />
-              <span className="absolute left-0.5 top-0.5 rounded-sm bg-red-500 px-1 py-0.5 text-[5px] font-bold text-white">{item.discount}</span>
+          <div key={item.name} className="rounded-lg bg-white shadow-sm overflow-hidden border border-slate-100/80">
+            <div className={`relative h-14 bg-gradient-to-br ${item.color} flex items-center justify-center`}>
+              <span className="text-[18px] drop-shadow-sm">{item.emoji}</span>
+              <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-1 py-0.5 text-[5px] font-bold text-white shadow-sm">-{item.disc}</span>
+              <span className="absolute right-0.5 top-0.5 text-[8px] text-slate-400">♡</span>
             </div>
-            <div className="p-1">
-              <p className="text-[7px] font-medium text-slate-800 leading-tight truncate">{item.name}</p>
-              <p className="text-[8px] font-bold text-red-600 mt-0.5">{item.price}</p>
-              <p className="text-[6px] text-slate-400 line-through">{item.orig}</p>
-              <div className="mt-0.5 flex items-center gap-0.5">
-                <span className="text-[6px] text-yellow-500">★</span>
-                <span className="text-[6px] text-slate-500">{item.rating}</span>
-                <span className="text-[6px] text-slate-400">| {item.sold} terjual</span>
+            <div className="p-1.5">
+              <p className="text-[6.5px] font-medium text-slate-800 leading-tight line-clamp-2">{item.name}</p>
+              <div className="mt-1 flex items-baseline gap-1">
+                <span className="text-[8px] font-bold text-red-600">Rp{item.price}</span>
               </div>
+              <p className="text-[6px] text-slate-400 line-through">Rp{item.orig}</p>
+              <div className="mt-0.5 flex items-center gap-0.5">
+                <span className="text-[6px] text-amber-400">★★★★★</span>
+                <span className="text-[5.5px] text-slate-400">{item.sold} terjual</span>
+              </div>
+              <div className="mt-1 h-1 w-full rounded-full bg-slate-100 overflow-hidden">
+                <div className="h-full rounded-full bg-gradient-to-r from-red-500 to-orange-400" style={{ width: "72%" }} />
+              </div>
+              <p className="text-[5px] text-red-500 font-medium mt-0.5">Segera habis!</p>
             </div>
           </div>
         ))}
       </div>
-      {/* Bottom categories */}
-      <div className="flex justify-around border-t border-slate-100 px-2 py-1.5">
-        {["🏠 Home", "📦 Pesanan", "💬 Chat", "👤 Akun"].map((c) => (
-          <span key={c} className="text-[6px] text-slate-500">{c}</span>
+      {/* Bottom nav */}
+      <div className="flex justify-around border-t border-slate-200 bg-white px-2 py-1.5">
+        {[
+          { icon: "🏠", label: "Home", active: true },
+          { icon: "🔍", label: "Explore", active: false },
+          { icon: "📦", label: "Pesanan", active: false },
+          { icon: "💬", label: "Chat", active: false },
+          { icon: "👤", label: "Akun", active: false },
+        ].map((n) => (
+          <div key={n.label} className="flex flex-col items-center gap-0.5">
+            <span className="text-[8px]">{n.icon}</span>
+            <span className={`text-[5px] font-medium ${n.active ? "text-blue-600" : "text-slate-400"}`}>{n.label}</span>
+          </div>
         ))}
       </div>
     </div>
@@ -228,48 +262,65 @@ function PreviewToko() {
 
 function PreviewLanding() {
   return (
-    <div className="h-full bg-white">
-      {/* Navbar */}
-      <div className="flex items-center justify-between bg-white px-3 py-2 border-b border-slate-100">
-        <span className="text-[9px] font-bold text-slate-800">✨ GlowUp</span>
-        <div className="flex items-center gap-2">
-          <span className="text-[7px] text-slate-500">Manfaat</span>
-          <span className="text-[7px] text-slate-500">Testimoni</span>
-          <span className="text-[7px] text-slate-500">FAQ</span>
-          <span className="rounded-full bg-rose-500 px-2 py-0.5 text-[7px] font-medium text-white">Order</span>
+    <div className="h-full bg-white flex flex-col">
+      {/* Sticky navbar */}
+      <div className="flex items-center justify-between px-3 py-2 border-b border-slate-100 bg-white/95 backdrop-blur-sm">
+        <div className="flex items-center gap-1">
+          <div className="h-3.5 w-3.5 rounded-full bg-gradient-to-br from-rose-500 to-pink-600" />
+          <span className="text-[9px] font-bold text-slate-900 tracking-tight">GlowSkin</span>
+        </div>
+        <div className="flex items-center gap-2.5">
+          <span className="text-[7px] text-slate-500 font-medium">Manfaat</span>
+          <span className="text-[7px] text-slate-500 font-medium">Testimoni</span>
+          <span className="text-[7px] text-slate-500 font-medium">FAQ</span>
+          <span className="rounded-full bg-gradient-to-r from-rose-500 to-pink-600 px-2.5 py-0.5 text-[7px] font-bold text-white shadow-sm">Pesan Sekarang</span>
         </div>
       </div>
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-rose-500 via-pink-500 to-purple-600 px-4 py-4 text-center">
-        <p className="text-[7px] font-medium text-rose-200 uppercase tracking-wider">Skincare #1 Indonesia</p>
-        <p className="mt-1 text-[11px] font-bold text-white leading-tight">Wajah Glowing dalam<br/>14 Hari, Tanpa Efek Samping</p>
-        <p className="mt-1 text-[7px] text-rose-100">Sudah dipercaya 25.000+ wanita Indonesia</p>
-        <div className="mx-auto mt-2 flex justify-center gap-1.5">
-          <span className="rounded-full bg-white px-3 py-1 text-[8px] font-bold text-rose-600 shadow">Pesan via WhatsApp</span>
-          <span className="rounded-full border border-white/40 px-2 py-1 text-[8px] text-white">Lihat Review</span>
-        </div>
-        <div className="mt-2 flex justify-center gap-1">
-          <span className="text-[7px] text-yellow-300">★★★★★</span>
-          <span className="text-[7px] text-rose-100">4.9/5 (2.380 ulasan)</span>
+      {/* Hero with overlay visual */}
+      <div className="relative bg-gradient-to-br from-rose-500 via-pink-500 to-purple-700 px-4 py-5 text-center overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-white/10" />
+        <div className="absolute -left-3 bottom-0 h-12 w-12 rounded-full bg-white/5" />
+        <div className="relative">
+          <span className="inline-block rounded-full bg-white/20 px-2 py-0.5 text-[6px] font-bold text-white uppercase tracking-widest backdrop-blur-sm">✨ Skincare #1 Indonesia</span>
+          <p className="mt-2 text-[12px] font-extrabold text-white leading-[1.2] tracking-tight">Wajah Glowing Dalam<br/>14 Hari Terbukti Klinis</p>
+          <p className="mt-1 text-[7px] text-rose-100/90 leading-relaxed">Formula dermatologis dengan Niacinamide 10% + Hyaluronic Acid.<br/>Dipercaya 25.000+ wanita Indonesia.</p>
+          <div className="mt-2.5 flex justify-center gap-2">
+            <span className="rounded-full bg-white px-3 py-1 text-[8px] font-bold text-rose-600 shadow-lg shadow-rose-900/20">💬 Pesan via WhatsApp</span>
+            <span className="rounded-full border-2 border-white/50 px-2.5 py-1 text-[8px] font-medium text-white backdrop-blur-sm">Lihat Review</span>
+          </div>
+          <div className="mt-2 flex items-center justify-center gap-1.5">
+            <span className="text-[8px] text-yellow-300">★★★★★</span>
+            <span className="text-[7px] text-white/80 font-medium">4.9/5</span>
+            <span className="text-[6px] text-rose-200">(2.380 ulasan terverifikasi)</span>
+          </div>
         </div>
       </div>
-      {/* Trust badges */}
-      <div className="flex items-center justify-center gap-3 py-2 border-b border-slate-50">
-        {["✅ BPOM Certified", "🚚 Free Ongkir", "💯 Garansi 100%", "🔒 Pembayaran Aman"].map((v) => (
-          <span key={v} className="text-[6px] text-slate-600">{v}</span>
+      {/* Social proof bar */}
+      <div className="flex items-center justify-center gap-4 bg-slate-50 py-2 border-b border-slate-100">
+        {[
+          { icon: "🏆", text: "BPOM Certified" },
+          { icon: "🚚", text: "Free Ongkir" },
+          { icon: "�", text: "Garansi 100%" },
+          { icon: "⭐", text: "Best Seller" },
+        ].map((v) => (
+          <div key={v.text} className="flex items-center gap-0.5">
+            <span className="text-[7px]">{v.icon}</span>
+            <span className="text-[6px] font-medium text-slate-600">{v.text}</span>
+          </div>
         ))}
       </div>
-      {/* Benefits */}
-      <div className="grid grid-cols-3 gap-2 p-2.5">
+      {/* Benefit cards */}
+      <div className="grid grid-cols-3 gap-2 p-2.5 flex-1">
         {[
-          { icon: "🌿", title: "Natural", desc: "100% bahan alami" },
-          { icon: "⚡", title: "Cepat", desc: "Hasil 14 hari" },
-          { icon: "🛡️", title: "Aman", desc: "Tanpa mercury" },
+          { icon: "🌿", title: "100% Natural", desc: "Tanpa bahan kimia berbahaya", color: "from-green-50 to-emerald-50 border-green-100" },
+          { icon: "⚡", title: "Hasil 14 Hari", desc: "Terlihat cerah & glowing", color: "from-amber-50 to-yellow-50 border-amber-100" },
+          { icon: "🛡️", title: "Tanpa Efek Samping", desc: "Aman untuk kulit sensitif", color: "from-blue-50 to-sky-50 border-blue-100" },
         ].map((b) => (
-          <div key={b.title} className="text-center rounded-lg bg-rose-50 p-1.5">
-            <span className="text-[10px]">{b.icon}</span>
-            <p className="text-[7px] font-bold text-slate-800">{b.title}</p>
-            <p className="text-[6px] text-slate-500">{b.desc}</p>
+          <div key={b.title} className={`text-center rounded-xl bg-gradient-to-br ${b.color} border p-2`}>
+            <span className="text-[12px]">{b.icon}</span>
+            <p className="text-[7px] font-bold text-slate-800 mt-0.5">{b.title}</p>
+            <p className="text-[5.5px] text-slate-500 mt-0.5 leading-relaxed">{b.desc}</p>
           </div>
         ))}
       </div>
@@ -279,54 +330,66 @@ function PreviewLanding() {
 
 function PreviewCompany() {
   return (
-    <div className="h-full bg-white">
-      {/* Navbar */}
-      <div className="flex items-center justify-between bg-slate-900 px-3 py-2">
-        <span className="text-[9px] font-bold text-white">◆ NEXACORP</span>
-        <div className="flex items-center gap-2">
-          <span className="text-[7px] text-slate-300">Beranda</span>
-          <span className="text-[7px] text-slate-300">Tentang</span>
-          <span className="text-[7px] text-slate-300">Layanan</span>
-          <span className="text-[7px] text-slate-300">Portofolio</span>
-          <span className="rounded bg-blue-500 px-1.5 py-0.5 text-[7px] text-white">Kontak</span>
+    <div className="h-full bg-white flex flex-col">
+      {/* Premium navbar */}
+      <div className="flex items-center justify-between bg-slate-950 px-3 py-2">
+        <div className="flex items-center gap-1.5">
+          <div className="h-3.5 w-3.5 rounded bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+            <span className="text-[6px] font-bold text-white">N</span>
+          </div>
+          <span className="text-[9px] font-bold text-white tracking-tight">NEXACORP</span>
+        </div>
+        <div className="flex items-center gap-2.5">
+          <span className="text-[7px] text-slate-400 font-medium">Beranda</span>
+          <span className="text-[7px] text-slate-400 font-medium">Tentang</span>
+          <span className="text-[7px] text-slate-400 font-medium">Layanan</span>
+          <span className="text-[7px] text-slate-400 font-medium">Portfolio</span>
+          <span className="rounded-md bg-blue-500 px-2 py-0.5 text-[7px] font-medium text-white">Hubungi Kami</span>
         </div>
       </div>
-      {/* Hero */}
-      <div className="relative bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 px-4 py-5">
-        <p className="text-[7px] font-medium text-blue-300 uppercase tracking-wider">Sejak 2010 — Terpercaya</p>
-        <p className="mt-1 text-[11px] font-bold text-white leading-tight">Membangun Solusi Digital<br/>untuk Masa Depan Bisnis Anda</p>
-        <p className="mt-1 text-[7px] text-slate-400">Konsultan IT & Pengembangan Software Enterprise</p>
-        <div className="mt-2 flex gap-1.5">
-          <span className="rounded bg-blue-500 px-2 py-0.5 text-[7px] font-medium text-white">Hubungi Kami</span>
-          <span className="rounded border border-slate-500 px-2 py-0.5 text-[7px] text-slate-300">Lihat Layanan</span>
+      {/* Hero section with depth */}
+      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 px-4 py-6 overflow-hidden">
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "12px 12px" }} />
+        {/* Glowing orb */}
+        <div className="absolute right-4 top-2 h-16 w-16 rounded-full bg-blue-500/20 blur-xl" />
+        <div className="relative">
+          <span className="inline-block rounded-full bg-blue-500/20 px-2 py-0.5 text-[6px] font-bold text-blue-300 uppercase tracking-widest border border-blue-500/30">Sejak 2010 — Trusted Partner</span>
+          <p className="mt-2 text-[12px] font-extrabold text-white leading-[1.15] tracking-tight">Transformasi Digital<br/>untuk Bisnis Masa Depan</p>
+          <p className="mt-1.5 text-[7px] text-slate-400 leading-relaxed max-w-[70%]">End-to-end technology solutions. Dari konsep hingga deployment, kami percepat pertumbuhan bisnis Anda.</p>
+          <div className="mt-2.5 flex gap-2">
+            <span className="rounded-md bg-gradient-to-r from-blue-500 to-blue-600 px-2.5 py-1 text-[7px] font-bold text-white shadow-lg shadow-blue-500/30">Konsultasi Gratis →</span>
+            <span className="rounded-md border border-slate-600 px-2.5 py-1 text-[7px] font-medium text-slate-300">Lihat Portfolio</span>
+          </div>
         </div>
       </div>
-      {/* Stats */}
-      <div className="grid grid-cols-4 gap-1 border-b border-slate-100 bg-slate-50 px-3 py-2.5">
+      {/* Stats bar */}
+      <div className="grid grid-cols-4 divide-x divide-slate-100 bg-white border-b border-slate-100">
         {[
-          { n: "150+", l: "Proyek Selesai" },
-          { n: "80+", l: "Klien Aktif" },
-          { n: "12", l: "Tahun Pengalaman" },
-          { n: "99%", l: "Kepuasan Klien" },
+          { n: "150+", l: "Proyek", icon: "📊" },
+          { n: "80+", l: "Klien", icon: "🤝" },
+          { n: "12th", l: "Pengalaman", icon: "🏆" },
+          { n: "99%", l: "Kepuasan", icon: "⭐" },
         ].map((s) => (
-          <div key={s.l} className="text-center">
-            <p className="text-[10px] font-bold text-blue-600">{s.n}</p>
-            <p className="text-[6px] text-slate-500">{s.l}</p>
+          <div key={s.l} className="py-2 text-center">
+            <p className="text-[10px] font-extrabold text-slate-900">{s.n}</p>
+            <p className="text-[5.5px] text-slate-500 font-medium">{s.l}</p>
           </div>
         ))}
       </div>
-      {/* Services preview */}
-      <div className="px-3 py-2">
-        <p className="text-[7px] font-bold text-slate-800 mb-1.5">Layanan Kami</p>
-        <div className="grid grid-cols-3 gap-1.5">
+      {/* Services */}
+      <div className="flex-1 px-3 py-2">
+        <p className="text-[7px] font-bold text-slate-800 mb-1.5">Layanan Unggulan</p>
+        <div className="grid grid-cols-4 gap-1.5">
           {[
-            { icon: "🖥️", title: "Web Dev" },
-            { icon: "📱", title: "Mobile App" },
-            { icon: "☁️", title: "Cloud" },
+            { icon: "🖥️", title: "Web App", color: "from-blue-50 to-sky-50" },
+            { icon: "📱", title: "Mobile", color: "from-purple-50 to-violet-50" },
+            { icon: "☁️", title: "Cloud", color: "from-cyan-50 to-teal-50" },
+            { icon: "🤖", title: "AI/ML", color: "from-amber-50 to-orange-50" },
           ].map((s) => (
-            <div key={s.title} className="rounded border border-slate-100 bg-white p-1.5 text-center shadow-sm">
-              <span className="text-[9px]">{s.icon}</span>
-              <p className="text-[6px] font-medium text-slate-700 mt-0.5">{s.title}</p>
+            <div key={s.title} className={`rounded-lg bg-gradient-to-br ${s.color} p-2 text-center border border-slate-100`}>
+              <span className="text-[11px]">{s.icon}</span>
+              <p className="text-[6px] font-bold text-slate-700 mt-0.5">{s.title}</p>
             </div>
           ))}
         </div>
@@ -337,60 +400,79 @@ function PreviewCompany() {
 
 function PreviewSekolah() {
   return (
-    <div className="h-full bg-white">
+    <div className="h-full bg-[#f8faf8] flex flex-col">
       {/* Navbar */}
-      <div className="flex items-center justify-between bg-green-700 px-3 py-2">
-        <div className="flex items-center gap-1">
-          <span className="text-[8px]">🏫</span>
-          <span className="text-[9px] font-bold text-white">SDN 1 Cendekia</span>
+      <div className="flex items-center justify-between bg-gradient-to-r from-green-700 to-emerald-600 px-3 py-2">
+        <div className="flex items-center gap-1.5">
+          <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white/20">
+            <span className="text-[7px]">🏫</span>
+          </div>
+          <div>
+            <span className="text-[8px] font-bold text-white block leading-none">SDN 1 Cendekia</span>
+            <span className="text-[5px] text-green-200">Terakreditasi A</span>
+          </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[7px] text-green-200">Profil</span>
-          <span className="text-[7px] text-green-200">Akademik</span>
-          <span className="text-[7px] text-green-200">Berita</span>
-          <span className="text-[7px] text-green-200">PPDB</span>
-          <span className="text-[7px] text-green-200">Kontak</span>
+          <span className="text-[6.5px] text-green-100 font-medium">Profil</span>
+          <span className="text-[6.5px] text-green-100 font-medium">Akademik</span>
+          <span className="text-[6.5px] text-green-100 font-medium">Berita</span>
+          <span className="rounded bg-white px-1.5 py-0.5 text-[6.5px] font-bold text-green-700">PPDB 2025</span>
         </div>
       </div>
-      {/* Hero */}
-      <div className="bg-gradient-to-r from-green-600 to-emerald-500 px-3 py-3">
-        <p className="text-[7px] text-green-200 uppercase tracking-wider">Tahun Ajaran 2025/2026</p>
-        <p className="text-[10px] font-bold text-white mt-0.5">Selamat Datang di SDN 1 Cendekia</p>
-        <p className="text-[7px] text-green-100 mt-0.5">Mendidik generasi unggul, berkarakter, dan berprestasi</p>
-        <div className="mt-1.5 flex gap-1.5">
-          <span className="rounded bg-white px-2 py-0.5 text-[7px] font-bold text-green-700">Daftar PPDB</span>
-          <span className="rounded border border-white/40 px-2 py-0.5 text-[7px] text-white">Virtual Tour</span>
+      {/* Hero banner */}
+      <div className="relative bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 px-3 py-4 overflow-hidden">
+        <div className="absolute right-2 top-1 h-14 w-14 rounded-full bg-white/5" />
+        <div className="absolute right-6 bottom-0 h-8 w-8 rounded-full bg-white/10" />
+        <div className="relative">
+          <span className="inline-block rounded-full bg-yellow-400/90 px-2 py-0.5 text-[5.5px] font-bold text-green-900">🎓 PPDB 2025/2026 DIBUKA!</span>
+          <p className="text-[11px] font-extrabold text-white mt-1 leading-tight">Selamat Datang di<br/>SDN 1 Cendekia</p>
+          <p className="text-[7px] text-green-100/90 mt-0.5">Mendidik generasi unggul, berkarakter, & berprestasi nasional</p>
+          <div className="mt-2 flex gap-1.5">
+            <span className="rounded-md bg-white px-2 py-0.5 text-[7px] font-bold text-green-700 shadow-sm">Daftar Sekarang</span>
+            <span className="rounded-md border border-white/40 px-2 py-0.5 text-[7px] text-white">Virtual Tour 360°</span>
+          </div>
         </div>
       </div>
-      {/* Quick info cards */}
-      <div className="grid grid-cols-3 gap-1.5 px-2.5 py-2">
+      {/* Quick stats */}
+      <div className="grid grid-cols-4 divide-x divide-green-100 bg-white border-b border-slate-100 py-2">
         {[
           { icon: "👨‍🏫", val: "32", label: "Guru" },
           { icon: "👨‍🎓", val: "480", label: "Siswa" },
           { icon: "🏆", val: "25+", label: "Prestasi" },
+          { icon: "📚", val: "A", label: "Akreditasi" },
         ].map((i) => (
-          <div key={i.label} className="rounded bg-green-50 p-1.5 text-center">
-            <span className="text-[9px]">{i.icon}</span>
-            <p className="text-[9px] font-bold text-green-700">{i.val}</p>
-            <p className="text-[6px] text-slate-500">{i.label}</p>
+          <div key={i.label} className="text-center px-1">
+            <span className="text-[8px]">{i.icon}</span>
+            <p className="text-[9px] font-extrabold text-green-700 leading-none">{i.val}</p>
+            <p className="text-[5px] text-slate-500 font-medium">{i.label}</p>
           </div>
         ))}
       </div>
-      {/* Announcements */}
-      <div className="px-2.5 pb-2">
-        <p className="text-[7px] font-bold text-slate-800 mb-1">📢 Pengumuman Terbaru</p>
-        <div className="space-y-1">
-          {[
-            { date: "10 Jun", text: "Pendaftaran siswa baru gelombang 2 dibuka" },
-            { date: "08 Jun", text: "Jadwal UAS semester genap 2025" },
-            { date: "05 Jun", text: "Juara 1 Olimpiade Sains tingkat kota" },
-          ].map((a) => (
-            <div key={a.text} className="flex items-start gap-1.5 rounded bg-slate-50 px-1.5 py-1">
-              <span className="rounded bg-green-100 px-1 py-0.5 text-[5px] font-medium text-green-700 whitespace-nowrap">{a.date}</span>
-              <span className="text-[7px] text-slate-700 leading-tight">{a.text}</span>
-            </div>
-          ))}
+      {/* Announcements & news */}
+      <div className="flex-1 px-2.5 py-2 space-y-1.5 overflow-hidden">
+        <div className="flex items-center justify-between">
+          <p className="text-[7px] font-bold text-slate-800">📢 Pengumuman & Berita</p>
+          <span className="text-[5.5px] text-green-600 font-medium">Lihat Semua →</span>
         </div>
+        {[
+          { date: "10 Jun", text: "Pendaftaran siswa baru gelombang 2 dibuka", tag: "PPDB", color: "bg-green-500" },
+          { date: "08 Jun", text: "Jadwal UAS semester genap 2025 telah dirilis", tag: "Akademik", color: "bg-blue-500" },
+          { date: "05 Jun", text: "Juara 1 Olimpiade Sains Nasional 2025", tag: "Prestasi", color: "bg-amber-500" },
+          { date: "01 Jun", text: "Kegiatan Jum'at Bersih & Go Green", tag: "Kegiatan", color: "bg-purple-500" },
+        ].map((a) => (
+          <div key={a.text} className="flex items-start gap-1.5 rounded-lg bg-white px-2 py-1.5 border border-slate-100 shadow-sm">
+            <div className="flex flex-col items-center min-w-[22px]">
+              <span className="text-[6px] font-bold text-slate-800 leading-none">{a.date.split(" ")[0]}</span>
+              <span className="text-[5px] text-slate-400">{a.date.split(" ")[1]}</span>
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-1">
+                <span className={`${a.color} rounded px-1 py-0.5 text-[4.5px] font-bold text-white`}>{a.tag}</span>
+              </div>
+              <span className="text-[6.5px] text-slate-700 leading-tight block mt-0.5 truncate">{a.text}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -398,53 +480,76 @@ function PreviewSekolah() {
 
 function PreviewOrganisasi() {
   return (
-    <div className="h-full bg-white">
+    <div className="h-full bg-white flex flex-col">
       {/* Navbar */}
-      <div className="flex items-center justify-between bg-violet-700 px-3 py-2">
-        <span className="text-[9px] font-bold text-white">💜 Yayasan Kasih Bangsa</span>
+      <div className="flex items-center justify-between bg-gradient-to-r from-violet-800 to-purple-700 px-3 py-2">
+        <div className="flex items-center gap-1.5">
+          <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white/20">
+            <span className="text-[7px]">💜</span>
+          </div>
+          <span className="text-[8px] font-bold text-white">Yayasan Kasih Bangsa</span>
+        </div>
         <div className="flex items-center gap-2">
-          <span className="text-[7px] text-violet-200">Beranda</span>
-          <span className="text-[7px] text-violet-200">Program</span>
-          <span className="text-[7px] text-violet-200">Tentang</span>
-          <span className="rounded bg-yellow-400 px-1.5 py-0.5 text-[7px] font-bold text-violet-900">Donasi</span>
+          <span className="text-[6.5px] text-violet-200 font-medium">Program</span>
+          <span className="text-[6.5px] text-violet-200 font-medium">Galeri</span>
+          <span className="text-[6.5px] text-violet-200 font-medium">Tentang</span>
+          <span className="rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 px-2 py-0.5 text-[6.5px] font-bold text-violet-900 shadow-sm">❤️ Donasi</span>
         </div>
       </div>
       {/* Hero */}
-      <div className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 px-4 py-4 text-center">
-        <p className="text-[7px] text-violet-200 uppercase tracking-wider">Berbagi Kebaikan Sejak 2015</p>
-        <p className="text-[11px] font-bold text-white mt-0.5 leading-tight">Bersama Kita Bisa<br/>Wujudkan Mimpi Mereka</p>
-        <p className="text-[7px] text-violet-200 mt-1">Bantu anak-anak Indonesia raih pendidikan layak</p>
-        <div className="mt-2 flex justify-center gap-1.5">
-          <span className="rounded-full bg-yellow-400 px-2.5 py-0.5 text-[7px] font-bold text-violet-900">Donasi Sekarang</span>
-          <span className="rounded-full border border-white/40 px-2 py-0.5 text-[7px] text-white">Jadi Relawan</span>
+      <div className="relative bg-gradient-to-br from-violet-700 via-purple-600 to-indigo-700 px-4 py-5 text-center overflow-hidden">
+        <div className="absolute -left-6 -top-6 h-20 w-20 rounded-full bg-white/5" />
+        <div className="absolute right-0 bottom-0 h-14 w-14 rounded-full bg-white/5" />
+        <div className="relative">
+          <span className="inline-block rounded-full bg-white/15 px-2 py-0.5 text-[5.5px] font-bold text-violet-200 uppercase tracking-widest backdrop-blur-sm border border-white/10">Berbagi Kebaikan Sejak 2015</span>
+          <p className="mt-2 text-[12px] font-extrabold text-white leading-[1.15] tracking-tight">Bersama Wujudkan<br/>Mimpi Anak Bangsa</p>
+          <p className="mt-1 text-[7px] text-violet-200/90">Setiap donasi Anda membuka pintu pendidikan bagi anak-anak kurang mampu</p>
+          <div className="mt-2.5 flex justify-center gap-2">
+            <span className="rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 px-3 py-1 text-[7px] font-bold text-violet-900 shadow-lg shadow-yellow-500/30">Donasi Sekarang</span>
+            <span className="rounded-full border-2 border-white/30 px-2.5 py-1 text-[7px] font-medium text-white backdrop-blur-sm">Jadi Relawan</span>
+          </div>
+        </div>
+      </div>
+      {/* Donation progress */}
+      <div className="bg-violet-50 px-3 py-2 border-b border-violet-100">
+        <div className="flex items-center justify-between mb-1">
+          <span className="text-[6px] font-bold text-violet-800">🎯 Target Juni: Rp 50.000.000</span>
+          <span className="text-[6px] font-bold text-violet-600">78% tercapai</span>
+        </div>
+        <div className="h-1.5 w-full rounded-full bg-violet-200 overflow-hidden">
+          <div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-500" style={{ width: "78%" }} />
+        </div>
+        <div className="flex justify-between mt-0.5">
+          <span className="text-[5px] text-violet-500">Rp 39.000.000 terkumpul</span>
+          <span className="text-[5px] text-violet-500">423 donatur</span>
         </div>
       </div>
       {/* Impact stats */}
-      <div className="grid grid-cols-4 gap-1 bg-violet-50 px-3 py-2">
+      <div className="grid grid-cols-4 divide-x divide-slate-100 bg-white py-2 border-b border-slate-100">
         {[
-          { n: "5.200+", l: "Anak Dibantu" },
-          { n: "250+", l: "Relawan" },
-          { n: "18", l: "Kota" },
-          { n: "Rp 2.1M", l: "Dana Tersalurkan" },
+          { n: "5.200+", l: "Anak Terbantu", icon: "👶" },
+          { n: "250+", l: "Relawan", icon: "🤝" },
+          { n: "18", l: "Kota", icon: "🏙️" },
+          { n: "Rp 2.1M", l: "Tersalurkan", icon: "💰" },
         ].map((s) => (
-          <div key={s.l} className="text-center">
-            <p className="text-[9px] font-bold text-violet-700">{s.n}</p>
-            <p className="text-[5px] text-slate-500">{s.l}</p>
+          <div key={s.l} className="text-center px-1">
+            <p className="text-[8px] font-extrabold text-violet-700">{s.n}</p>
+            <p className="text-[5px] text-slate-500 font-medium">{s.l}</p>
           </div>
         ))}
       </div>
       {/* Programs */}
-      <div className="px-2.5 py-2">
-        <p className="text-[7px] font-bold text-slate-800 mb-1.5">Program Kami</p>
+      <div className="flex-1 px-2.5 py-2">
+        <p className="text-[7px] font-bold text-slate-800 mb-1.5">Program Unggulan</p>
         <div className="grid grid-cols-3 gap-1.5">
           {[
-            { icon: "📚", title: "Beasiswa", desc: "Pendidikan gratis" },
-            { icon: "🍚", title: "Pangan", desc: "1000 paket/bulan" },
-            { icon: "🏥", title: "Kesehatan", desc: "Layanan medis" },
+            { icon: "📚", title: "Beasiswa", desc: "500 anak/tahun", color: "from-blue-50 to-indigo-50 border-blue-100" },
+            { icon: "🍚", title: "Pangan", desc: "1000 paket/bln", color: "from-amber-50 to-orange-50 border-amber-100" },
+            { icon: "🏥", title: "Kesehatan", desc: "Layanan gratis", color: "from-green-50 to-emerald-50 border-green-100" },
           ].map((p) => (
-            <div key={p.title} className="rounded border border-violet-100 bg-white p-1.5 text-center">
-              <span className="text-[9px]">{p.icon}</span>
-              <p className="text-[7px] font-medium text-slate-800">{p.title}</p>
+            <div key={p.title} className={`rounded-lg bg-gradient-to-br ${p.color} border p-1.5 text-center`}>
+              <span className="text-[10px]">{p.icon}</span>
+              <p className="text-[6.5px] font-bold text-slate-800">{p.title}</p>
               <p className="text-[5px] text-slate-500">{p.desc}</p>
             </div>
           ))}
@@ -456,84 +561,103 @@ function PreviewOrganisasi() {
 
 function PreviewPOS() {
   return (
-    <div className="h-full bg-slate-100">
+    <div className="h-full bg-[#1e293b] flex flex-col">
       {/* Top bar */}
-      <div className="flex items-center justify-between bg-slate-800 px-3 py-1.5">
-        <span className="text-[9px] font-bold text-white">💳 KasirPro</span>
+      <div className="flex items-center justify-between bg-slate-900 px-2.5 py-1.5 border-b border-slate-700">
+        <div className="flex items-center gap-1.5">
+          <div className="h-3.5 w-3.5 rounded bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center">
+            <span className="text-[5px] font-bold text-white">K</span>
+          </div>
+          <span className="text-[8px] font-bold text-white">KasirPro</span>
+          <span className="rounded bg-emerald-500/20 px-1 py-0.5 text-[5px] font-bold text-emerald-400">PRO</span>
+        </div>
         <div className="flex items-center gap-2">
-          <span className="text-[7px] text-slate-400">Kasir: Ahmad</span>
-          <span className="text-[7px] text-slate-400">|</span>
-          <span className="text-[7px] text-green-400">● Online</span>
+          <span className="text-[6px] text-slate-400">👤 Ahmad (Kasir 1)</span>
+          <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
+          <span className="text-[6px] text-green-400">Online</span>
         </div>
       </div>
       {/* Main layout */}
-      <div className="flex h-[calc(100%-28px)]">
-        {/* Left - product grid */}
-        <div className="flex-1 p-2 overflow-hidden">
-          {/* Search */}
-          <div className="flex items-center gap-1 mb-1.5">
-            <div className="flex h-4 flex-1 items-center rounded bg-white px-1.5 border border-slate-200">
-              <span className="text-[6px] text-slate-400">🔍 Cari produk atau scan barcode...</span>
+      <div className="flex flex-1 overflow-hidden">
+        {/* Left - product area */}
+        <div className="flex-1 flex flex-col p-2 overflow-hidden">
+          {/* Search + actions */}
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <div className="flex h-5 flex-1 items-center rounded-md bg-slate-800 px-2 border border-slate-600">
+              <svg className="h-2 w-2 text-slate-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <span className="text-[6px] text-slate-500">Scan barcode atau ketik nama...</span>
             </div>
-            <span className="rounded bg-blue-500 px-1.5 py-0.5 text-[6px] text-white">+ Manual</span>
+            <span className="rounded-md bg-blue-600 px-1.5 py-1 text-[6px] font-medium text-white">📷 Scan</span>
           </div>
           {/* Category tabs */}
-          <div className="flex gap-1 mb-1.5">
-            {["Semua", "Minuman", "Makanan", "Snack"].map((c, i) => (
-              <span key={c} className={`rounded px-1.5 py-0.5 text-[6px] ${i === 1 ? "bg-blue-500 text-white" : "bg-white text-slate-600 border border-slate-200"}`}>{c}</span>
+          <div className="flex gap-1 mb-2">
+            {["☕ Minuman", "🍞 Makanan", "🍪 Snack", "🧊 Dingin"].map((c, i) => (
+              <span key={c} className={`rounded-md px-1.5 py-0.5 text-[6px] font-medium ${i === 0 ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-400 border border-slate-700"}`}>{c}</span>
             ))}
           </div>
-          {/* Products */}
-          <div className="grid grid-cols-3 gap-1">
+          {/* Product grid */}
+          <div className="grid grid-cols-4 gap-1.5 flex-1 overflow-hidden">
             {[
-              { n: "Kopi Latte", p: "28K" },
-              { n: "Americano", p: "22K" },
-              { n: "Cappuccino", p: "30K" },
-              { n: "Matcha Latte", p: "32K" },
-              { n: "Es Teh", p: "10K" },
-              { n: "Air Mineral", p: "5K" },
+              { n: "Kopi Latte", p: "28K", emoji: "☕" },
+              { n: "Americano", p: "22K", emoji: "☕" },
+              { n: "Cappuccino", p: "30K", emoji: "☕" },
+              { n: "Matcha", p: "32K", emoji: "🍵" },
+              { n: "Es Teh", p: "10K", emoji: "🧊" },
+              { n: "Croissant", p: "22K", emoji: "🥐" },
+              { n: "Roti Bakar", p: "18K", emoji: "🍞" },
+              { n: "Mineral", p: "5K", emoji: "💧" },
             ].map((item) => (
-              <div key={item.n} className="rounded bg-white border border-slate-200 p-1 text-center cursor-pointer hover:border-blue-300">
-                <div className="h-5 w-full rounded bg-slate-100 mb-0.5" />
-                <p className="text-[6px] text-slate-700 truncate">{item.n}</p>
-                <p className="text-[7px] font-bold text-slate-900">{item.p}</p>
+              <div key={item.n} className="rounded-lg bg-slate-800 border border-slate-700 p-1.5 text-center hover:border-blue-500 transition-colors cursor-pointer flex flex-col items-center justify-center">
+                <span className="text-[12px] mb-0.5">{item.emoji}</span>
+                <p className="text-[5.5px] text-slate-300 truncate w-full">{item.n}</p>
+                <p className="text-[7px] font-bold text-white mt-0.5">Rp{item.p}</p>
               </div>
             ))}
           </div>
         </div>
-        {/* Right - cart */}
-        <div className="w-[42%] border-l border-slate-200 bg-white p-2 flex flex-col">
-          <p className="text-[7px] font-bold text-slate-800 mb-1">🧾 Pesanan #047</p>
-          <div className="flex-1 space-y-1 overflow-hidden">
+        {/* Right - order panel */}
+        <div className="w-[38%] bg-slate-900 border-l border-slate-700 flex flex-col">
+          {/* Order header */}
+          <div className="flex items-center justify-between px-2 py-1.5 border-b border-slate-700">
+            <span className="text-[7px] font-bold text-white">🧾 Order #047</span>
+            <span className="text-[5px] text-slate-500">Meja 5</span>
+          </div>
+          {/* Items */}
+          <div className="flex-1 px-2 py-1.5 space-y-1 overflow-hidden">
             {[
-              { n: "Kopi Latte", q: "2x", p: "56.000" },
-              { n: "Croissant", q: "1x", p: "22.000" },
-              { n: "Air Mineral", q: "1x", p: "5.000" },
+              { n: "Kopi Latte", q: 2, p: "56.000" },
+              { n: "Croissant", q: 1, p: "22.000" },
+              { n: "Matcha Latte", q: 1, p: "32.000" },
+              { n: "Air Mineral", q: 2, p: "10.000" },
             ].map((i) => (
-              <div key={i.n} className="flex items-center justify-between border-b border-dashed border-slate-100 pb-0.5">
-                <div>
-                  <span className="text-[7px] text-slate-700">{i.n}</span>
-                  <span className="ml-1 text-[6px] text-slate-400">{i.q}</span>
+              <div key={i.n} className="flex items-center justify-between py-0.5 border-b border-slate-800">
+                <div className="flex-1 min-w-0">
+                  <span className="text-[6.5px] text-slate-300 block truncate">{i.n}</span>
+                  <span className="text-[5.5px] text-slate-500">{i.q}x</span>
                 </div>
-                <span className="text-[7px] text-slate-900">{i.p}</span>
+                <span className="text-[7px] font-medium text-white">{i.p}</span>
               </div>
             ))}
           </div>
-          <div className="border-t border-slate-200 pt-1 mt-1">
-            <div className="flex justify-between text-[6px] text-slate-500">
-              <span>Subtotal</span><span>83.000</span>
+          {/* Totals */}
+          <div className="px-2 py-1.5 border-t border-slate-700 space-y-0.5">
+            <div className="flex justify-between">
+              <span className="text-[6px] text-slate-500">Subtotal</span>
+              <span className="text-[6px] text-slate-400">120.000</span>
             </div>
-            <div className="flex justify-between text-[6px] text-slate-500">
-              <span>Pajak (11%)</span><span>9.130</span>
+            <div className="flex justify-between">
+              <span className="text-[6px] text-slate-500">PPN (11%)</span>
+              <span className="text-[6px] text-slate-400">13.200</span>
             </div>
-            <div className="flex justify-between mt-0.5">
-              <span className="text-[8px] font-bold text-slate-900">TOTAL</span>
-              <span className="text-[8px] font-bold text-slate-900">Rp 92.130</span>
+            <div className="flex justify-between pt-1 border-t border-slate-700">
+              <span className="text-[8px] font-bold text-white">TOTAL</span>
+              <span className="text-[8px] font-bold text-emerald-400">Rp 133.200</span>
             </div>
           </div>
-          <div className="mt-1.5 grid grid-cols-2 gap-1">
-            <span className="rounded bg-slate-100 py-0.5 text-center text-[6px] font-medium text-slate-700 border border-slate-200">💵 Tunai</span>
-            <span className="rounded bg-green-600 py-0.5 text-center text-[6px] font-bold text-white">BAYAR →</span>
+          {/* Payment buttons */}
+          <div className="px-2 pb-2 grid grid-cols-2 gap-1">
+            <span className="rounded-md bg-slate-800 border border-slate-700 py-1 text-center text-[6px] font-medium text-slate-300">💵 Cash</span>
+            <span className="rounded-md bg-gradient-to-r from-emerald-500 to-green-500 py-1 text-center text-[6px] font-bold text-white shadow-sm">✓ BAYAR</span>
           </div>
         </div>
       </div>
@@ -543,78 +667,111 @@ function PreviewPOS() {
 
 function PreviewInventory() {
   return (
-    <div className="h-full bg-slate-50">
-      {/* Sidebar + content layout */}
-      <div className="flex h-full">
-        {/* Sidebar */}
-        <div className="w-[22%] bg-slate-900 p-2 space-y-1.5">
-          <p className="text-[8px] font-bold text-white mb-2">📦 StokKu</p>
+    <div className="h-full bg-[#f1f5f9] flex">
+      {/* Sidebar */}
+      <div className="w-[20%] bg-slate-900 flex flex-col">
+        <div className="px-2 py-2 border-b border-slate-800">
+          <div className="flex items-center gap-1">
+            <div className="h-3.5 w-3.5 rounded bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
+              <span className="text-[5px] font-bold text-white">S</span>
+            </div>
+            <span className="text-[7px] font-bold text-white">StokKu</span>
+          </div>
+        </div>
+        <div className="px-1.5 py-2 space-y-0.5 flex-1">
           {[
             { icon: "📊", label: "Dashboard", active: false },
             { icon: "📦", label: "Produk", active: true },
             { icon: "📥", label: "Stok Masuk", active: false },
             { icon: "📤", label: "Stok Keluar", active: false },
+            { icon: "🏷️", label: "Kategori", active: false },
             { icon: "📋", label: "Laporan", active: false },
-            { icon: "⚙️", label: "Pengaturan", active: false },
+            { icon: "👥", label: "Supplier", active: false },
           ].map((m) => (
-            <div key={m.label} className={`flex items-center gap-1 rounded px-1 py-0.5 ${m.active ? "bg-blue-600" : ""}`}>
+            <div key={m.label} className={`flex items-center gap-1 rounded-md px-1.5 py-1 ${m.active ? "bg-blue-600 shadow-sm shadow-blue-500/30" : "hover:bg-slate-800"}`}>
               <span className="text-[6px]">{m.icon}</span>
-              <span className={`text-[6px] ${m.active ? "text-white font-medium" : "text-slate-400"}`}>{m.label}</span>
+              <span className={`text-[5.5px] ${m.active ? "text-white font-bold" : "text-slate-400 font-medium"}`}>{m.label}</span>
             </div>
           ))}
         </div>
-        {/* Main content */}
-        <div className="flex-1 p-2 overflow-hidden">
-          {/* Top bar */}
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-[8px] font-bold text-slate-800">Manajemen Produk</p>
-            <div className="flex gap-1">
-              <span className="rounded bg-white border border-slate-200 px-1.5 py-0.5 text-[6px] text-slate-500">🔍 Cari produk...</span>
-              <span className="rounded bg-blue-600 px-1.5 py-0.5 text-[6px] font-medium text-white">+ Tambah</span>
+        <div className="px-2 pb-2">
+          <div className="rounded-md bg-slate-800 p-1.5">
+            <p className="text-[5px] text-slate-500">Storage</p>
+            <div className="h-1 w-full rounded-full bg-slate-700 mt-0.5">
+              <div className="h-full rounded-full bg-blue-500" style={{ width: "65%" }} />
             </div>
+            <p className="text-[5px] text-slate-500 mt-0.5">65% used</p>
           </div>
-          {/* Summary cards */}
-          <div className="grid grid-cols-3 gap-1 mb-2">
-            {[
-              { label: "Total Produk", val: "348", color: "text-blue-600" },
-              { label: "Stok Menipis", val: "12", color: "text-yellow-600" },
-              { label: "Stok Habis", val: "3", color: "text-red-600" },
-            ].map((c) => (
-              <div key={c.label} className="rounded bg-white border border-slate-100 p-1.5">
-                <p className="text-[5px] text-slate-500">{c.label}</p>
-                <p className={`text-[10px] font-bold ${c.color}`}>{c.val}</p>
+        </div>
+      </div>
+      {/* Main content */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Top bar */}
+        <div className="flex items-center justify-between bg-white px-3 py-1.5 border-b border-slate-200">
+          <div>
+            <p className="text-[8px] font-bold text-slate-900">Manajemen Produk</p>
+            <p className="text-[5.5px] text-slate-500">348 produk terdaftar</p>
+          </div>
+          <div className="flex gap-1.5">
+            <div className="flex h-4 items-center rounded-md bg-slate-100 px-2 border border-slate-200">
+              <span className="text-[5.5px] text-slate-500">🔍 Cari SKU atau nama...</span>
+            </div>
+            <span className="rounded-md bg-blue-600 px-2 py-0.5 text-[6px] font-bold text-white shadow-sm">+ Tambah Produk</span>
+          </div>
+        </div>
+        {/* Alert banner */}
+        <div className="mx-3 mt-1.5 flex items-center gap-1.5 rounded-md bg-amber-50 border border-amber-200 px-2 py-1">
+          <span className="text-[7px]">⚠️</span>
+          <span className="text-[6px] text-amber-700 font-medium">12 produk stok menipis & 3 produk sudah habis. Segera lakukan restok!</span>
+          <span className="ml-auto text-[5.5px] text-amber-600 font-bold underline">Lihat Detail</span>
+        </div>
+        {/* Stats */}
+        <div className="grid grid-cols-4 gap-2 px-3 py-2">
+          {[
+            { label: "Total SKU", val: "348", change: "+12", up: true, color: "text-blue-600", bg: "bg-blue-50 border-blue-100" },
+            { label: "Stok Masuk", val: "1.250", change: "+180", up: true, color: "text-green-600", bg: "bg-green-50 border-green-100" },
+            { label: "Stok Menipis", val: "12", change: "+3", up: false, color: "text-amber-600", bg: "bg-amber-50 border-amber-100" },
+            { label: "Stok Habis", val: "3", change: "+1", up: false, color: "text-red-600", bg: "bg-red-50 border-red-100" },
+          ].map((c) => (
+            <div key={c.label} className={`rounded-lg ${c.bg} border p-1.5`}>
+              <p className="text-[5px] text-slate-500 font-medium">{c.label}</p>
+              <div className="flex items-baseline gap-1">
+                <p className={`text-[10px] font-extrabold ${c.color}`}>{c.val}</p>
+                <span className={`text-[5px] font-bold ${c.up ? "text-green-500" : "text-red-500"}`}>{c.change}</span>
               </div>
-            ))}
-          </div>
-          {/* Table */}
-          <div className="rounded bg-white border border-slate-100 overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-slate-50 border-b border-slate-100">
-                  <th className="py-1 px-1.5 text-left text-[6px] font-medium text-slate-500">SKU</th>
-                  <th className="py-1 px-1.5 text-left text-[6px] font-medium text-slate-500">Produk</th>
-                  <th className="py-1 px-1.5 text-right text-[6px] font-medium text-slate-500">Stok</th>
-                  <th className="py-1 px-1.5 text-right text-[6px] font-medium text-slate-500">Status</th>
+            </div>
+          ))}
+        </div>
+        {/* Table */}
+        <div className="flex-1 mx-3 mb-2 rounded-lg bg-white border border-slate-200 overflow-hidden shadow-sm">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-slate-50 border-b border-slate-200">
+                <th className="py-1 px-2 text-left text-[5.5px] font-bold text-slate-500 uppercase tracking-wider">SKU</th>
+                <th className="py-1 px-2 text-left text-[5.5px] font-bold text-slate-500 uppercase tracking-wider">Produk</th>
+                <th className="py-1 px-2 text-right text-[5.5px] font-bold text-slate-500 uppercase tracking-wider">Stok</th>
+                <th className="py-1 px-2 text-right text-[5.5px] font-bold text-slate-500 uppercase tracking-wider">Harga</th>
+                <th className="py-1 px-2 text-center text-[5.5px] font-bold text-slate-500 uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { sku: "KS-001", n: "Kaos Polos Hitam", s: "245", price: "89.000", st: "Aman", c: "bg-green-100 text-green-700 border-green-200" },
+                { sku: "TP-012", n: "Topi Baseball Premium", s: "12", price: "125.000", st: "Menipis", c: "bg-amber-100 text-amber-700 border-amber-200" },
+                { sku: "TK-003", n: "Tas Kanvas Large", s: "0", price: "175.000", st: "Habis", c: "bg-red-100 text-red-700 border-red-200" },
+                { sku: "JK-007", n: "Jaket Denim Wash", s: "89", price: "285.000", st: "Aman", c: "bg-green-100 text-green-700 border-green-200" },
+                { sku: "SP-021", n: "Sneakers Canvas", s: "8", price: "245.000", st: "Menipis", c: "bg-amber-100 text-amber-700 border-amber-200" },
+              ].map((r) => (
+                <tr key={r.sku} className="border-b border-slate-50 hover:bg-slate-50">
+                  <td className="py-1 px-2 text-[5.5px] text-blue-600 font-mono font-medium">{r.sku}</td>
+                  <td className="py-1 px-2 text-[6px] text-slate-800 font-medium">{r.n}</td>
+                  <td className="py-1 px-2 text-right text-[6.5px] font-bold text-slate-900">{r.s}</td>
+                  <td className="py-1 px-2 text-right text-[6px] text-slate-600">Rp{r.price}</td>
+                  <td className="py-1 px-2 text-center"><span className={`rounded-full border px-1.5 py-0.5 text-[5px] font-bold ${r.c}`}>{r.st}</span></td>
                 </tr>
-              </thead>
-              <tbody>
-                {[
-                  { sku: "KS-001", n: "Kaos Polos Hitam", s: "245", st: "Aman", c: "bg-green-100 text-green-700" },
-                  { sku: "TP-012", n: "Topi Baseball", s: "12", st: "Menipis", c: "bg-yellow-100 text-yellow-700" },
-                  { sku: "TK-003", n: "Tas Kanvas Besar", s: "0", st: "Habis", c: "bg-red-100 text-red-700" },
-                  { sku: "JK-007", n: "Jaket Denim", s: "89", st: "Aman", c: "bg-green-100 text-green-700" },
-                  { sku: "SP-021", n: "Sepatu Sneaker", s: "8", st: "Menipis", c: "bg-yellow-100 text-yellow-700" },
-                ].map((r) => (
-                  <tr key={r.sku} className="border-b border-slate-50">
-                    <td className="py-0.5 px-1.5 text-[6px] text-slate-400 font-mono">{r.sku}</td>
-                    <td className="py-0.5 px-1.5 text-[7px] text-slate-700">{r.n}</td>
-                    <td className="py-0.5 px-1.5 text-right text-[7px] font-medium text-slate-900">{r.s}</td>
-                    <td className="py-0.5 px-1.5 text-right"><span className={`rounded-full px-1 py-0.5 text-[5px] font-medium ${r.c}`}>{r.st}</span></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -623,84 +780,107 @@ function PreviewInventory() {
 
 function PreviewBooking() {
   return (
-    <div className="h-full bg-white">
+    <div className="h-full bg-white flex flex-col">
       {/* Navbar */}
-      <div className="flex items-center justify-between bg-teal-700 px-3 py-2">
-        <span className="text-[9px] font-bold text-white">📅 BookKu</span>
+      <div className="flex items-center justify-between bg-gradient-to-r from-teal-700 to-cyan-600 px-3 py-2">
+        <div className="flex items-center gap-1.5">
+          <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white/20">
+            <span className="text-[7px]">📅</span>
+          </div>
+          <span className="text-[9px] font-bold text-white tracking-tight">BookingKu</span>
+        </div>
         <div className="flex items-center gap-2">
-          <span className="text-[7px] text-teal-200">Beranda</span>
-          <span className="text-[7px] text-teal-200">Layanan</span>
-          <span className="text-[7px] text-teal-200">Jadwal</span>
-          <span className="rounded bg-white px-1.5 py-0.5 text-[7px] font-medium text-teal-700">Booking</span>
+          <span className="text-[6.5px] text-teal-100 font-medium">Beranda</span>
+          <span className="text-[6.5px] text-teal-100 font-medium">Layanan</span>
+          <span className="text-[6.5px] text-teal-100 font-medium">Jadwal</span>
+          <span className="rounded-md bg-white px-2 py-0.5 text-[6.5px] font-bold text-teal-700 shadow-sm">+ Booking</span>
         </div>
       </div>
-      {/* Content */}
-      <div className="flex h-[calc(100%-32px)]">
-        {/* Left - calendar */}
-        <div className="flex-1 p-2.5">
-          <div className="flex items-center justify-between mb-1.5">
-            <p className="text-[8px] font-bold text-slate-800">Juni 2025</p>
-            <div className="flex gap-1">
-              <span className="rounded bg-slate-100 px-1 py-0.5 text-[7px] text-slate-600">‹</span>
-              <span className="rounded bg-slate-100 px-1 py-0.5 text-[7px] text-slate-600">›</span>
+      {/* Main content */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Left - calendar & service */}
+        <div className="flex-1 p-2.5 flex flex-col overflow-hidden">
+          {/* Service selector */}
+          <div className="flex gap-1 mb-2">
+            {["💇 Potong Rambut", "💆 Creambath", "💅 Manicure", "🧖 Spa"].map((s, i) => (
+              <span key={s} className={`rounded-full px-2 py-0.5 text-[5.5px] font-medium whitespace-nowrap ${i === 0 ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-600 border border-slate-200"}`}>{s}</span>
+            ))}
+          </div>
+          {/* Calendar */}
+          <div className="rounded-lg border border-slate-200 bg-white p-2 shadow-sm">
+            <div className="flex items-center justify-between mb-1.5">
+              <p className="text-[8px] font-bold text-slate-900">Juni 2025</p>
+              <div className="flex gap-1">
+                <span className="flex h-4 w-4 items-center justify-center rounded-md bg-slate-100 text-[7px] text-slate-600 cursor-pointer">‹</span>
+                <span className="flex h-4 w-4 items-center justify-center rounded-md bg-slate-100 text-[7px] text-slate-600 cursor-pointer">›</span>
+              </div>
+            </div>
+            {/* Calendar grid */}
+            <div className="grid grid-cols-7 gap-0.5">
+              {["Sen","Sel","Rab","Kam","Jum","Sab","Min"].map((d) => (
+                <div key={d} className="text-center text-[5px] font-bold text-slate-400 pb-1 uppercase">{d}</div>
+              ))}
+              {/* Offset for June 2025 starts on Sunday */}
+              {[null, null, null, null, null, null].map((_, i) => (
+                <div key={`e${i}`} />
+              ))}
+              {Array.from({ length: 28 }, (_, i) => i + 1).map((d) => (
+                <div key={d} className={`flex h-[14px] items-center justify-center rounded-md text-[6px] transition-all ${
+                  d === 15 ? "bg-teal-600 text-white font-bold shadow-sm shadow-teal-300/50 ring-2 ring-teal-300" :
+                  [5, 12, 19, 26].includes(d) ? "bg-teal-500 text-white font-bold" :
+                  [6, 7, 13, 14, 20, 21, 27].includes(d) ? "bg-teal-100 text-teal-700 font-medium" :
+                  [3, 10, 17, 24].includes(d) ? "bg-red-50 text-red-400 line-through" :
+                  "text-slate-600 hover:bg-slate-50"
+                }`}>
+                  {d}
+                </div>
+              ))}
             </div>
           </div>
-          {/* Calendar grid */}
-          <div className="grid grid-cols-7 gap-0.5">
-            {["Sen","Sel","Rab","Kam","Jum","Sab","Min"].map((d) => (
-              <div key={d} className="text-center text-[5px] font-medium text-slate-400 pb-0.5">{d}</div>
-            ))}
-            {/* Empty cells for alignment */}
-            {[null, null, null, null, null, null].map((_, i) => (
-              <div key={`e${i}`} />
-            ))}
-            {Array.from({ length: 28 }, (_, i) => i + 1).map((d) => (
-              <div key={d} className={`flex h-4 items-center justify-center rounded text-[6px] ${
-                [5, 12, 19].includes(d) ? "bg-teal-500 text-white font-bold" :
-                [6, 7, 13, 20, 21].includes(d) ? "bg-teal-100 text-teal-700" :
-                d === 15 ? "ring-1 ring-teal-400 text-teal-700 font-bold" :
-                [14, 27, 28].includes(d) ? "bg-red-100 text-red-400 line-through" :
-                "text-slate-600 hover:bg-slate-50"
-              }`}>
-                {d}
-              </div>
-            ))}
-          </div>
           {/* Legend */}
-          <div className="mt-1.5 flex gap-2">
-            <span className="flex items-center gap-0.5 text-[5px] text-slate-500"><span className="h-1.5 w-1.5 rounded-full bg-teal-500" /> Penuh</span>
-            <span className="flex items-center gap-0.5 text-[5px] text-slate-500"><span className="h-1.5 w-1.5 rounded-full bg-teal-100" /> Sebagian</span>
-            <span className="flex items-center gap-0.5 text-[5px] text-slate-500"><span className="h-1.5 w-1.5 rounded-full bg-red-100" /> Libur</span>
-            <span className="flex items-center gap-0.5 text-[5px] text-slate-500"><span className="h-1.5 w-1.5 ring-1 ring-teal-400 rounded-full" /> Hari Ini</span>
+          <div className="mt-1.5 flex gap-2.5">
+            <span className="flex items-center gap-0.5 text-[5px] text-slate-500 font-medium"><span className="h-2 w-2 rounded-sm bg-teal-500" />Penuh</span>
+            <span className="flex items-center gap-0.5 text-[5px] text-slate-500 font-medium"><span className="h-2 w-2 rounded-sm bg-teal-100" />Tersedia</span>
+            <span className="flex items-center gap-0.5 text-[5px] text-slate-500 font-medium"><span className="h-2 w-2 rounded-sm bg-red-50 border border-red-200" />Libur</span>
+            <span className="flex items-center gap-0.5 text-[5px] text-slate-500 font-medium"><span className="h-2 w-2 rounded-sm ring-2 ring-teal-400 bg-teal-600" />Hari Ini</span>
           </div>
         </div>
-        {/* Right - time slots */}
-        <div className="w-[38%] border-l border-slate-100 p-2 bg-slate-50">
-          <p className="text-[7px] font-bold text-slate-800 mb-0.5">15 Juni 2025</p>
-          <p className="text-[6px] text-slate-500 mb-1.5">Pilih waktu tersedia:</p>
-          <div className="space-y-1">
+        {/* Right - time slots & booking */}
+        <div className="w-[36%] border-l border-slate-200 bg-slate-50 flex flex-col overflow-hidden">
+          <div className="px-2 py-2 border-b border-slate-200 bg-white">
+            <p className="text-[7px] font-bold text-slate-900">Minggu, 15 Juni 2025</p>
+            <p className="text-[5.5px] text-teal-600 font-medium">💇 Potong Rambut — 30 menit</p>
+          </div>
+          <div className="flex-1 px-2 py-1.5 space-y-1 overflow-hidden">
+            <p className="text-[5.5px] text-slate-500 font-bold uppercase tracking-wider mb-1">Pilih Waktu</p>
             {[
               { time: "09:00", status: "available" },
-              { time: "10:00", status: "booked" },
+              { time: "09:30", status: "available" },
+              { time: "10:00", status: "booked", who: "Andi S." },
+              { time: "10:30", status: "booked", who: "Budi R." },
               { time: "11:00", status: "available" },
-              { time: "13:00", status: "booked" },
+              { time: "13:00", status: "booked", who: "Clara N." },
+              { time: "13:30", status: "available" },
               { time: "14:00", status: "available" },
-              { time: "15:00", status: "available" },
-              { time: "16:00", status: "booked" },
             ].map((slot) => (
-              <div key={slot.time} className={`flex items-center justify-between rounded px-1.5 py-0.5 ${
-                slot.status === "booked" ? "bg-slate-200" : "bg-white border border-teal-200"
+              <div key={slot.time} className={`flex items-center justify-between rounded-md px-2 py-1 ${
+                slot.status === "booked" ? "bg-slate-100 border border-slate-200" : "bg-white border border-teal-200 shadow-sm"
               }`}>
-                <span className={`text-[7px] ${slot.status === "booked" ? "text-slate-400" : "text-slate-700 font-medium"}`}>{slot.time}</span>
+                <div className="flex items-center gap-1.5">
+                  <span className={`h-1.5 w-1.5 rounded-full ${slot.status === "booked" ? "bg-slate-300" : "bg-teal-400"}`} />
+                  <span className={`text-[6.5px] font-mono ${slot.status === "booked" ? "text-slate-400" : "text-slate-800 font-bold"}`}>{slot.time}</span>
+                </div>
                 {slot.status === "booked" ? (
-                  <span className="text-[5px] text-slate-400">Terisi</span>
+                  <span className="text-[5px] text-slate-400 italic">{slot.who}</span>
                 ) : (
-                  <span className="text-[5px] text-teal-600 font-medium">Pilih</span>
+                  <span className="text-[5.5px] text-teal-600 font-bold">Pilih →</span>
                 )}
               </div>
             ))}
           </div>
-          <div className="mt-2 rounded bg-teal-600 py-1 text-center text-[7px] font-bold text-white">Konfirmasi Booking</div>
+          <div className="px-2 pb-2">
+            <div className="rounded-md bg-gradient-to-r from-teal-600 to-cyan-600 py-1.5 text-center text-[7px] font-bold text-white shadow-sm shadow-teal-500/30">Konfirmasi Booking →</div>
+          </div>
         </div>
       </div>
     </div>
