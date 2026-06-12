@@ -27,13 +27,19 @@ const painPoints = [
     icon: ShieldX,
     title: "Persaingan Harga Ketat",
     explanation:
-      "Persaingan harga semakin ketat.",
+      "Persaingan harga semakin ketat dan margin makin tipis.",
   },
   {
     icon: RefreshCw,
     title: "Algoritma Bisa Berubah Kapan Saja",
     explanation:
       "Satu perubahan algoritma bisa langsung memengaruhi penjualan.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Sulit Membangun Loyalitas",
+    explanation:
+      "Pelanggan mudah berpindah ke kompetitor karena tidak ada ikatan langsung.",
   },
 ];
 
