@@ -403,7 +403,7 @@ function PreviewSekolah() {
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/preview-sekolah.webp"
+        src="/images/WebSekolah.webp"
         alt="Preview Website Sekolah"
         className="h-full w-full object-cover object-top"
       />
@@ -413,81 +413,13 @@ function PreviewSekolah() {
 
 function PreviewOrganisasi() {
   return (
-    <div className="h-full bg-white flex flex-col">
-      {/* Navbar */}
-      <div className="flex items-center justify-between bg-gradient-to-r from-violet-800 to-purple-700 px-3 py-2">
-        <div className="flex items-center gap-1.5">
-          <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white/20">
-            <span className="text-[7px]">💜</span>
-          </div>
-          <span className="text-[8px] font-bold text-white">Yayasan Kasih Bangsa</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[6.5px] text-violet-200 font-medium">Program</span>
-          <span className="text-[6.5px] text-violet-200 font-medium">Galeri</span>
-          <span className="text-[6.5px] text-violet-200 font-medium">Tentang</span>
-          <span className="rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 px-2 py-0.5 text-[6.5px] font-bold text-violet-900 shadow-sm">❤️ Donasi</span>
-        </div>
-      </div>
-      {/* Hero */}
-      <div className="relative bg-gradient-to-br from-violet-700 via-purple-600 to-indigo-700 px-4 py-5 text-center overflow-hidden">
-        <div className="absolute -left-6 -top-6 h-20 w-20 rounded-full bg-white/5" />
-        <div className="absolute right-0 bottom-0 h-14 w-14 rounded-full bg-white/5" />
-        <div className="relative">
-          <span className="inline-block rounded-full bg-white/15 px-2 py-0.5 text-[5.5px] font-bold text-violet-200 uppercase tracking-widest backdrop-blur-sm border border-white/10">Berbagi Kebaikan Sejak 2015</span>
-          <p className="mt-2 text-[12px] font-extrabold text-white leading-[1.15] tracking-tight">Bersama Wujudkan<br/>Mimpi Anak Bangsa</p>
-          <p className="mt-1 text-[7px] text-violet-200/90">Setiap donasi Anda membuka pintu pendidikan bagi anak-anak kurang mampu</p>
-          <div className="mt-2.5 flex justify-center gap-2">
-            <span className="rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 px-3 py-1 text-[7px] font-bold text-violet-900 shadow-lg shadow-yellow-500/30">Donasi Sekarang</span>
-            <span className="rounded-full border-2 border-white/30 px-2.5 py-1 text-[7px] font-medium text-white backdrop-blur-sm">Jadi Relawan</span>
-          </div>
-        </div>
-      </div>
-      {/* Donation progress */}
-      <div className="bg-violet-50 px-3 py-2 border-b border-violet-100">
-        <div className="flex items-center justify-between mb-1">
-          <span className="text-[6px] font-bold text-violet-800">🎯 Target Juni: Rp 50.000.000</span>
-          <span className="text-[6px] font-bold text-violet-600">78% tercapai</span>
-        </div>
-        <div className="h-1.5 w-full rounded-full bg-violet-200 overflow-hidden">
-          <div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-500" style={{ width: "78%" }} />
-        </div>
-        <div className="flex justify-between mt-0.5">
-          <span className="text-[5px] text-violet-500">Rp 39.000.000 terkumpul</span>
-          <span className="text-[5px] text-violet-500">423 donatur</span>
-        </div>
-      </div>
-      {/* Impact stats */}
-      <div className="grid grid-cols-4 divide-x divide-slate-100 bg-white py-2 border-b border-slate-100">
-        {[
-          { n: "5.200+", l: "Anak Terbantu", icon: "👶" },
-          { n: "250+", l: "Relawan", icon: "🤝" },
-          { n: "18", l: "Kota", icon: "🏙️" },
-          { n: "Rp 2.1M", l: "Tersalurkan", icon: "💰" },
-        ].map((s) => (
-          <div key={s.l} className="text-center px-1">
-            <p className="text-[8px] font-extrabold text-violet-700">{s.n}</p>
-            <p className="text-[5px] text-slate-500 font-medium">{s.l}</p>
-          </div>
-        ))}
-      </div>
-      {/* Programs */}
-      <div className="flex-1 px-2.5 py-2">
-        <p className="text-[7px] font-bold text-slate-800 mb-1.5">Program Unggulan</p>
-        <div className="grid grid-cols-3 gap-1.5">
-          {[
-            { icon: "📚", title: "Beasiswa", desc: "500 anak/tahun", color: "from-blue-50 to-indigo-50 border-blue-100" },
-            { icon: "🍚", title: "Pangan", desc: "1000 paket/bln", color: "from-amber-50 to-orange-50 border-amber-100" },
-            { icon: "🏥", title: "Kesehatan", desc: "Layanan gratis", color: "from-green-50 to-emerald-50 border-green-100" },
-          ].map((p) => (
-            <div key={p.title} className={`rounded-lg bg-gradient-to-br ${p.color} border p-1.5 text-center`}>
-              <span className="text-[10px]">{p.icon}</span>
-              <p className="text-[6.5px] font-bold text-slate-800">{p.title}</p>
-              <p className="text-[5px] text-slate-500">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="h-full w-full overflow-hidden">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/yayasan.webp"
+        alt="Preview Website Organisasi"
+        className="h-full w-full object-cover object-top"
+      />
     </div>
   );
 }
