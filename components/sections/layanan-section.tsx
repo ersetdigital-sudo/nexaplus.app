@@ -498,12 +498,6 @@ export function LayananSection() {
               ))}
             </ul>
 
-            {/* Price */}
-            <div className="mt-6">
-              <span className="text-xs text-slate-500">Mulai dari</span>
-              <p className="text-2xl font-bold text-slate-900">{active.price}</p>
-            </div>
-
             {/* CTAs */}
             <div className="mt-6 flex flex-wrap gap-3">
               <a
