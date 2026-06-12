@@ -123,7 +123,11 @@ export function generateLocalBusinessSchema() {
     telephone: `+${siteConfig.whatsapp.number}`,
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'ID',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postalCode,
+      addressCountry: siteConfig.address.country,
     },
     priceRange: 'Rp 500.000 - Rp 4.000.000',
   };

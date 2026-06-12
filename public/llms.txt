@@ -22,7 +22,8 @@ Dibangun menggunakan Next.js, React, dan Tailwind CSS untuk performa maksimal, k
 
 ## Contact
 Website: https://nexaplus.app
-WhatsApp: Tersedia di website
+WhatsApp: +6281573059442
+Email: hello@nexaplus.app
 
 ## Location
-Indonesia (melayani seluruh Indonesia secara remote)
+Jalan Mayor Hadi No 10, Sumedang, Jawa Barat 45381, Indonesia

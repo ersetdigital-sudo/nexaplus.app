@@ -106,6 +106,11 @@ export function Footer() {
                   <span>{siteConfig.contact.email}</span>
                 </a>
               </li>
+              <li>
+                <p className="text-sm text-slate-600">
+                  {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.region} {siteConfig.address.postalCode}
+                </p>
+              </li>
             </ul>
 
             {/* Social Links */}

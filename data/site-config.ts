@@ -2,13 +2,20 @@ export const siteConfig = {
   name: 'NexaPlus',
   url: 'https://nexaplus.app',
   whatsapp: {
-    number: '6281234567890',
+    number: '6281573059442',
     defaultMessage: 'Halo NexaPlus, saya tertarik dengan jasa pembuatan website.',
   },
   meta: {
     title: 'Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus',
     description: 'NexaPlus adalah jasa pembuatan website profesional di Indonesia. Melayani toko online, landing page, company profile, website sekolah, dan organisasi. Mulai dari Rp 500.000, termasuk hosting dan SSL gratis.',
     ogImage: '/images/og-image.jpg',
+  },
+  address: {
+    street: 'Jalan Mayor Hadi No 10',
+    city: 'Sumedang',
+    region: 'Jawa Barat',
+    postalCode: '45381',
+    country: 'ID',
   },
   colors: {
     background: '#0A0118',
@@ -21,6 +28,7 @@ export const siteConfig = {
     primary: 'Inter',
   },
   contact: {
+    phone: '+6281573059442',
     email: 'hello@nexaplus.app',
     socialLinks: [
       { platform: 'Instagram', url: 'https://instagram.com/nexaplus.app', icon: 'instagram' },
