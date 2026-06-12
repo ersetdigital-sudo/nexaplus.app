@@ -1,0 +1,70 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+import { SectionWrapper } from "@/components/shared/section-wrapper";
+import { Badge } from "@/components/ui/badge";
+import { portfolioItems } from "@/data/portfolio";
+
+export function PortfolioSection() {
+  return (
+    <SectionWrapper id="portfolio">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-12 text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+          Portfolio Kami
+        </h2>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {portfolioItems.map((item) => (
+            <PortfolioCard key={item.slug} item={typeof item === "object" ? item : item} />
+          ))}
+        </div>
+      </div>
+    </SectionWrapper>
+  );
+}
+
+function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Link
+      href={`/portfolio/${item.slug}`}
+      className="group relative block overflow-hidden rounded-xl border border-white/8 bg-white/3 backdrop-blur-sm"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
+    >
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
+        <Image
+          src={item.screenshot}
+          alt={`Screenshot ${item.name}`}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+
+        {/* Hover overlay */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center bg-black/60"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <span className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white">
+            Lihat Detail
+          </span>
+        </motion.div>
+      </div>
+
+      <div className="p-4">
+        <h3 className="mb-2 text-lg font-semibold text-white">{item.name}</h3>
+        <Badge variant="outline">{item.category}</Badge>
+      </div>
+    </Link>
+  );
+}
