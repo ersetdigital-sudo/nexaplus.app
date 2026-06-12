@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 import { blogPosts } from '@/data/blog-posts';
 import { generateArticleSchema } from '@/lib/schema-markup';
 
@@ -102,7 +103,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Content */}
         <div className="mx-auto max-w-3xl px-5 sm:px-6 mt-10">
-          <div
+          <article
             className="prose prose-lg prose-slate max-w-none
               prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900
               prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
@@ -111,8 +112,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               prose-li:text-slate-600 prose-li:leading-relaxed
               prose-strong:text-slate-900
               prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          >
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </article>
         </div>
 
         {/* Bottom CTA */}
