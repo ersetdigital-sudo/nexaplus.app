@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
     description:
-      "Jasa pembuatan website profesional untuk UMKM, toko online, company profile, dan sekolah di Indonesia. Mulai Rp 500.000.",
+      "Jasa pembuatan website profesional di Indonesia. Toko online, landing page, company profile, dan website sekolah. Mulai dari Rp 500.000, hosting gratis.",
     url: "https://nexaplus.app",
     siteName: "NexaPlus",
     images: [
