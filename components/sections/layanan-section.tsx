@@ -1,9 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
-import { CheckCircle, ShoppingCart, Layout, Building2, GraduationCap, Users, Monitor, Package, CalendarCheck, MessageCircle, Landmark } from "lucide-react";
+import { CheckCircle, ShoppingCart, Layout, Building2, GraduationCap, Users, Monitor, Package, CalendarCheck, Landmark } from "lucide-react";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { getDefaultWhatsAppUrl } from "@/lib/whatsapp";
 
 // ============ DATA ============
 
@@ -21,7 +20,6 @@ const TABS = [
       "Dashboard kelola produk",
       "SEO-ready & mobile friendly",
     ],
-    price: "Rp 6.000.000",
     previewUrl: "tokoonline.co.id",
   },
   {
@@ -37,7 +35,6 @@ const TABS = [
       "Integrasi WhatsApp langsung",
       "Loading super cepat",
     ],
-    price: "Rp 1.500.000",
     previewUrl: "landingku.id",
   },
   {
@@ -53,7 +50,6 @@ const TABS = [
       "Form kontak + Google Maps",
       "Hingga 5 halaman",
     ],
-    price: "Rp 3.500.000",
     previewUrl: "companyku.co.id",
   },
   {
@@ -69,7 +65,6 @@ const TABS = [
       "Galeri foto & berita",
       "Form pendaftaran siswa",
     ],
-    price: "Rp 3.500.000",
     previewUrl: "sekolahku.sch.id",
   },
   {
@@ -85,7 +80,6 @@ const TABS = [
       "Form pendaftaran anggota",
       "Donasi online opsional",
     ],
-    price: "Rp 3.500.000",
     previewUrl: "yayasanku.org",
   },
   {
@@ -101,7 +95,6 @@ const TABS = [
       "Laporan penjualan harian/bulanan",
       "Multi-kasir & multi-outlet",
     ],
-    price: "Rp 5.000.000",
     previewUrl: "kasirku.app",
   },
   {
@@ -117,7 +110,6 @@ const TABS = [
       "Laporan & export Excel",
       "Alert stok menipis",
     ],
-    price: "Rp 5.000.000",
     previewUrl: "stokku.app",
   },
   {
@@ -133,7 +125,6 @@ const TABS = [
       "Dashboard admin kelola jadwal",
       "E-tiket & QR code",
     ],
-    price: "Rp 4.500.000",
     previewUrl: "bookingku.id",
   },
   {
@@ -149,7 +140,6 @@ const TABS = [
       "Layanan publik online",
       "Transparansi anggaran & PPID",
     ],
-    price: "Rp 5.000.000",
     previewUrl: "desaku.go.id",
   },
 ];
@@ -236,7 +226,7 @@ function PreviewPOS() {
           <span className="rounded bg-emerald-500/20 px-1 py-0.5 text-[5px] font-bold text-emerald-400">PRO</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[6px] text-slate-400">👤 Ahmad (Kasir 1)</span>
+          <span className="text-[6px] text-slate-400">ðŸ‘¤ Ahmad (Kasir 1)</span>
           <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
           <span className="text-[6px] text-green-400">Online</span>
         </div>
@@ -245,25 +235,25 @@ function PreviewPOS() {
         <div className="flex-1 flex flex-col p-2 overflow-hidden">
           <div className="flex items-center gap-1.5 mb-1.5">
             <div className="flex h-5 flex-1 items-center rounded-md bg-slate-800 px-2 border border-slate-600">
-              <span className="text-[6px] text-slate-500">🔍 Scan barcode atau ketik nama...</span>
+              <span className="text-[6px] text-slate-500">ðŸ” Scan barcode atau ketik nama...</span>
             </div>
-            <span className="rounded-md bg-blue-600 px-1.5 py-1 text-[6px] font-medium text-white">📷 Scan</span>
+            <span className="rounded-md bg-blue-600 px-1.5 py-1 text-[6px] font-medium text-white">ðŸ“· Scan</span>
           </div>
           <div className="flex gap-1 mb-2">
-            {["☕ Minuman", "🍞 Makanan", "🍪 Snack", "🧊 Dingin"].map((c, i) => (
+            {["â˜• Minuman", "ðŸž Makanan", "ðŸª Snack", "ðŸ§Š Dingin"].map((c, i) => (
               <span key={c} className={`rounded-md px-1.5 py-0.5 text-[6px] font-medium ${i === 0 ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-400 border border-slate-700"}`}>{c}</span>
             ))}
           </div>
           <div className="grid grid-cols-4 gap-1.5 flex-1 overflow-hidden">
             {[
-              { n: "Kopi Latte", p: "28K", emoji: "☕" },
-              { n: "Americano", p: "22K", emoji: "☕" },
-              { n: "Cappuccino", p: "30K", emoji: "☕" },
-              { n: "Matcha", p: "32K", emoji: "🍵" },
-              { n: "Es Teh", p: "10K", emoji: "🧊" },
-              { n: "Croissant", p: "22K", emoji: "🥐" },
-              { n: "Roti Bakar", p: "18K", emoji: "🍞" },
-              { n: "Mineral", p: "5K", emoji: "💧" },
+              { n: "Kopi Latte", p: "28K", emoji: "â˜•" },
+              { n: "Americano", p: "22K", emoji: "â˜•" },
+              { n: "Cappuccino", p: "30K", emoji: "â˜•" },
+              { n: "Matcha", p: "32K", emoji: "ðŸµ" },
+              { n: "Es Teh", p: "10K", emoji: "ðŸ§Š" },
+              { n: "Croissant", p: "22K", emoji: "ðŸ¥" },
+              { n: "Roti Bakar", p: "18K", emoji: "ðŸž" },
+              { n: "Mineral", p: "5K", emoji: "ðŸ’§" },
             ].map((item) => (
               <div key={item.n} className="rounded-lg bg-slate-800 border border-slate-700 p-1.5 text-center hover:border-blue-500 transition-colors cursor-pointer flex flex-col items-center justify-center">
                 <span className="text-[12px] mb-0.5">{item.emoji}</span>
@@ -275,7 +265,7 @@ function PreviewPOS() {
         </div>
         <div className="w-[38%] bg-slate-900 border-l border-slate-700 flex flex-col">
           <div className="flex items-center justify-between px-2 py-1.5 border-b border-slate-700">
-            <span className="text-[7px] font-bold text-white">🧾 Order #047</span>
+            <span className="text-[7px] font-bold text-white">ðŸ§¾ Order #047</span>
             <span className="text-[5px] text-slate-500">Meja 5</span>
           </div>
           <div className="flex-1 px-2 py-1.5 space-y-1 overflow-hidden">
@@ -303,8 +293,8 @@ function PreviewPOS() {
             </div>
           </div>
           <div className="px-2 pb-2 grid grid-cols-2 gap-1">
-            <span className="rounded-md bg-slate-800 border border-slate-700 py-1 text-center text-[6px] font-medium text-slate-300">💵 Cash</span>
-            <span className="rounded-md bg-gradient-to-r from-emerald-500 to-green-500 py-1 text-center text-[6px] font-bold text-white shadow-sm">✓ BAYAR</span>
+            <span className="rounded-md bg-slate-800 border border-slate-700 py-1 text-center text-[6px] font-medium text-slate-300">ðŸ’µ Cash</span>
+            <span className="rounded-md bg-gradient-to-r from-emerald-500 to-green-500 py-1 text-center text-[6px] font-bold text-white shadow-sm">âœ“ BAYAR</span>
           </div>
         </div>
       </div>
@@ -326,13 +316,13 @@ function PreviewInventory() {
         </div>
         <div className="px-1.5 py-2 space-y-0.5 flex-1">
           {[
-            { icon: "📊", label: "Dashboard", active: false },
-            { icon: "📦", label: "Produk", active: true },
-            { icon: "📥", label: "Stok Masuk", active: false },
-            { icon: "📤", label: "Stok Keluar", active: false },
-            { icon: "🏷️", label: "Kategori", active: false },
-            { icon: "📋", label: "Laporan", active: false },
-            { icon: "👥", label: "Supplier", active: false },
+            { icon: "ðŸ“Š", label: "Dashboard", active: false },
+            { icon: "ðŸ“¦", label: "Produk", active: true },
+            { icon: "ðŸ“¥", label: "Stok Masuk", active: false },
+            { icon: "ðŸ“¤", label: "Stok Keluar", active: false },
+            { icon: "ðŸ·ï¸", label: "Kategori", active: false },
+            { icon: "ðŸ“‹", label: "Laporan", active: false },
+            { icon: "ðŸ‘¥", label: "Supplier", active: false },
           ].map((m) => (
             <div key={m.label} className={`flex items-center gap-1 rounded-md px-1.5 py-1 ${m.active ? "bg-blue-600 shadow-sm shadow-blue-500/30" : "hover:bg-slate-800"}`}>
               <span className="text-[6px]">{m.icon}</span>
@@ -349,13 +339,13 @@ function PreviewInventory() {
           </div>
           <div className="flex gap-1.5">
             <div className="flex h-4 items-center rounded-md bg-slate-100 px-2 border border-slate-200">
-              <span className="text-[5.5px] text-slate-500">🔍 Cari SKU atau nama...</span>
+              <span className="text-[5.5px] text-slate-500">ðŸ” Cari SKU atau nama...</span>
             </div>
             <span className="rounded-md bg-blue-600 px-2 py-0.5 text-[6px] font-bold text-white shadow-sm">+ Tambah Produk</span>
           </div>
         </div>
         <div className="mx-3 mt-1.5 flex items-center gap-1.5 rounded-md bg-amber-50 border border-amber-200 px-2 py-1">
-          <span className="text-[7px]">⚠️</span>
+          <span className="text-[7px]">âš ï¸</span>
           <span className="text-[6px] text-amber-700 font-medium">12 produk stok menipis & 3 produk sudah habis.</span>
         </div>
         <div className="grid grid-cols-4 gap-2 px-3 py-2">
@@ -439,7 +429,6 @@ const PREVIEW_MAP: Record<string, React.FC> = {
 
 export function LayananSection() {
   const [activeTab, setActiveTab] = useState("toko");
-  const whatsappUrl = getDefaultWhatsAppUrl();
 
   const active = TABS.find((t) => t.id === activeTab) || TABS[0];
   const PreviewComponent = PREVIEW_MAP[active.id];
@@ -454,7 +443,7 @@ export function LayananSection() {
             Satu Partner, Semua Kebutuhan Digital
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 md:text-base">
-            Pilih layanan yang sesuai — kami kerjakan dari nol sampai online.
+            Pilih layanan yang sesuai â€” kami kerjakan dari nol sampai online.
           </p>
         </div>
 
@@ -477,7 +466,7 @@ export function LayananSection() {
 
         {/* Content: 2 columns */}
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
-          {/* Left — Info */}
+          {/* Left â€” Info */}
           <div>
             {/* Tag */}
             <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
@@ -500,7 +489,7 @@ export function LayananSection() {
 
           </div>
 
-          {/* Right — Preview */}
+          {/* Right â€” Preview */}
           <div>
             <BrowserFrame url={active.previewUrl}>
               {PreviewComponent && <PreviewComponent />}
