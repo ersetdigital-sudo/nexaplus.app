@@ -3,6 +3,7 @@ import { Phone, Mail } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
 import { siteConfig } from '@/data/site-config';
+import { Logo } from '@/components/shared/logo';
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -35,9 +36,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand / About Column */}
           <div className="space-y-4">
-            <div className="flex items-center">
-              <img src="/images/logo.png" alt="NexaPlus" className="h-14 w-auto" />
-            </div>
+            <Logo />
             <p className="text-sm text-gray-400">
               Jasa pembuatan website profesional untuk UMKM, perusahaan, dan
               organisasi di Indonesia.

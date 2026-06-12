@@ -7,6 +7,7 @@ import { navLinks } from '@/data/navigation';
 import { getDefaultWhatsAppUrl } from '@/lib/whatsapp';
 import { drawerVariants } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/shared/logo';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,10 +49,10 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#beranda" className="flex items-center" aria-label="NexaPlus beranda">
-            <img src="/images/logo.png" alt="NexaPlus" className="h-14 w-auto" />
+            <Logo />
           </a>
 
           {/* Desktop Navigation */}
@@ -119,9 +120,7 @@ export function Navbar() {
               <div className="flex flex-col h-full p-6">
                 {/* Drawer Header */}
                 <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center">
-                  <img src="/images/logo.png" alt="NexaPlus" className="h-9 w-auto" />
-                </div>
+                  <Logo />
                   <button
                     type="button"
                     className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 transition-colors"
