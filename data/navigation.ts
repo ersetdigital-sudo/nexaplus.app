@@ -4,11 +4,11 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: 'Beranda', href: '#beranda' },
-  { label: 'Layanan', href: '#layanan' },
-  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Beranda', href: '/' },
+  { label: 'Layanan', href: '/#layanan' },
+  { label: 'Portfolio', href: '/#portfolio' },
   { label: 'Tentang Kami', href: '/tentang-kami' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Kontak', href: '#kontak' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Blog', href: '/#blog' },
+  { label: 'Kontak', href: '/#kontak' },
 ];

@@ -23,13 +23,26 @@ export function Navbar() {
 
   const handleLinkClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      e.preventDefault();
       setIsOpen(false);
-      setTimeout(() => {
-        const targetId = href.replace('#', '');
-        const element = document.getElementById(targetId);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 350);
+
+      // For non-hash links (like /tentang-kami), let default navigation happen
+      if (!href.startsWith('#') && !href.startsWith('/#')) {
+        return;
+      }
+
+      // For hash links on the same page, do smooth scroll
+      const hash = href.includes('#') ? href.split('#')[1] : '';
+      if (!hash) return;
+
+      // If we're on homepage and it's a /#section link, smooth scroll
+      if (window.location.pathname === '/' || href.startsWith('#')) {
+        e.preventDefault();
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 350);
+      }
+      // Otherwise, let the browser navigate to /#section (it will load homepage + scroll)
     },
     []
   );
@@ -44,7 +57,7 @@ export function Navbar() {
     >
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="#beranda" className="flex items-center" aria-label="NexaPlus beranda">
+          <a href="/" className="flex items-center" aria-label="NexaPlus beranda">
             <Logo />
           </a>
 
