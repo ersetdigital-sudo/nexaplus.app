@@ -11,6 +11,8 @@ import { portfolioItems } from "@/data/portfolio";
 // Map slug to live URL for screenshot API
 const siteUrls: Record<string, string> = {
   'octaf-kreasi': 'https://octafkreasi.com',
+  'erset-store': 'https://ersetstore.vercel.app',
+  'oos-shop': 'https://oos-shop.com',
 };
 
 function getScreenshotUrl(slug: string): string | null {
