@@ -20,7 +20,7 @@ export function AnimatedCard({
   return (
     <motion.div
       className={cn(
-        "rounded-xl border border-slate-200 bg-white shadow-sm",
+        "rounded-[8px] border border-[#E4E4E7] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-150 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.06),0_2px_4px_-2px_rgba(0,0,0,0.04)]",
         className
       )}
       whileHover={
@@ -28,7 +28,7 @@ export function AnimatedCard({
           ? undefined
           : { scale: hoverScale }
       }
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.15 }}
     >
       {children}
     </motion.div>

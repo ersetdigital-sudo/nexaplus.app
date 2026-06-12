@@ -21,7 +21,7 @@ export function FAQSection() {
         </h2>
 
         {/* Accordion wrapper with shared border + radius */}
-        <div className="overflow-hidden rounded-xl border border-slate-200">
+        <div className="overflow-hidden rounded-[12px] border border-[#E4E4E7]">
           <Accordion type="single" collapsible>
             {faqItems.map((item) => (
               <AccordionItem key={item.id} value={item.id}>
