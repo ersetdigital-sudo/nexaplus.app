@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
 import { generateArticleSchema } from '@/lib/schema-markup';
+import { Breadcrumb } from '@/components/shared/breadcrumb';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -99,13 +100,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="py-16 md:py-24">
         {/* Hero header */}
         <header className="mx-auto max-w-3xl px-5 sm:px-6">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-blue-600 transition-colors mb-8"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Kembali ke Blog
-          </Link>
+          <div className="mb-8">
+            <Breadcrumb
+              variant="light"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Blog", href: "/blog" },
+                { label: post.title },
+              ]}
+            />
+          </div>
 
           <div className="flex items-center gap-3 mb-5">
             <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">

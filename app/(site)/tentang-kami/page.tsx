@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/shared/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Tentang Kami — NexaPlus | Jasa Pembuatan Website Profesional",
@@ -28,6 +29,15 @@ export default function TentangKamiPage() {
   return (
     <section className="px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-3xl">
+        <div className="mb-8">
+          <Breadcrumb
+            variant="light"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Tentang Kami" },
+            ]}
+          />
+        </div>
         {/* Heading */}
         <h1 className="font-extrabold tracking-tight text-slate-900 text-3xl md:text-4xl">
           Tentang NexaPlus
