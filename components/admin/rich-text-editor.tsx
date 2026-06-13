@@ -228,3 +228,5 @@ export function RichTextEditor({ content, onChange, placeholder, onRevise, isRev
     </div>
   );
 }
+
+export default RichTextEditor;

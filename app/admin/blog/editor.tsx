@@ -8,8 +8,8 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 
 const RichTextEditor = dynamic(
-  () => import("@/components/admin/rich-text-editor").then((mod) => mod.RichTextEditor),
-  { ssr: false }
+  () => import("@/components/admin/rich-text-editor"),
+  { ssr: false, loading: () => <div className="rounded-xl border border-slate-200 bg-white p-8 text-center text-sm text-slate-400">Loading editor...</div> }
 );
 
 interface BlogPost {
