@@ -5,7 +5,12 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Eye, Sparkles, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { RichTextEditor } from "@/components/admin/rich-text-editor";
+import dynamic from "next/dynamic";
+
+const RichTextEditor = dynamic(
+  () => import("@/components/admin/rich-text-editor").then((mod) => mod.RichTextEditor),
+  { ssr: false }
+);
 
 interface BlogPost {
   id?: string;
