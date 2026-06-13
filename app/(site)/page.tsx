@@ -36,8 +36,8 @@ export default function Home() {
       <ProcessSection />
       <TestimonialSection />
       <FAQSection />
-      <BlogSection />
       <FinalCtaSection />
+      <BlogSection />
     </>
   );
 }
