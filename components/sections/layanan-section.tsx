@@ -1,7 +1,8 @@
 ﻿"use client";
 
 import { useState } from "react";
-import { CheckCircle, ShoppingCart, Layout, Building2, GraduationCap, Users, Monitor, Package, CalendarCheck, Landmark } from "lucide-react";
+import { CheckCircle, ShoppingCart, Layout, Building2, GraduationCap, Users, Monitor, Package, CalendarCheck, Landmark, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 
 // ============ DATA ============
@@ -21,6 +22,7 @@ const TABS = [
       "SEO-ready & mobile friendly",
     ],
     previewUrl: "tokoonline.co.id",
+    detailHref: "/layanan/toko-online",
   },
   {
     id: "landing",
@@ -36,6 +38,7 @@ const TABS = [
       "Loading super cepat",
     ],
     previewUrl: "landingku.id",
+    detailHref: "/layanan/landing-page",
   },
   {
     id: "company",
@@ -51,6 +54,7 @@ const TABS = [
       "Hingga 5 halaman",
     ],
     previewUrl: "companyku.co.id",
+    detailHref: "/layanan/company-profile",
   },
   {
     id: "sekolah",
@@ -66,6 +70,7 @@ const TABS = [
       "Form pendaftaran siswa",
     ],
     previewUrl: "sekolahku.sch.id",
+    detailHref: "/layanan/website-sekolah",
   },
   {
     id: "organisasi",
@@ -81,6 +86,7 @@ const TABS = [
       "Donasi online opsional",
     ],
     previewUrl: "yayasanku.org",
+    detailHref: "/layanan/website-organisasi",
   },
   {
     id: "pos",
@@ -486,6 +492,17 @@ export function LayananSection() {
                 </li>
               ))}
             </ul>
+
+            {/* Detail link */}
+            {active.detailHref && (
+              <Link
+                href={active.detailHref}
+                className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                Lihat detail layanan
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            )}
 
           </div>
 
