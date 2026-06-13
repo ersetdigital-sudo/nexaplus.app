@@ -3,6 +3,7 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
+import Link from "@tiptap/extension-link";
 import {
   Bold,
   Italic,
@@ -14,6 +15,7 @@ import {
   Quote,
   Undo,
   Redo,
+  LinkIcon,
 } from "lucide-react";
 
 interface RichTextEditorProps {
@@ -26,6 +28,12 @@ export function RichTextEditor({ content, onChange, placeholder }: RichTextEdito
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Link.configure({
+        openOnClick: false,
+        HTMLAttributes: {
+          class: "text-blue-600 underline",
+        },
+      }),
       Placeholder.configure({
         placeholder: placeholder || "Tulis konten artikel di sini...",
       }),
@@ -134,6 +142,18 @@ export function RichTextEditor({ content, onChange, placeholder }: RichTextEdito
           title="Blockquote"
         >
           <Quote className="h-4 w-4" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => {
+            const url = window.prompt("Masukkan URL:");
+            if (url) {
+              editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+            }
+          }}
+          active={editor.isActive("link")}
+          title="Insert Link"
+        >
+          <LinkIcon className="h-4 w-4" />
         </ToolbarButton>
 
         <div className="mx-1 h-5 w-px bg-slate-200" />

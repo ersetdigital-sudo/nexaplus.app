@@ -52,6 +52,22 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
     if (!isEditing) {
       setSlug(generateSlug(value));
     }
+    // Auto-generate meta title if empty
+    if (!metaTitle) {
+      setMetaTitle(value.slice(0, 60));
+    }
+  };
+
+  const handleContentChange = (html: string) => {
+    setContent(html);
+    // Auto-generate excerpt and meta desc from content (strip HTML)
+    const text = html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+    if (!excerpt) {
+      setExcerpt(text.slice(0, 200));
+    }
+    if (!metaDesc) {
+      setMetaDesc(text.slice(0, 155));
+    }
   };
 
   const handleSave = async () => {
@@ -187,7 +203,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
             <label className="block text-sm font-medium text-slate-700 mb-1.5">Konten Artikel</label>
             <RichTextEditor
               content={content}
-              onChange={(html) => setContent(html)}
+              onChange={handleContentChange}
               placeholder="Tulis konten artikel di sini..."
             />
           </div>
