@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Eye, Save, Send } from "lucide-react";
+import { ArrowLeft, Eye } from "lucide-react";
 import Link from "next/link";
 import { RichTextEditor } from "@/components/admin/rich-text-editor";
 
@@ -32,6 +32,9 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
   const [category, setCategory] = useState(post?.category || categories[0]);
   const [content, setContent] = useState(post?.content || "");
   const [coverImage, setCoverImage] = useState(post?.cover_image || "");
+  const [metaTitle, setMetaTitle] = useState("");
+  const [metaDesc, setMetaDesc] = useState("");
+  const [status, setStatus] = useState<"draft" | "published">(post?.published ? "published" : "draft");
   const [showPreview, setShowPreview] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -51,13 +54,14 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
     }
   };
 
-  const handleSave = async (publish: boolean) => {
+  const handleSave = async () => {
     setSaving(true);
+    const publish = status === "published";
 
     const data = {
       title,
       slug,
-      excerpt,
+      excerpt: excerpt || metaDesc || title,
       category,
       content,
       cover_image: coverImage || null,
@@ -77,7 +81,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
   };
 
   return (
-    <div>
+    <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
@@ -87,146 +91,181 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
           >
             <ArrowLeft className="h-5 w-5" />
           </Link>
-          <div>
-            <h1 className="text-xl font-bold text-slate-900">
-              {isEditing ? "Edit Artikel" : "Tulis Artikel Baru"}
-            </h1>
-          </div>
+          <h1 className="text-xl font-bold text-slate-900">
+            {isEditing ? "Edit Artikel" : "Tulis Artikel Baru"}
+          </h1>
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setShowPreview(!showPreview)}
-            className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-              showPreview
-                ? "bg-blue-50 text-blue-700"
-                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-            }`}
-          >
-            <Eye className="h-4 w-4" />
-            Preview
-          </button>
-          <button
-            onClick={() => handleSave(false)}
-            disabled={saving || !title || !content}
-            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50 transition-colors"
-          >
-            <Save className="h-4 w-4" />
-            Simpan Draft
-          </button>
-          <button
-            onClick={() => handleSave(true)}
-            disabled={saving || !title || !content || !excerpt}
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
-          >
-            <Send className="h-4 w-4" />
-            Publish
-          </button>
-        </div>
+        <button
+          onClick={() => setShowPreview(!showPreview)}
+          className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+            showPreview ? "bg-blue-50 text-blue-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+          }`}
+        >
+          <Eye className="h-4 w-4" />
+          Preview
+        </button>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {/* Editor */}
-        <div className={`${showPreview ? "lg:col-span-2" : "lg:col-span-2"} space-y-5`}>
-          {/* Title */}
+      {showPreview ? (
+        /* Preview Mode */
+        <div className="rounded-xl border border-slate-200 bg-white p-8">
+          <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 mb-4">{category}</span>
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">{title || "Judul Artikel"}</h1>
+          <p className="text-slate-500 mb-6">{excerpt || "Excerpt artikel..."}</p>
+          <hr className="mb-6" />
+          <div
+            className="prose prose-slate max-w-none"
+            dangerouslySetInnerHTML={{ __html: content || "<p>Konten artikel akan muncul di sini...</p>" }}
+          />
+        </div>
+      ) : (
+        /* Editor Mode */
+        <div className="space-y-6">
+          {/* Judul */}
           <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">
+              Judul Artikel <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
-              placeholder="Judul artikel..."
-              className="w-full text-2xl font-bold text-slate-900 placeholder:text-slate-300 border-0 focus:outline-none focus:ring-0 bg-transparent"
+              placeholder="Masukkan judul atau topik artikel"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
 
-          {/* Content editor */}
-          <RichTextEditor
-            content={content}
-            onChange={(html) => setContent(html)}
-            placeholder="Tulis konten artikel di sini..."
-          />
-        </div>
+          {/* Slug */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">Slug (URL)</label>
+            <div className="flex items-center rounded-lg border border-slate-200 bg-slate-50 overflow-hidden">
+              <span className="px-3 text-sm text-slate-400 bg-slate-100 py-3 border-r border-slate-200">/blog/</span>
+              <input
+                type="text"
+                value={slug}
+                onChange={(e) => setSlug(e.target.value)}
+                placeholder="slug-artikel"
+                className="flex-1 bg-transparent px-3 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+              />
+            </div>
+          </div>
 
-        {/* Sidebar / Preview */}
-        <div className="space-y-5">
-          {showPreview ? (
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <h3 className="text-sm font-semibold text-slate-900 mb-3">Preview</h3>
-              <div className="prose prose-sm prose-slate max-w-none">
-                <h1>{title || "Judul Artikel"}</h1>
-                <p className="text-slate-500">{excerpt || "Excerpt akan muncul di sini..."}</p>
-                <hr />
-                <div dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, "<br/>") }} />
+          {/* Thumbnail URL */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">Thumbnail URL</label>
+            <input
+              type="text"
+              value={coverImage}
+              onChange={(e) => setCoverImage(e.target.value)}
+              placeholder="https://example.com/image.jpg"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+            {coverImage && (
+              <div className="mt-2 w-32 h-20 rounded-lg overflow-hidden border border-slate-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={coverImage} alt="Preview" className="w-full h-full object-cover" />
+              </div>
+            )}
+          </div>
+
+          {/* Kategori */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">Kategori</label>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Konten Artikel */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">Konten Artikel</label>
+            <RichTextEditor
+              content={content}
+              onChange={(html) => setContent(html)}
+              placeholder="Tulis konten artikel di sini..."
+            />
+          </div>
+
+          {/* SEO Meta */}
+          <div className="rounded-xl border border-slate-200 bg-white p-6">
+            <h3 className="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              🔍 SEO Meta
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-medium text-slate-600 mb-1">
+                  Meta Title <span className="text-slate-400">({metaTitle.length}/60)</span>
+                </label>
+                <input
+                  type="text"
+                  value={metaTitle}
+                  onChange={(e) => setMetaTitle(e.target.value)}
+                  placeholder="Judul untuk mesin pencari (ideal max 60 karakter)"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-slate-600 mb-1">
+                  Meta Description <span className="text-slate-400">({metaDesc.length}/155)</span>
+                </label>
+                <textarea
+                  value={metaDesc}
+                  onChange={(e) => setMetaDesc(e.target.value)}
+                  rows={3}
+                  placeholder="Deskripsi untuk mesin pencari (ideal max 155 karakter)"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none resize-none"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-slate-600 mb-1">Excerpt (ringkasan)</label>
+                <textarea
+                  value={excerpt}
+                  onChange={(e) => setExcerpt(e.target.value)}
+                  rows={2}
+                  placeholder="Ringkasan singkat artikel untuk preview di homepage"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none resize-none"
+                />
               </div>
             </div>
-          ) : (
-            <>
-              {/* Metadata */}
-              <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-4">
-                <h3 className="text-sm font-semibold text-slate-900">Pengaturan</h3>
+          </div>
 
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Slug (URL)</label>
-                  <input
-                    type="text"
-                    value={slug}
-                    onChange={(e) => setSlug(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
-                    placeholder="judul-artikel"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Kategori</label>
-                  <select
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
-                  >
-                    {categories.map((cat) => (
-                      <option key={cat} value={cat}>{cat}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Excerpt (ringkasan)</label>
-                  <textarea
-                    value={excerpt}
-                    onChange={(e) => setExcerpt(e.target.value)}
-                    rows={3}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none resize-none"
-                    placeholder="Ringkasan singkat artikel untuk SEO dan preview..."
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">Cover Image URL</label>
-                  <input
-                    type="text"
-                    value={coverImage}
-                    onChange={(e) => setCoverImage(e.target.value)}
-                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
-                    placeholder="/images/blog/cover.webp"
-                  />
-                </div>
-              </div>
-
-              {/* Status info */}
-              {isEditing && (
-                <div className="rounded-xl border border-slate-200 bg-white p-5">
-                  <h3 className="text-sm font-semibold text-slate-900 mb-2">Status</h3>
-                  <div className="space-y-2 text-xs text-slate-500">
-                    <p>Status: <span className={`font-medium ${post.published ? "text-green-600" : "text-slate-700"}`}>{post.published ? "Published" : "Draft"}</span></p>
-                    {post.published_at && (
-                      <p>Published: {new Date(post.published_at).toLocaleDateString("id-ID")}</p>
-                    )}
-                  </div>
-                </div>
-              )}
-            </>
-          )}
+          {/* Footer actions */}
+          <div className="flex items-center justify-between rounded-xl border border-slate-200 bg-white px-6 py-4">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-slate-600">Status:</span>
+              <select
+                value={status}
+                onChange={(e) => setStatus(e.target.value as "draft" | "published")}
+                className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 focus:border-blue-500 focus:outline-none"
+              >
+                <option value="draft">Draft</option>
+                <option value="published">Published</option>
+              </select>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/admin/blog"
+                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              >
+                Batal
+              </Link>
+              <button
+                onClick={handleSave}
+                disabled={saving || !title || !content}
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+              >
+                {saving ? "Menyimpan..." : "Simpan Artikel"}
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
