@@ -19,6 +19,8 @@ import {
   Search,
   Package,
 } from "lucide-react";
+import { Breadcrumb } from "@/components/shared/breadcrumb";
+import { LayananCrossLinks } from "@/components/shared/layanan-cross-links";
 
 const whatsappUrl =
   "https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website%20toko%20online.%20Bisa%20konsultasi%3F";
@@ -69,6 +71,18 @@ export function TokoOnlineLanding() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-24">
+          {/* Breadcrumb */}
+          <div className="mb-8">
+            <Breadcrumb
+              variant="dark"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Layanan", href: "/#layanan" },
+                { label: "Website Toko Online" },
+              ]}
+            />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -496,6 +510,9 @@ export function TokoOnlineLanding() {
           </motion.div>
         </div>
       </Section>
+
+      {/* ===== LAYANAN LAINNYA ===== */}
+      <LayananCrossLinks currentSlug="toko-online" />
 
       {/* ===== CTA FINAL ===== */}
       <section className="relative py-24 md:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
