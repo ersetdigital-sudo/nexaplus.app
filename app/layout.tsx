@@ -2,9 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -100,10 +97,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        {children}
       </body>
     </html>
   );
