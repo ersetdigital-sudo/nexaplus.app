@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Save, Eye, EyeOff, Loader2 } from "lucide-react";
+import { Save, Eye, EyeOff, Loader2, RefreshCw } from "lucide-react";
 
 interface Setting {
   id: string;
@@ -10,25 +10,21 @@ interface Setting {
   value: string;
 }
 
-const availableModels = [
-  { value: "claude-sonnet-4.5", label: "Claude Sonnet 4.5 (FREE)" },
-  { value: "claude-haiku-4.5", label: "Claude Haiku 4.5 (FREE)" },
-  { value: "deepseek-3.2", label: "DeepSeek 3.2 (FREE)" },
-  { value: "minimax-m2.5", label: "MiniMax M2.5 (FREE)" },
-  { value: "minimax-m2.1", label: "MiniMax M2.1 (FREE)" },
-  { value: "gemini-2.5-flash", label: "Gemini 2.5 Flash (PRO+)" },
-  { value: "gemini-2.5-pro", label: "Gemini 2.5 Pro (PRO+)" },
-  { value: "gpt-4.1", label: "GPT 4.1 (PRO+)" },
-  { value: "claude-opus-4.6", label: "Claude Opus 4.6 (PRO+)" },
-];
+interface AIModel {
+  id: string;
+  object?: string;
+  owned_by?: string;
+}
 
 export default function AdminSettingsPage() {
   const [apiKey, setApiKey] = useState("");
   const [model, setModel] = useState("claude-sonnet-4.5");
+  const [models, setModels] = useState<AIModel[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [showKey, setShowKey] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [loadingModels, setLoadingModels] = useState(false);
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -49,6 +45,33 @@ export default function AdminSettingsPage() {
 
     fetchSettings();
   }, []);
+
+  // Fetch models once API key is available
+  useEffect(() => {
+    if (apiKey) {
+      fetchModels();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [apiKey]);
+
+  const fetchModels = async () => {
+    setLoadingModels(true);
+    try {
+      const res = await fetch("/api/models");
+      if (res.ok) {
+        const data = await res.json();
+        // OpenAI-compatible format returns { data: [...] }
+        const modelList = data.data || data;
+        if (Array.isArray(modelList)) {
+          setModels(modelList);
+        }
+      }
+    } catch (err) {
+      console.error("Failed to fetch models:", err);
+    } finally {
+      setLoadingModels(false);
+    }
+  };
 
   const handleSave = async () => {
     setSaving(true);
@@ -133,19 +156,38 @@ export default function AdminSettingsPage() {
               <label className="block text-sm font-medium text-slate-700 mb-1.5">
                 Model AI
               </label>
-              <select
-                value={model}
-                onChange={(e) => setModel(e.target.value)}
-                className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
-              >
-                {availableModels.map((m) => (
-                  <option key={m.value} value={m.value}>
-                    {m.label}
-                  </option>
-                ))}
-              </select>
+              <div className="flex items-center gap-2">
+                <select
+                  value={model}
+                  onChange={(e) => setModel(e.target.value)}
+                  className="flex-1 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                >
+                  {models.length > 0 ? (
+                    models.map((m) => (
+                      <option key={m.id} value={m.id}>
+                        {m.id}{m.owned_by ? ` (${m.owned_by})` : ""}
+                      </option>
+                    ))
+                  ) : (
+                    <option value={model}>{model}</option>
+                  )}
+                </select>
+                <button
+                  type="button"
+                  onClick={fetchModels}
+                  disabled={loadingModels || !apiKey}
+                  title="Refresh daftar model"
+                  className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-slate-500 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-50 transition-colors"
+                >
+                  <RefreshCw className={`h-4 w-4 ${loadingModels ? "animate-spin" : ""}`} />
+                </button>
+              </div>
               <p className="mt-1.5 text-xs text-slate-400">
-                Model FREE bisa digunakan tanpa biaya. Model PRO+ memerlukan subscription.
+                {loadingModels
+                  ? "Memuat daftar model..."
+                  : models.length > 0
+                  ? `${models.length} model tersedia dari OpenAgentic`
+                  : "Simpan API key lalu klik refresh untuk memuat daftar model."}
               </p>
             </div>
           </div>
