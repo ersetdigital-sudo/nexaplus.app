@@ -18,14 +18,14 @@ export async function POST(req: NextRequest) {
     const { data: settings } = await supabase
       .from("settings")
       .select("key, value")
-      .in("key", ["gemini_api_key", "ai_model"]);
+      .in("key", ["openagentic_api_key", "ai_model"]);
 
-    const apiKey = settings?.find((s) => s.key === "gemini_api_key")?.value;
+    const apiKey = settings?.find((s) => s.key === "openagentic_api_key")?.value;
     const model = settings?.find((s) => s.key === "ai_model")?.value || "google/gemini-2.0-flash";
 
     if (!apiKey) {
       return NextResponse.json(
-        { error: "API key belum dikonfigurasi. Silakan isi di halaman Settings." },
+        { error: "API key OpenAgentic belum dikonfigurasi. Silakan isi di halaman Settings." },
         { status: 400 }
       );
     }
