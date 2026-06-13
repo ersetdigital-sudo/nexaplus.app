@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Hero header */}
         <header className="mx-auto max-w-3xl px-5 sm:px-6">
           <Link
-            href="/#blog"
+            href="/blog"
             className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-blue-600 transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />

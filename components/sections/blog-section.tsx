@@ -81,46 +81,56 @@ export function BlogSection() {
             <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
           </div>
         ) : filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filteredPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-blue-600/30">
-                  {post.cover_image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={post.cover_image}
-                      alt={post.title}
-                      className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
-                      <span className="px-4 text-center text-lg font-bold text-white/90">
-                        {post.category}
+          <>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {filteredPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-blue-600/30">
+                    {post.cover_image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={post.cover_image}
+                        alt={post.title}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
+                        <span className="px-4 text-center text-lg font-bold text-white/90">
+                          {post.category}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <div className="mb-3 flex items-center justify-between">
+                      <Badge variant="secondary">{post.category}</Badge>
+                      <span className="text-xs text-slate-500">
+                        {formatDate(post.published_at || post.created_at)}
                       </span>
                     </div>
-                  )}
-                </div>
-                <div className="p-5">
-                  <div className="mb-3 flex items-center justify-between">
-                    <Badge variant="secondary">{post.category}</Badge>
-                    <span className="text-xs text-slate-500">
-                      {formatDate(post.published_at || post.created_at)}
-                    </span>
+                    <h3 className="card-title mb-2 font-semibold text-slate-900">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 line-clamp-2">
+                      {post.excerpt}
+                    </p>
                   </div>
-                  <h3 className="card-title mb-2 font-semibold text-slate-900">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-6 py-3 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
+              >
+                Lihat Semua Artikel →
               </Link>
-            ))}
-          </div>
+            </div>
+          </>
         ) : (
           <p className="text-center text-slate-600">
             Belum ada artikel untuk kategori ini
