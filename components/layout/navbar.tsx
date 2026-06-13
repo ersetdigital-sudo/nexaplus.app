@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { Drawer } from 'vaul';
 import { Menu, ChevronDown, ShoppingCart, Layout, Building2, GraduationCap, Landmark, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,7 +20,11 @@ const layananItems = [
   { icon: Users, title: 'Website Organisasi', desc: 'Website untuk komunitas & yayasan', href: '/layanan/website-organisasi' },
 ];
 
+// Pages with dark hero sections
+const darkHeroPages = ['/layanan/toko-online', '/layanan/landing-page', '/layanan/company-profile', '/layanan/website-sekolah', '/layanan/website-pemerintahan', '/layanan/website-organisasi'];
+
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -30,6 +35,9 @@ export function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
 
   const whatsappUrl = getDefaultWhatsAppUrl();
+  const hasDarkHero = darkHeroPages.some((p) => pathname.startsWith(p));
+  // Light mode: not scrolled + dark hero page
+  const isLightMode = hasDarkHero && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -123,6 +131,8 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)]'
+          : hasDarkHero
+          ? 'bg-transparent'
           : 'bg-white/0'
       }`}
     >
@@ -130,7 +140,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="/" className="relative z-10 flex items-center" aria-label="NexaPlus beranda">
-            <Logo />
+            <Logo variant={isLightMode ? "light" : "dark"} />
           </a>
 
           {/* Desktop Navigation — Centered */}
@@ -139,7 +149,11 @@ export function Navbar() {
             className="hidden md:flex md:items-center md:absolute md:left-1/2 md:-translate-x-1/2"
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="flex items-center gap-1 rounded-full border border-slate-200/80 bg-white/90 backdrop-blur-sm px-2 py-1.5 shadow-sm">
+            <div className={`flex items-center gap-1 rounded-full border px-2 py-1.5 shadow-sm transition-all duration-300 ${
+              isLightMode
+                ? 'border-white/20 bg-white/10 backdrop-blur-md'
+                : 'border-slate-200/80 bg-white/90 backdrop-blur-sm'
+            }`}>
               {navLinks.map((link, index) => {
                 const isLayanan = link.label === 'Layanan';
 
@@ -155,12 +169,14 @@ export function Navbar() {
                         href={link.href}
                         onClick={(e) => handleLinkClick(e, link.href, index)}
                         onMouseEnter={() => setHoveredIndex(index)}
-                        className="relative flex items-center gap-1 rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-slate-900"
+                        className={`relative flex items-center gap-1 rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200 ${
+                          isLightMode ? 'text-white/80 hover:text-white' : 'text-slate-600 hover:text-slate-900'
+                        }`}
                       >
                         <AnimatePresence>
                           {hoveredIndex === index && (
                             <motion.span
-                              className="absolute inset-0 rounded-full bg-slate-100"
+                              className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/15' : 'bg-slate-100'}`}
                               layoutId="navbar-hover"
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
@@ -171,12 +187,12 @@ export function Navbar() {
                         </AnimatePresence>
                         {activeIndex === index && hoveredIndex === null && (
                           <motion.span
-                            className="absolute inset-0 rounded-full bg-blue-50"
+                            className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/20' : 'bg-blue-50'}`}
                             layoutId="navbar-active"
                             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                           />
                         )}
-                        <span className={`relative z-10 ${activeIndex === index ? 'text-blue-600' : ''}`}>
+                        <span className={`relative z-10 ${activeIndex === index ? (isLightMode ? 'text-white' : 'text-blue-600') : ''}`}>
                           {link.label}
                         </span>
                         <ChevronDown className={`relative z-10 h-3.5 w-3.5 transition-transform duration-200 ${showLayanan ? 'rotate-180' : ''}`} />
@@ -229,12 +245,14 @@ export function Navbar() {
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href, index)}
                     onMouseEnter={() => setHoveredIndex(index)}
-                    className="relative rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-slate-900"
+                    className={`relative rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200 ${
+                      isLightMode ? 'text-white/80 hover:text-white' : 'text-slate-600 hover:text-slate-900'
+                    }`}
                   >
                     <AnimatePresence>
                       {hoveredIndex === index && (
                         <motion.span
-                          className="absolute inset-0 rounded-full bg-slate-100"
+                          className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/15' : 'bg-slate-100'}`}
                           layoutId="navbar-hover"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
@@ -245,12 +263,12 @@ export function Navbar() {
                     </AnimatePresence>
                     {activeIndex === index && hoveredIndex === null && (
                       <motion.span
-                        className="absolute inset-0 rounded-full bg-blue-50"
+                        className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/20' : 'bg-blue-50'}`}
                         layoutId="navbar-active"
                         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                       />
                     )}
-                    <span className={`relative z-10 ${activeIndex === index ? 'text-blue-600' : ''}`}>
+                    <span className={`relative z-10 ${activeIndex === index ? (isLightMode ? 'text-white' : 'text-blue-600') : ''}`}>
                       {link.label}
                     </span>
                   </a>
@@ -261,7 +279,7 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block relative z-10">
-            <Button asChild size="sm" className="rounded-full shadow-sm">
+            <Button asChild size="sm" className={`rounded-full shadow-sm ${isLightMode ? 'bg-white text-slate-900 hover:bg-white/90' : ''}`}>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 Konsultasi Gratis
               </a>
@@ -274,7 +292,9 @@ export function Navbar() {
               <Drawer.Trigger asChild>
                 <button
                   type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-full text-slate-700 hover:bg-slate-100 transition-colors"
+                  className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                    isLightMode ? 'text-white hover:bg-white/10' : 'text-slate-700 hover:bg-slate-100'
+                  }`}
                   aria-label="Menu navigasi"
                 >
                   <Menu className="h-5 w-5" />

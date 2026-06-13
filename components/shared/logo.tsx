@@ -3,9 +3,10 @@ import { cn } from "@/lib/utils";
 interface LogoProps {
   className?: string;
   showText?: boolean;
+  variant?: "dark" | "light";
 }
 
-export function Logo({ className, showText = true }: LogoProps) {
+export function Logo({ className, showText = true, variant = "dark" }: LogoProps) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       {/* Icon mark — rounded square with </> code symbol */}
@@ -44,8 +45,8 @@ export function Logo({ className, showText = true }: LogoProps) {
 
       {/* Wordmark */}
       {showText && (
-        <span className="text-xl font-bold tracking-tight text-slate-900">
-          Nexa<span className="text-blue-600">Plus</span>
+        <span className={cn("text-xl font-bold tracking-tight", variant === "light" ? "text-white" : "text-slate-900")}>
+          Nexa<span className={variant === "light" ? "text-blue-400" : "text-blue-600"}>Plus</span>
         </span>
       )}
     </span>
