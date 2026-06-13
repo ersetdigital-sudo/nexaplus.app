@@ -85,6 +85,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     title: post.meta_title || post.title,
     excerpt: post.meta_description || post.excerpt,
     publishedDate,
+    modifiedDate: post.updated_at ? new Date(post.updated_at) : undefined,
+    url: `https://nexaplus.app/blog/${post.slug}`,
+    image: post.cover_image || undefined,
   });
 
   return (

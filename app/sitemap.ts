@@ -1,18 +1,39 @@
 import type { MetadataRoute } from 'next';
-import { blogPosts } from '@/data/blog-posts';
-import { portfolioItems } from '@/data/portfolio';
+import { createClient } from '@supabase/supabase-js';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://nexaplus.app';
 
-  const blogUrls = blogPosts.map((post) => ({
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+
+  // Fetch published blog posts
+  const { data: blogPosts } = await supabase
+    .from('blog_posts')
+    .select('slug, updated_at, published_at')
+    .eq('published', true)
+    .order('published_at', { ascending: false });
+
+  const blogUrls = (blogPosts || []).map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.publishedDate,
+    lastModified: new Date(post.updated_at || post.published_at),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
   }));
 
-  const portfolioUrls = portfolioItems.map((item) => ({
+  // Fetch portfolio items
+  const { data: portfolioItems } = await supabase
+    .from('portfolio_items')
+    .select('slug, updated_at')
+    .eq('published', true);
+
+  const portfolioUrls = (portfolioItems || []).map((item) => ({
     url: `${baseUrl}/portfolio/${item.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(item.updated_at),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
   }));
 
   return [

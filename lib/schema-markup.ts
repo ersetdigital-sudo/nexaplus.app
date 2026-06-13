@@ -58,6 +58,9 @@ export interface SchemaArticle {
   headline: string;
   description: string;
   datePublished: string;
+  dateModified?: string;
+  url?: string;
+  image?: string;
   author: { '@type': 'Organization'; name: string };
 }
 
@@ -77,6 +80,9 @@ export interface ArticleInput {
   title: string;
   excerpt: string;
   publishedDate: Date;
+  modifiedDate?: Date;
+  url?: string;
+  image?: string;
 }
 
 // --- Validation helpers ---
@@ -202,7 +208,7 @@ export function generateArticleSchema(post: ArticleInput): SchemaArticle {
   const headline = validateRequiredString(post.title, 'article.title');
   const description = validateRequiredString(post.excerpt, 'article.excerpt');
 
-  return {
+  const schema: SchemaArticle = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline,
@@ -213,4 +219,16 @@ export function generateArticleSchema(post: ArticleInput): SchemaArticle {
       name: siteConfig.name,
     },
   };
+
+  if (post.modifiedDate) {
+    schema.dateModified = post.modifiedDate.toISOString();
+  }
+  if (post.url) {
+    schema.url = post.url;
+  }
+  if (post.image) {
+    schema.image = post.image;
+  }
+
+  return schema;
 }
