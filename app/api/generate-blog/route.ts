@@ -1,4 +1,4 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -9,16 +9,28 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Topic is required" }, { status: 400 });
     }
 
-    const supabase = await createServerSupabaseClient();
+    // Use service-level supabase client (no auth needed for settings read)
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
 
     // Get API key and model from settings
-    const { data: settings } = await supabase
+    const { data: settings, error: dbError } = await supabase
       .from("settings")
       .select("key, value")
       .in("key", ["openagentic_api_key", "ai_model"]);
 
+    if (dbError) {
+      console.error("DB error:", dbError);
+      return NextResponse.json(
+        { error: "Gagal membaca settings dari database." },
+        { status: 500 }
+      );
+    }
+
     const apiKey = settings?.find((s) => s.key === "openagentic_api_key")?.value;
-    const model = settings?.find((s) => s.key === "ai_model")?.value || "google/gemini-2.0-flash";
+    const model = settings?.find((s) => s.key === "ai_model")?.value || "claude-sonnet-4.5";
 
     if (!apiKey) {
       return NextResponse.json(
@@ -48,27 +60,31 @@ Panduan penulisan:
 - Jangan gunakan markdown, gunakan HTML tags
 - Response HANYA berupa JSON, tanpa teks lain`;
 
+    const requestBody = {
+      model,
+      messages: [
+        { role: "system", content: "Kamu adalah AI penulis artikel blog profesional. Selalu respond dalam format JSON murni." },
+        { role: "user", content: prompt },
+      ],
+      temperature: 0.7,
+      max_tokens: 4096,
+    };
+
     const response = await fetch("https://aimurah.my.id/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify({
-        model,
-        messages: [
-          { role: "system", content: "Kamu adalah AI penulis artikel blog profesional. Selalu respond dalam format JSON murni." },
-          { role: "user", content: prompt },
-        ],
-        temperature: 0.7,
-      }),
+      body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("OpenAgentic API error:", errorText);
+      console.error("OpenAgentic API error status:", response.status);
+      console.error("OpenAgentic API error body:", errorText);
       return NextResponse.json(
-        { error: "Gagal generate artikel. Periksa API key dan model." },
+        { error: `Gagal generate artikel. Status: ${response.status}. Detail: ${errorText}` },
         { status: 500 }
       );
     }
@@ -77,6 +93,7 @@ Panduan penulisan:
     const rawContent = data.choices?.[0]?.message?.content;
 
     if (!rawContent) {
+      console.error("Empty AI response, full data:", JSON.stringify(data));
       return NextResponse.json({ error: "Response kosong dari AI" }, { status: 500 });
     }
 
@@ -84,7 +101,7 @@ Panduan penulisan:
     let parsed;
     try {
       const cleaned = rawContent
-        .replace(/```json\s*/g, "")
+        .replace(/```json\s*/gi, "")
         .replace(/```\s*/g, "")
         .trim();
       parsed = JSON.parse(cleaned);
@@ -106,6 +123,6 @@ Panduan penulisan:
     });
   } catch (error) {
     console.error("Generate blog error:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ error: "Internal server error: " + String(error) }, { status: 500 });
   }
 }

@@ -1,4 +1,4 @@
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -12,16 +12,28 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const supabase = await createServerSupabaseClient();
+    // Use service-level supabase client (no auth needed for settings read)
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
 
     // Get API key and model from settings
-    const { data: settings } = await supabase
+    const { data: settings, error: dbError } = await supabase
       .from("settings")
       .select("key, value")
       .in("key", ["openagentic_api_key", "ai_model"]);
 
+    if (dbError) {
+      console.error("DB error:", dbError);
+      return NextResponse.json(
+        { error: "Gagal membaca settings dari database." },
+        { status: 500 }
+      );
+    }
+
     const apiKey = settings?.find((s) => s.key === "openagentic_api_key")?.value;
-    const model = settings?.find((s) => s.key === "ai_model")?.value || "google/gemini-2.0-flash";
+    const model = settings?.find((s) => s.key === "ai_model")?.value || "claude-sonnet-4.5";
 
     if (!apiKey) {
       return NextResponse.json(
@@ -57,14 +69,16 @@ ATURAN:
           { role: "user", content: prompt },
         ],
         temperature: 0.7,
+        max_tokens: 4096,
       }),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("OpenAgentic API error:", errorText);
+      console.error("OpenAgentic API error status:", response.status);
+      console.error("OpenAgentic API error body:", errorText);
       return NextResponse.json(
-        { error: "Gagal merevisi artikel. Periksa API key dan model." },
+        { error: `Gagal merevisi artikel. Status: ${response.status}. Detail: ${errorText}` },
         { status: 500 }
       );
     }
@@ -78,13 +92,13 @@ ATURAN:
 
     // Clean up potential markdown code blocks
     revisedContent = revisedContent
-      .replace(/```html\s*/g, "")
+      .replace(/```html\s*/gi, "")
       .replace(/```\s*/g, "")
       .trim();
 
     return NextResponse.json({ content: revisedContent });
   } catch (error) {
     console.error("Revise blog error:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ error: "Internal server error: " + String(error) }, { status: 500 });
   }
 }
