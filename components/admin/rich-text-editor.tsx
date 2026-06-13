@@ -4,6 +4,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Link from "@tiptap/extension-link";
+import { useEffect } from "react";
 import {
   Bold,
   Italic,
@@ -16,15 +17,19 @@ import {
   Undo,
   Redo,
   LinkIcon,
+  Sparkles,
+  Loader2,
 } from "lucide-react";
 
 interface RichTextEditorProps {
   content: string;
   onChange: (html: string) => void;
   placeholder?: string;
+  onRevise?: () => void;
+  isRevising?: boolean;
 }
 
-export function RichTextEditor({ content, onChange, placeholder }: RichTextEditorProps) {
+export function RichTextEditor({ content, onChange, placeholder, onRevise, isRevising }: RichTextEditorProps) {
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -49,6 +54,14 @@ export function RichTextEditor({ content, onChange, placeholder }: RichTextEdito
       },
     },
   });
+
+  // Sync editor content when content prop changes externally (e.g., from AI)
+  useEffect(() => {
+    if (editor && content !== editor.getHTML()) {
+      editor.commands.setContent(content);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content, editor]);
 
   if (!editor) return null;
 
@@ -170,6 +183,26 @@ export function RichTextEditor({ content, onChange, placeholder }: RichTextEdito
         >
           <Redo className="h-4 w-4" />
         </ToolbarButton>
+
+        {onRevise && (
+          <>
+            <div className="mx-1 h-5 w-px bg-slate-200" />
+            <button
+              type="button"
+              onClick={onRevise}
+              disabled={isRevising}
+              title="Revisi dengan AI"
+              className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 hover:bg-purple-100 transition-colors disabled:opacity-50"
+            >
+              {isRevising ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : (
+                <Sparkles className="h-3.5 w-3.5" />
+              )}
+              Revisi AI
+            </button>
+          </>
+        )}
       </div>
 
       {/* Editor content */}
