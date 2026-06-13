@@ -163,11 +163,28 @@ export default function AdminSettingsPage() {
                   className="flex-1 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
                 >
                   {models.length > 0 ? (
-                    models.map((m) => (
-                      <option key={m.id} value={m.id}>
-                        {m.id}{m.owned_by ? ` (${m.owned_by})` : ""}
-                      </option>
-                    ))
+                    (() => {
+                      // Group models by owned_by/provider
+                      const grouped: Record<string, AIModel[]> = {};
+                      models.forEach((m) => {
+                        const provider = m.owned_by || "Lainnya";
+                        if (!grouped[provider]) grouped[provider] = [];
+                        grouped[provider].push(m);
+                      });
+
+                      // Sort groups
+                      const sortedGroups = Object.entries(grouped).sort(([a], [b]) => a.localeCompare(b));
+
+                      return sortedGroups.map(([provider, groupModels]) => (
+                        <optgroup key={provider} label={provider}>
+                          {groupModels.map((m) => (
+                            <option key={m.id} value={m.id}>
+                              {m.id}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ));
+                    })()
                   ) : (
                     <option value={model}>{model}</option>
                   )}
