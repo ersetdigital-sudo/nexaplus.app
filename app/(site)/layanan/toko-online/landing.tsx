@@ -267,7 +267,7 @@ export function TokoOnlineLanding() {
               { title: "Support Aktif", desc: "Tim kami siap bantu via WhatsApp setelah website live." },
               { title: "Desain Sesuai Brand", desc: "Bukan template asal jadi, tapi disesuaikan dengan identitas bisnis kamu." },
               { title: "Berpengalaman di Pasar Indonesia", desc: "Kami paham kebutuhan UMKM lokal dan perilaku pembeli Indonesia." },
-              { title: "Teknologi Modern", desc: "Menggunakan Next.js & React — sama seperti yang dipakai startup unicorn." },
+              { title: "Website Super Cepat & Modern", desc: "Dibangun dengan teknologi terkini untuk memberikan performa tinggi, pengalaman pengguna yang nyaman, dan dukungan SEO yang lebih optimal." },
             ].map((item, i) => (
               <motion.div
                 key={i}
