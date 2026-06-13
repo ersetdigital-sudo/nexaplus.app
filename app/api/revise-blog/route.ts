@@ -44,7 +44,7 @@ ATURAN:
 - Jangan tambahkan penjelasan, langsung berikan HTML yang sudah direvisi
 - Pastikan tetap SEO-friendly dan dalam bahasa Indonesia`;
 
-    const response = await fetch("https://openagentic.id/api/v1/chat/completions", {
+    const response = await fetch("https://aimurah.my.id/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

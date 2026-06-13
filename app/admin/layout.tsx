@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { FileText, Image, LayoutDashboard, LogOut } from "lucide-react";
+import { FileText, Image, LayoutDashboard, LogOut, Settings } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 
 const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Blog", href: "/admin/blog", icon: FileText },
   { label: "Portfolio", href: "/admin/portfolio", icon: Image },
+  { label: "Settings", href: "/admin/settings", icon: Settings },
 ];
 
 export default function AdminLayout({

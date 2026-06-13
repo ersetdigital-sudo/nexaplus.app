@@ -48,7 +48,7 @@ Panduan penulisan:
 - Jangan gunakan markdown, gunakan HTML tags
 - Response HANYA berupa JSON, tanpa teks lain`;
 
-    const response = await fetch("https://openagentic.id/api/v1/chat/completions", {
+    const response = await fetch("https://aimurah.my.id/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
