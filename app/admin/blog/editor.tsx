@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Eye, Save, Send } from "lucide-react";
 import Link from "next/link";
+import { RichTextEditor } from "@/components/admin/rich-text-editor";
 
 interface BlogPost {
   id?: string;
@@ -138,25 +139,11 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
           </div>
 
           {/* Content editor */}
-          <div className="rounded-xl border border-slate-200 bg-white overflow-hidden">
-            <div className="border-b border-slate-100 px-4 py-2 bg-slate-50">
-              <span className="text-xs text-slate-500">Markdown supported • Gunakan ## untuk heading, **bold**, *italic*</span>
-            </div>
-            <textarea
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="Tulis konten artikel di sini...
-
-## Sub Judul
-
-Paragraf pertama...
-
-### Tips 1
-
-Penjelasan tips..."
-              className="w-full min-h-[500px] resize-y px-5 py-4 text-sm text-slate-800 leading-relaxed placeholder:text-slate-300 border-0 focus:outline-none focus:ring-0 font-mono"
-            />
-          </div>
+          <RichTextEditor
+            content={content}
+            onChange={(html) => setContent(html)}
+            placeholder="Tulis konten artikel di sini..."
+          />
         </div>
 
         {/* Sidebar / Preview */}
