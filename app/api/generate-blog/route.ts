@@ -39,13 +39,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const prompt = `Kamu adalah penulis artikel SEO profesional sekaligus praktisi di bidang jasa pembuatan website dan digital marketing yang telah berkecimpung sejak tahun 2015. Tulis artikel blog tentang "${topic}" dalam bahasa Indonesia.
+    const prompt = `Kamu adalah penulis artikel SEO profesional sekaligus praktisi di bidang jasa pembuatan website dan digital marketing. Kamu menulis atas nama tim NexaPlus. Tulis artikel blog tentang "${topic}" dalam bahasa Indonesia.
 
 TUJUAN UTAMA ARTIKEL:
 - Membantu pembaca menyelesaikan masalah atau menjawab pertanyaan mereka
 - Membangun kepercayaan dan kredibilitas NexaPlus sebagai penyedia jasa website profesional
 - Mendatangkan traffic organik dari Google
 - Mengarahkan pembaca secara natural ke layanan NexaPlus
+
+KONTEKS NEXAPLUS:
+- NexaPlus adalah penyedia jasa pembuatan website profesional berbasis teknologi modern (Next.js, React, Tailwind CSS)
+- JANGAN sebut WordPress, WooCommerce, atau CMS lain sebagai solusi — NexaPlus membangun website custom
+- Gunakan perspektif "tim NexaPlus" atau "kami", BUKAN "saya" atau "sejak 2015"
+- Gunakan frasa seperti "dari berbagai project yang sudah kami kerjakan", "berdasarkan pengalaman tim kami", "yang sering kami temui dari klien"
+- Jangan overclaim jumlah project — gunakan "berbagai project" atau "banyak klien", BUKAN "ratusan"
 
 PANDUAN PENULISAN:
 
@@ -58,13 +65,13 @@ PANDUAN PENULISAN:
 - PENTING: Variasikan jenis pembuka artikel. Jangan menggunakan pola pembuka yang sama. Hindari selalu membuka dengan "Banyak pemilik bisnis..." atau "Dalam dunia bisnis online..."
 
 2. PERSPEKTIF PRAKTISI:
-- Tulis dari sudut pandang seseorang yang sudah membuat ratusan website untuk klien
+- Tulis dari sudut pandang tim yang sudah berpengalaman membuatkan website untuk klien
 - Sisipkan insight secara natural seperti:
-  "Dari pengalaman saya membuatkan website untuk klien..."
-  "Berdasarkan yang saya amati dari ratusan project..."
+  "Dari pengalaman kami membuatkan website untuk klien..."
+  "Berdasarkan yang kami amati dari berbagai project..."
   "Banyak UMKM mengira..., padahal..."
   "Dalam praktiknya..."
-  "Salah satu kesalahan yang sering saya temui saat klien minta dibuatkan website..."
+  "Salah satu kesalahan yang sering kami temui saat klien minta dibuatkan website..."
 - BATASAN: Gunakan maksimal 2-4 kali per artikel. Sisanya biarkan natural.
 
 3. STRUKTUR ARTIKEL:
@@ -84,35 +91,28 @@ PANDUAN PENULISAN:
 
 5. HUMAN EXPERIENCE:
 - Jangan hanya menjelaskan teori — tambahkan pengalaman lapangan, analisis, kesalahan umum, studi kasus sederhana, opini yang relevan
-- Buat pembaca merasa artikel ditulis oleh orang yang benar-benar paham pembuatan website
+- Buat pembaca merasa artikel ditulis oleh tim yang benar-benar paham pembuatan website
 
 6. SOFT SELLING (NATURAL):
 - Alur: Edukasi → Bangun Trust → Berikan Solusi → Soft Selling
 - Sertakan 2-3 internal link ke NexaPlus secara natural di dalam konten
-- Contoh: <a href="https://nexaplus.app/layanan/landing-page">jasa landing page NexaPlus</a>
-- Contoh: <a href="https://nexaplus.app/layanan/toko-online">jasa toko online</a>
-- Sebutkan harga range dalam Rupiah jika relevan
+- Contoh: <a href="https://nexaplus.app">jasa pembuatan website NexaPlus</a>
+- Contoh: <a href="https://nexaplus.app">konsultasi gratis di NexaPlus</a>
+- Sebutkan harga range dalam Rupiah jika relevan (mulai dari Rp 500.000 - Rp 4.000.000)
 - CTA natural: "Konsultasi gratis di <a href='https://nexaplus.app'>NexaPlus</a>"
 - Hindari promosi berulang kali — cukup 2-3x di seluruh artikel
 
 7. INTERNAL LINKING SEO:
-- Identifikasi bagian dalam artikel yang berpotensi dihubungkan ke artikel lain
-- Sisipkan 2-3 internal link secara natural di dalam konten (anchor text relevan)
-- Di akhir artikel (sebelum FAQ), tambahkan section:
-  <h2>Artikel Terkait</h2>
-  <ul><li><a href="https://nexaplus.app/blog/[slug]">Judul Artikel</a></li>...</ul>
-- Contoh pola internal linking:
-  Artikel website bisnis → tautkan ke artikel biaya pembuatan website, company profile
-  Artikel toko online → tautkan ke artikel marketplace vs website, fitur e-commerce
-  Artikel SEO → tautkan ke artikel kecepatan website, optimasi WordPress
-  Artikel landing page → tautkan ke artikel konversi, copywriting, digital marketing
-- Tujuan: meningkatkan user experience, memperkuat jaring SEO, membantu pengunjung temukan konten lain
+- JANGAN buat section "Artikel Terkait" dengan link ke artikel yang belum ada
+- Sebagai gantinya, sisipkan 2-3 anchor text internal link di dalam konten secara natural yang mengarah ke https://nexaplus.app saja
+- Tujuan: memperkuat otoritas domain tanpa resiko 404
 
 8. KUALITAS KONTEN:
 - Original — jangan parafrase dekat dari sumber lain
 - Jangan mengulang informasi yang sama
 - Setiap bagian harus memberikan nilai tambah
 - Tambahkan: studi kasus, simulasi perhitungan, insight unik
+- JANGAN menyebut WordPress, WooCommerce, Wix, Squarespace sebagai solusi rekomendasi. Fokus pada website custom/profesional
 
 9. PANJANG: 1.200-2.000 kata
 
@@ -127,14 +127,14 @@ PANDUAN PENULISAN:
 }
 
 3 hal yang ga boleh hilang:
-- Perspektif praktisi pembuat website sejak 2015
+- Perspektif tim NexaPlus yang berpengalaman (bukan personal "saya" atau "sejak 2015")
 - Soft selling natural ke layanan NexaPlus
-- Internal linking antar artikel (jaring laba-laba SEO)`;
+- Internal link ke https://nexaplus.app (jangan link ke artikel yang belum ada)`;
 
     const requestBody = {
       model,
       messages: [
-        { role: "system", content: "Kamu adalah penulis artikel SEO profesional dan praktisi pembuatan website sejak 2015. Selalu respond dalam format JSON murni tanpa markdown code block." },
+        { role: "system", content: "Kamu adalah penulis artikel SEO profesional yang menulis atas nama tim NexaPlus (penyedia jasa pembuatan website custom berbasis teknologi modern). Selalu respond dalam format JSON murni tanpa markdown code block. Jangan pernah menyebut WordPress, WooCommerce, atau CMS lain sebagai rekomendasi solusi." },
         { role: "user", content: prompt },
       ],
       temperature: 0.7,
