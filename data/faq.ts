@@ -9,7 +9,7 @@ export const faqItems: FAQItem[] = [
     id: 'faq-1',
     question: 'Berapa biaya pembuatan website?',
     answer:
-      'Harga menyesuaikan kebutuhan. Paket tersedia mulai dari Rp 1.500.000 hingga Rp 6.000.000 tergantung jenis dan kompleksitas website. Semua paket sudah termasuk hosting dan SSL gratis untuk tahun pertama.',
+      'Harga menyesuaikan kebutuhan. Paket tersedia mulai dari Rp 500.000 hingga Rp 4.000.000 tergantung jenis dan kompleksitas website. Semua paket sudah termasuk hosting dan SSL gratis untuk tahun pertama.',
   },
   {
     id: 'faq-2',
