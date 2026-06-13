@@ -2,38 +2,66 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { blogPosts } from '@/data/blog-posts';
+import { createClient } from '@supabase/supabase-js';
 import { generateArticleSchema } from '@/lib/schema-markup';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
+
+async function getPost(slug: string) {
+  const supabase = getSupabase();
+  const { data } = await supabase
+    .from('blog_posts')
+    .select('*')
+    .eq('slug', slug)
+    .eq('published', true)
+    .single();
+  return data;
+}
+
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  const supabase = getSupabase();
+  const { data } = await supabase
+    .from('blog_posts')
+    .select('slug')
+    .eq('published', true);
+  return (data || []).map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getPost(slug);
 
   if (!post) {
     return { title: 'Post Tidak Ditemukan' };
   }
 
+  const metaTitle = post.meta_title || post.title;
+  const metaDescription = post.meta_description || post.excerpt;
+
   return {
-    title: `${post.title} | NexaPlus Blog`,
-    description: post.excerpt,
+    title: `${metaTitle} | NexaPlus Blog`,
+    description: metaDescription,
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       type: 'article',
-      publishedTime: post.publishedDate.toISOString(),
+      publishedTime: post.published_at || post.created_at,
+      images: post.cover_image ? [{ url: post.cover_image }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
+      images: post.cover_image ? [post.cover_image] : undefined,
     },
     alternates: {
       canonical: `https://nexaplus.app/blog/${post.slug}`,
@@ -41,18 +69,22 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
+export const revalidate = 60; // ISR: revalidate every 60 seconds
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();
   }
 
+  const publishedDate = new Date(post.published_at || post.created_at);
+
   const articleSchema = generateArticleSchema({
-    title: post.title,
-    excerpt: post.excerpt,
-    publishedDate: post.publishedDate,
+    title: post.meta_title || post.title,
+    excerpt: post.meta_description || post.excerpt,
+    publishedDate,
   });
 
   return (
@@ -77,10 +109,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.category}
             </span>
             <time
-              dateTime={post.publishedDate.toISOString()}
+              dateTime={publishedDate.toISOString()}
               className="text-sm text-slate-500"
             >
-              {post.publishedDate.toLocaleDateString('id-ID', {
+              {publishedDate.toLocaleDateString('id-ID', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -96,13 +128,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.excerpt}
           </p>
 
+          {/* Cover Image */}
+          {post.cover_image && (
+            <div className="mt-8 rounded-xl overflow-hidden border border-slate-200">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={post.cover_image}
+                alt={post.title}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          )}
+
           {/* Divider */}
           <div className="mt-10 border-t border-slate-200" />
         </header>
 
         {/* Content */}
         <div className="mx-auto max-w-3xl px-5 sm:px-6 mt-10">
-          <article
+          <div
             className="prose prose-lg prose-slate max-w-none
               prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-slate-900
               prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4

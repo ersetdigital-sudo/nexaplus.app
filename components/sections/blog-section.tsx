@@ -1,29 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { createClient } from "@/lib/supabase/client";
 
-import { blogPosts, type BlogCategory } from "@/data/blog-posts";
-import { filterBlogPosts, formatDate } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 
-const categories: (BlogCategory | "All")[] = [
-  "All",
-  "SEO",
-  "Website",
-  "Bisnis Online",
-  "UMKM",
-  "Toko Online",
-];
+interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  cover_image: string | null;
+  published_at: string | null;
+  created_at: string;
+}
+
+const categories = ["All", "SEO", "Website", "Bisnis Online", "UMKM", "Toko Online"];
 
 export function BlogSection() {
-  const [activeCategory, setActiveCategory] = useState<BlogCategory | "All">(
-    "All"
-  );
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredPosts = filterBlogPosts(blogPosts, activeCategory).slice(0, 6);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const supabase = createClient();
+      const { data } = await supabase
+        .from("blog_posts")
+        .select("id, slug, title, excerpt, category, cover_image, published_at, created_at")
+        .eq("published", true)
+        .order("published_at", { ascending: false })
+        .limit(12);
+      setPosts(data || []);
+      setLoading(false);
+    };
+    fetchPosts();
+  }, []);
+
+  const filteredPosts =
+    activeCategory === "All"
+      ? posts.slice(0, 6)
+      : posts.filter((p) => p.category === activeCategory).slice(0, 6);
+
+  const formatDate = (dateStr: string) => {
+    return new Date(dateStr).toLocaleDateString("id-ID", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   return (
     <SectionWrapper id="blog" className="bg-white">
@@ -41,13 +70,17 @@ export function BlogSection() {
               size="sm"
               onClick={() => setActiveCategory(category)}
             >
-              {category === "All" ? "All" : category}
+              {category}
             </Button>
           ))}
         </div>
 
         {/* Blog posts grid */}
-        {filteredPosts.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center py-12">
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+          </div>
+        ) : filteredPosts.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredPosts.map((post) => (
               <Link
@@ -56,17 +89,26 @@ export function BlogSection() {
                 className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-blue-600/30">
-                  <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
-                    <span className="px-4 text-center text-lg font-bold text-white/90">
-                      {post.category}
-                    </span>
-                  </div>
+                  {post.cover_image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={post.cover_image}
+                      alt={post.title}
+                      className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
+                      <span className="px-4 text-center text-lg font-bold text-white/90">
+                        {post.category}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-5">
                   <div className="mb-3 flex items-center justify-between">
                     <Badge variant="secondary">{post.category}</Badge>
                     <span className="text-xs text-slate-500">
-                      {formatDate(post.publishedDate)}
+                      {formatDate(post.published_at || post.created_at)}
                     </span>
                   </div>
                   <h3 className="card-title mb-2 font-semibold text-slate-900">

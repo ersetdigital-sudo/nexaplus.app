@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { blogPosts } from '@/data/blog-posts';
+import { createClient } from '@supabase/supabase-js';
 
 export const runtime = 'edge';
 export const alt = 'Artikel Blog NexaPlus - Jasa Pembuatan Website Profesional';
@@ -7,9 +7,18 @@ export const size = { width: 1200, height: 628 };
 export const contentType = 'image/png';
 
 export default async function Image({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
-  const title = post?.title || 'NexaPlus Blog';
+  const { data: post } = await supabase
+    .from('blog_posts')
+    .select('title, category, meta_title')
+    .eq('slug', params.slug)
+    .single();
+
+  const title = post?.meta_title || post?.title || 'NexaPlus Blog';
   const category = post?.category || 'Blog';
 
   return new ImageResponse(

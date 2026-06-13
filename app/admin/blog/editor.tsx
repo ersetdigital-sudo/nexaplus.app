@@ -15,6 +15,8 @@ interface BlogPost {
   category: string;
   content: string;
   cover_image: string;
+  meta_title?: string;
+  meta_description?: string;
   published: boolean;
   published_at: string | null;
 }
@@ -32,8 +34,8 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
   const [category, setCategory] = useState(post?.category || categories[0]);
   const [content, setContent] = useState(post?.content || "");
   const [coverImage, setCoverImage] = useState(post?.cover_image || "");
-  const [metaTitle, setMetaTitle] = useState("");
-  const [metaDesc, setMetaDesc] = useState("");
+  const [metaTitle, setMetaTitle] = useState(post?.meta_title || "");
+  const [metaDesc, setMetaDesc] = useState(post?.meta_description || "");
   const [status, setStatus] = useState<"draft" | "published">(post?.published ? "published" : "draft");
   const [showPreview, setShowPreview] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -156,6 +158,8 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
       category,
       content,
       cover_image: coverImage || null,
+      meta_title: metaTitle || null,
+      meta_description: metaDesc || null,
       published: publish,
       published_at: publish ? new Date().toISOString() : post?.published_at || null,
     };
