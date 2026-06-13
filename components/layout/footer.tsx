@@ -77,9 +77,38 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social Links Column */}
+          {/* Social Links & Contact Column */}
           <div>
             <h3 className="!text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">
+              Kontak
+            </h3>
+            <ul className="space-y-2 mb-4">
+              <li className="text-sm text-slate-600">
+                {siteConfig.address.street}
+              </li>
+              <li className="text-sm text-slate-600">
+                {siteConfig.address.city}, {siteConfig.address.region} {siteConfig.address.postalCode}
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp.number}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                >
+                  +{siteConfig.whatsapp.number}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                >
+                  {siteConfig.contact.email}
+                </a>
+              </li>
+            </ul>
+            <h3 className="!text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">
               Ikuti Kami
             </h3>
             <div className="flex items-center gap-3">
