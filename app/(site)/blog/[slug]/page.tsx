@@ -133,12 +133,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Cover Image */}
           {post.cover_image && (
-            <div className="mt-8 rounded-xl overflow-hidden border border-slate-200">
+            <div className="mt-8 rounded-xl overflow-hidden border border-slate-200 aspect-[1200/630]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={post.cover_image}
                 alt={post.title}
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           )}

@@ -275,8 +275,9 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
               placeholder="https://example.com/image.jpg"
               className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
+            <p className="mt-1.5 text-xs text-slate-400">Ukuran ideal: 1200 x 630 px (rasio 1.91:1)</p>
             {coverImage && (
-              <div className="mt-2 w-32 h-20 rounded-lg overflow-hidden border border-slate-200">
+              <div className="mt-2 w-48 aspect-[1200/630] rounded-lg overflow-hidden border border-slate-200">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={coverImage} alt="Preview" className="w-full h-full object-cover" />
               </div>
