@@ -67,13 +67,27 @@ export function Footer() {
               Layanan
             </h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <span className="text-sm text-slate-600">
-                    {service.title}
-                  </span>
-                </li>
-              ))}
+              {services.map((service) => {
+                const slugMap: Record<string, string> = {
+                  'website-toko-online': '/layanan/toko-online',
+                  'landing-page': '/layanan/landing-page',
+                  'company-profile': '/layanan/company-profile',
+                  'website-sekolah': '/layanan/website-sekolah',
+                  'website-pemerintahan': '/layanan/website-pemerintahan',
+                  'website-organisasi': '/layanan/website-organisasi',
+                };
+                const href = slugMap[service.id] || '/#layanan';
+                return (
+                  <li key={service.id}>
+                    <Link
+                      href={href}
+                      className="text-sm text-slate-600 transition-colors hover:text-blue-600"
+                    >
+                      {service.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
