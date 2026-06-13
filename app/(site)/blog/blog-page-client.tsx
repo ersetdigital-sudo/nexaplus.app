@@ -40,7 +40,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
   };
 
   return (
-    <div className="py-16 md:py-24">
+    <div className="py-8 md:py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         {/* Header */}
         <div className="mb-12 text-center">

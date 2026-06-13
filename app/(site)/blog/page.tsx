@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createClient } from "@supabase/supabase-js";
 import { BlogPageClient } from "./blog-page-client";
+import { Breadcrumb } from "@/components/shared/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Blog - Artikel SEO, Website & Digital Marketing | NexaPlus",
@@ -39,5 +40,18 @@ async function getPosts() {
 export default async function BlogPage() {
   const posts = await getPosts();
 
-  return <BlogPageClient posts={posts} />;
+  return (
+    <div>
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 pt-20 md:pt-24">
+        <Breadcrumb
+          variant="light"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Blog" },
+          ]}
+        />
+      </div>
+      <BlogPageClient posts={posts} />
+    </div>
+  );
 }
