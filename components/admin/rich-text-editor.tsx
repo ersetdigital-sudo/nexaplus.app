@@ -4,6 +4,10 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Link from "@tiptap/extension-link";
+import Table from "@tiptap/extension-table";
+import TableRow from "@tiptap/extension-table-row";
+import TableCell from "@tiptap/extension-table-cell";
+import TableHeader from "@tiptap/extension-table-header";
 import { useEffect } from "react";
 import {
   Bold,
@@ -37,6 +41,23 @@ export function RichTextEditor({ content, onChange, placeholder, onRevise, isRev
         openOnClick: false,
         HTMLAttributes: {
           class: "text-blue-600 underline",
+        },
+      }),
+      Table.configure({
+        resizable: false,
+        HTMLAttributes: {
+          class: "border-collapse border border-slate-200 w-full",
+        },
+      }),
+      TableRow,
+      TableCell.configure({
+        HTMLAttributes: {
+          class: "border border-slate-200 px-3 py-2 text-sm",
+        },
+      }),
+      TableHeader.configure({
+        HTMLAttributes: {
+          class: "border border-slate-200 px-3 py-2 text-sm font-semibold bg-slate-50",
         },
       }),
       Placeholder.configure({
