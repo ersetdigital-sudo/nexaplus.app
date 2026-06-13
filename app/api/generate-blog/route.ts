@@ -98,7 +98,10 @@ PANDUAN PENULISAN:
 - Sertakan 2-3 internal link ke NexaPlus secara natural di dalam konten
 - Contoh: <a href="https://nexaplus.app">jasa pembuatan website NexaPlus</a>
 - Contoh: <a href="https://nexaplus.app">konsultasi gratis di NexaPlus</a>
-- Sebutkan harga range dalam Rupiah jika relevan (mulai dari Rp 500.000 - Rp 4.000.000)
+- Sebutkan harga range dalam Rupiah jika relevan. Harga NexaPlus:
+  * Landing page mulai dari Rp 1.500.000
+  * Company profile / website bisnis mulai dari Rp 3.500.000
+  * Toko online lengkap mulai dari Rp 6.000.000
 - CTA natural: "Konsultasi gratis di <a href='https://nexaplus.app'>NexaPlus</a>"
 - Hindari promosi berulang kali — cukup 2-3x di seluruh artikel
 

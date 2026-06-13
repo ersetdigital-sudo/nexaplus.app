@@ -130,7 +130,7 @@ export function generateLocalBusinessSchema() {
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
-    priceRange: 'Rp 500.000 - Rp 4.000.000',
+    priceRange: 'Rp 1.500.000 - Rp 6.000.000',
   };
 }
 
