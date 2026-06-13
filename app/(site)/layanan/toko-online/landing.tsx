@@ -350,12 +350,12 @@ export function TokoOnlineLanding() {
                 ))}
               </ul>
               <a
-                href={whatsappUrl}
+                href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Starter%20Website%20Toko%20Online.%20Bisa%20info%20lebih%20lanjut%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 flex h-11 w-full items-center justify-center rounded-full border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
               >
-                Konsultasi Paket
+                Konsultasi Paket Starter
               </a>
             </motion.div>
 
@@ -379,12 +379,12 @@ export function TokoOnlineLanding() {
                 ))}
               </ul>
               <a
-                href={whatsappUrl}
+                href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Professional%20Website%20Toko%20Online.%20Bisa%20info%20lebih%20lanjut%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 flex h-11 w-full items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white hover:bg-blue-700 transition-colors shadow-sm"
               >
-                Konsultasi Paket
+                Konsultasi Paket Professional
               </a>
             </motion.div>
 
@@ -404,7 +404,7 @@ export function TokoOnlineLanding() {
                 ))}
               </ul>
               <a
-                href={whatsappUrl}
+                href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Enterprise%20Website%20Toko%20Online.%20Bisa%20diskusi%20kebutuhan%20custom%20saya%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 flex h-11 w-full items-center justify-center rounded-full border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
