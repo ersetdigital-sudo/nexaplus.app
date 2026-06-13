@@ -190,7 +190,7 @@ export function Navbar() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 8, scale: 0.96 }}
                             transition={{ duration: 0.2, ease: 'easeOut' }}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[520px] rounded-2xl border border-slate-200/80 bg-white/95 backdrop-blur-xl p-4 shadow-xl shadow-slate-200/50"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[520px] rounded-2xl border border-slate-200/80 bg-white backdrop-blur-xl p-4 shadow-xl shadow-slate-200/50"
                             onMouseEnter={handleLayananEnter}
                             onMouseLeave={handleLayananLeave}
                           >
