@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { CheckCircle, ShoppingCart, Layout, Building2, GraduationCap, Users, Monitor, Package, CalendarCheck, Landmark, ArrowRight } from "lucide-react";
@@ -232,7 +232,7 @@ function PreviewPOS() {
           <span className="rounded bg-emerald-500/20 px-1 py-0.5 text-[5px] font-bold text-emerald-400">PRO</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[6px] text-slate-400">ðŸ‘¤ Ahmad (Kasir 1)</span>
+          <span className="text-[6px] text-slate-400">👤 Ahmad (Kasir 1)</span>
           <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
           <span className="text-[6px] text-green-400">Online</span>
         </div>
@@ -241,25 +241,25 @@ function PreviewPOS() {
         <div className="flex-1 flex flex-col p-2 overflow-hidden">
           <div className="flex items-center gap-1.5 mb-1.5">
             <div className="flex h-5 flex-1 items-center rounded-md bg-slate-800 px-2 border border-slate-600">
-              <span className="text-[6px] text-slate-500">ðŸ” Scan barcode atau ketik nama...</span>
+              <span className="text-[6px] text-slate-500">🔍 Scan barcode atau ketik nama...</span>
             </div>
-            <span className="rounded-md bg-blue-600 px-1.5 py-1 text-[6px] font-medium text-white">ðŸ“· Scan</span>
+            <span className="rounded-md bg-blue-600 px-1.5 py-1 text-[6px] font-medium text-white">📷 Scan</span>
           </div>
           <div className="flex gap-1 mb-2">
-            {["â˜• Minuman", "ðŸž Makanan", "ðŸª Snack", "ðŸ§Š Dingin"].map((c, i) => (
+            {["☕ Minuman", "🍞 Makanan", "🍪 Snack", "🧊 Dingin"].map((c, i) => (
               <span key={c} className={`rounded-md px-1.5 py-0.5 text-[6px] font-medium ${i === 0 ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-400 border border-slate-700"}`}>{c}</span>
             ))}
           </div>
           <div className="grid grid-cols-4 gap-1.5 flex-1 overflow-hidden">
             {[
-              { n: "Kopi Latte", p: "28K", emoji: "â˜•" },
-              { n: "Americano", p: "22K", emoji: "â˜•" },
-              { n: "Cappuccino", p: "30K", emoji: "â˜•" },
-              { n: "Matcha", p: "32K", emoji: "ðŸµ" },
-              { n: "Es Teh", p: "10K", emoji: "ðŸ§Š" },
-              { n: "Croissant", p: "22K", emoji: "ðŸ¥" },
-              { n: "Roti Bakar", p: "18K", emoji: "ðŸž" },
-              { n: "Mineral", p: "5K", emoji: "ðŸ’§" },
+              { n: "Kopi Latte", p: "28K", emoji: "☕" },
+              { n: "Americano", p: "22K", emoji: "☕" },
+              { n: "Cappuccino", p: "30K", emoji: "☕" },
+              { n: "Matcha", p: "32K", emoji: "🍵" },
+              { n: "Es Teh", p: "10K", emoji: "🧊" },
+              { n: "Croissant", p: "22K", emoji: "🥐" },
+              { n: "Roti Bakar", p: "18K", emoji: "🍞" },
+              { n: "Mineral", p: "5K", emoji: "💧" },
             ].map((item) => (
               <div key={item.n} className="rounded-lg bg-slate-800 border border-slate-700 p-1.5 text-center hover:border-blue-500 transition-colors cursor-pointer flex flex-col items-center justify-center">
                 <span className="text-[12px] mb-0.5">{item.emoji}</span>
@@ -271,7 +271,7 @@ function PreviewPOS() {
         </div>
         <div className="w-[38%] bg-slate-900 border-l border-slate-700 flex flex-col">
           <div className="flex items-center justify-between px-2 py-1.5 border-b border-slate-700">
-            <span className="text-[7px] font-bold text-white">ðŸ§¾ Order #047</span>
+            <span className="text-[7px] font-bold text-white">🧾 Order #047</span>
             <span className="text-[5px] text-slate-500">Meja 5</span>
           </div>
           <div className="flex-1 px-2 py-1.5 space-y-1 overflow-hidden">
@@ -299,8 +299,8 @@ function PreviewPOS() {
             </div>
           </div>
           <div className="px-2 pb-2 grid grid-cols-2 gap-1">
-            <span className="rounded-md bg-slate-800 border border-slate-700 py-1 text-center text-[6px] font-medium text-slate-300">ðŸ’µ Cash</span>
-            <span className="rounded-md bg-gradient-to-r from-emerald-500 to-green-500 py-1 text-center text-[6px] font-bold text-white shadow-sm">âœ“ BAYAR</span>
+            <span className="rounded-md bg-slate-800 border border-slate-700 py-1 text-center text-[6px] font-medium text-slate-300">💵 Cash</span>
+            <span className="rounded-md bg-gradient-to-r from-emerald-500 to-green-500 py-1 text-center text-[6px] font-bold text-white shadow-sm">✓ BAYAR</span>
           </div>
         </div>
       </div>
@@ -322,13 +322,13 @@ function PreviewInventory() {
         </div>
         <div className="px-1.5 py-2 space-y-0.5 flex-1">
           {[
-            { icon: "ðŸ“Š", label: "Dashboard", active: false },
-            { icon: "ðŸ“¦", label: "Produk", active: true },
-            { icon: "ðŸ“¥", label: "Stok Masuk", active: false },
-            { icon: "ðŸ“¤", label: "Stok Keluar", active: false },
-            { icon: "ðŸ·ï¸", label: "Kategori", active: false },
-            { icon: "ðŸ“‹", label: "Laporan", active: false },
-            { icon: "ðŸ‘¥", label: "Supplier", active: false },
+            { icon: "📊", label: "Dashboard", active: false },
+            { icon: "📦", label: "Produk", active: true },
+            { icon: "📥", label: "Stok Masuk", active: false },
+            { icon: "📤", label: "Stok Keluar", active: false },
+            { icon: "🏷️", label: "Kategori", active: false },
+            { icon: "📋", label: "Laporan", active: false },
+            { icon: "👥", label: "Supplier", active: false },
           ].map((m) => (
             <div key={m.label} className={`flex items-center gap-1 rounded-md px-1.5 py-1 ${m.active ? "bg-blue-600 shadow-sm shadow-blue-500/30" : "hover:bg-slate-800"}`}>
               <span className="text-[6px]">{m.icon}</span>
@@ -345,13 +345,13 @@ function PreviewInventory() {
           </div>
           <div className="flex gap-1.5">
             <div className="flex h-4 items-center rounded-md bg-slate-100 px-2 border border-slate-200">
-              <span className="text-[5.5px] text-slate-500">ðŸ” Cari SKU atau nama...</span>
+              <span className="text-[5.5px] text-slate-500">🔍 Cari SKU atau nama...</span>
             </div>
             <span className="rounded-md bg-blue-600 px-2 py-0.5 text-[6px] font-bold text-white shadow-sm">+ Tambah Produk</span>
           </div>
         </div>
         <div className="mx-3 mt-1.5 flex items-center gap-1.5 rounded-md bg-amber-50 border border-amber-200 px-2 py-1">
-          <span className="text-[7px]">âš ï¸</span>
+          <span className="text-[7px]">⚠️</span>
           <span className="text-[6px] text-amber-700 font-medium">12 produk stok menipis & 3 produk sudah habis.</span>
         </div>
         <div className="grid grid-cols-4 gap-2 px-3 py-2">
@@ -449,31 +449,37 @@ export function LayananSection() {
             Satu Partner, Semua Kebutuhan Digital
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 md:text-base">
-            Pilih layanan yang sesuai â€” kami kerjakan dari nol sampai online.
+            Pilih layanan yang sesuai — kami kerjakan dari nol sampai online.
           </p>
         </div>
 
-        {/* Tab pills */}
-        <div className="mb-8 flex flex-wrap justify-center gap-2">
-          {TABS.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
-                activeTab === tab.id
-                  ? "border-blue-600 bg-blue-600 text-white"
-                  : "border-[#E4E4E7] bg-white text-slate-500 hover:border-blue-600 hover:text-blue-600"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Tab pills — horizontal scroll on mobile */}
+        <div className="mb-8 -mx-5 px-5 md:mx-0 md:px-0">
+          <div className="flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible md:pb-0 scrollbar-hide">
+            {TABS.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`shrink-0 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                    activeTab === tab.id
+                      ? "border-blue-600 bg-blue-600 text-white shadow-sm shadow-blue-200"
+                      : "border-[#E4E4E7] bg-white text-slate-500 hover:border-blue-600 hover:text-blue-600"
+                  }`}
+                >
+                  <Icon className="h-3.5 w-3.5 md:hidden" />
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Content: 2 columns */}
-        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
-          {/* Left â€” Info */}
-          <div>
+        <div className="grid grid-cols-1 items-start gap-6 md:gap-8 md:grid-cols-2">
+          {/* Left — Info */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 md:rounded-none md:border-0 md:bg-transparent md:p-0">
             {/* Tag */}
             <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
               <active.icon className="h-3 w-3" />
@@ -506,7 +512,7 @@ export function LayananSection() {
 
           </div>
 
-          {/* Right â€” Preview */}
+          {/* Right — Preview */}
           <div>
             <BrowserFrame url={active.previewUrl}>
               {PreviewComponent && <PreviewComponent />}
