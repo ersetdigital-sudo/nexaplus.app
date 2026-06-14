@@ -179,7 +179,7 @@ function PreviewToko() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/toko online.webp" alt="Preview Toko Online" className="h-full w-full object-cover object-top" />
+      <img src="/images/toko online.webp" alt="Preview Toko Online" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -188,7 +188,7 @@ function PreviewLanding() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/landingpage.webp" alt="Preview Landing Page" className="h-full w-full object-cover object-top" />
+      <img src="/images/landingpage.webp" alt="Preview Landing Page" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -197,7 +197,7 @@ function PreviewCompany() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/company profile.webp" alt="Preview Company Profile" className="h-full w-full object-cover object-top" />
+      <img src="/images/company profile.webp" alt="Preview Company Profile" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -206,7 +206,7 @@ function PreviewSekolah() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/WebSekolah.webp" alt="Preview Website Sekolah" className="h-full w-full object-cover object-top" />
+      <img src="/images/WebSekolah.webp" alt="Preview Website Sekolah" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -215,7 +215,7 @@ function PreviewOrganisasi() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/yayasan.webp" alt="Preview Website Organisasi" className="h-full w-full object-cover object-top" />
+      <img src="/images/yayasan.webp" alt="Preview Website Organisasi" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -405,7 +405,7 @@ function PreviewBooking() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/booking.webp" alt="Preview Sistem Booking" className="h-full w-full object-cover object-top" />
+      <img src="/images/booking.webp" alt="Preview Sistem Booking" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -414,7 +414,7 @@ function PreviewPemerintah() {
   return (
     <div className="h-full w-full overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/pemerintah.webp" alt="Preview Website Pemerintahan" className="h-full w-full object-cover object-top" />
+      <img src="/images/pemerintah.webp" alt="Preview Website Pemerintahan" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
     </div>
   );
 }

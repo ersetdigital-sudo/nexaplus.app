@@ -95,7 +95,7 @@ export function BlogSection() {
                       <img
                         src={post.cover_image}
                         alt={post.title}
-                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" decoding="async"
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">
