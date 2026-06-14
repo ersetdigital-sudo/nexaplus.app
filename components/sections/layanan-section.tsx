@@ -453,23 +453,23 @@ export function LayananSection() {
           </p>
         </div>
 
-        {/* Tab pills — horizontal scroll on mobile */}
-        <div className="mb-8 -mx-5 px-5 md:mx-0 md:px-0">
-          <div className="flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible md:pb-0 scrollbar-hide">
+        {/* Tab pills — grid on mobile, wrap on desktop */}
+        <div className="mb-8">
+          <div className="grid grid-cols-3 gap-2 md:flex md:flex-wrap md:justify-center">
             {TABS.map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`shrink-0 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                  className={`flex flex-col items-center gap-1.5 rounded-xl border p-3 text-xs font-medium transition-all md:flex-row md:gap-2 md:rounded-full md:px-4 md:py-2 md:text-sm ${
                     activeTab === tab.id
                       ? "border-blue-600 bg-blue-600 text-white shadow-sm shadow-blue-200"
                       : "border-[#E4E4E7] bg-white text-slate-500 hover:border-blue-600 hover:text-blue-600"
                   }`}
                 >
-                  <Icon className="h-3.5 w-3.5 md:hidden" />
-                  {tab.label}
+                  <Icon className={`h-4 w-4 md:hidden ${activeTab === tab.id ? "text-white" : "text-slate-400"}`} />
+                  <span className="truncate">{tab.label}</span>
                 </button>
               );
             })}
