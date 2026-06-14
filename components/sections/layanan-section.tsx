@@ -476,10 +476,17 @@ export function LayananSection() {
           </div>
         </div>
 
-        {/* Content: 2 columns */}
+        {/* Content: 2 columns — preview first on mobile */}
         <div className="grid grid-cols-1 items-start gap-6 md:gap-8 md:grid-cols-2">
-          {/* Left — Info */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 md:rounded-none md:border-0 md:bg-transparent md:p-0">
+          {/* Preview — shows first on mobile */}
+          <div className="order-1 md:order-2">
+            <BrowserFrame url={active.previewUrl}>
+              {PreviewComponent && <PreviewComponent />}
+            </BrowserFrame>
+          </div>
+
+          {/* Info — shows second on mobile */}
+          <div className="order-2 md:order-1 rounded-2xl border border-slate-200 bg-white p-5 md:rounded-none md:border-0 md:bg-transparent md:p-0">
             {/* Tag */}
             <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
               <active.icon className="h-3 w-3" />
@@ -510,13 +517,6 @@ export function LayananSection() {
               </Link>
             )}
 
-          </div>
-
-          {/* Right — Preview */}
-          <div>
-            <BrowserFrame url={active.previewUrl}>
-              {PreviewComponent && <PreviewComponent />}
-            </BrowserFrame>
           </div>
         </div>
       </div>
