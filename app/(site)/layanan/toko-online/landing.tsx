@@ -15,7 +15,6 @@ import {
   MessageCircle,
   Clock,
   Wallet,
-  Eye,
   Search,
   Package,
 } from "lucide-react";
@@ -155,41 +154,45 @@ export function TokoOnlineLanding() {
       </section>
 
       {/* ===== PROBLEM ===== */}
-      <Section className="bg-white">
+      <Section className="bg-slate-900">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-              Masih Jualan Cuma di WhatsApp & Instagram?
+          <motion.div variants={fadeUp} className="max-w-2xl mb-12">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>
+              Masih Jualan Cuma di{" "}
+              <span className="text-orange-400 italic">WhatsApp & Instagram?</span>
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-base text-slate-400">
               Banyak pemilik UMKM menghadapi masalah yang sama setiap hari.
             </p>
           </motion.div>
 
-          <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: MessageCircle, text: "Pesanan berantakan, susah dilacak satu per satu" },
-              { icon: Eye, text: "Calon pembeli kabur karena tidak ada tampilan toko yang profesional" },
-              { icon: Wallet, text: "Potongan marketplace makin mahal, untung makin tipis" },
-              { icon: Shield, text: "Tidak punya \"rumah digital\" sendiri yang bisa dikontrol penuh" },
-              { icon: Search, text: "Susah dipercaya pembeli baru karena tidak punya website resmi" },
-              { icon: Clock, text: "Capek balas chat satu per satu padahal produk & harga sama" },
-            ].map((item, i) => (
+              "Pesanan berantakan, susah dilacak satu per satu.",
+              "Calon pembeli kabur karena tak ada tampilan toko yang profesional.",
+              "Potongan marketplace makin mahal, untung makin tipis.",
+              "Tidak punya \"rumah digital\" sendiri yang bisa dikontrol penuh.",
+              "Susah dipercaya pembeli baru karena tak punya website resmi.",
+              "Capek balas chat satu per satu padahal produk & harga sama.",
+            ].map((text, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50/50 p-5 hover:border-red-200 hover:bg-red-50/30 transition-colors"
+                className="flex items-start gap-3 rounded-xl border border-slate-700 bg-slate-800/50 p-5"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-100">
-                  <item.icon className="h-5 w-5 text-red-600" />
-                </div>
-                <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-500/20 mt-0.5">
+                  <svg className="h-3 w-3 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                <p className="text-sm text-slate-300 leading-relaxed">{text}</p>
               </motion.div>
             ))}
           </motion.div>
 
-          <motion.p variants={fadeUp} className="mt-10 text-center text-lg font-medium text-slate-900">
-            Kalau kamu mengalami salah satu di atas — sudah saatnya punya toko online sendiri.
+          <motion.p variants={fadeUp} className="mt-10 text-center text-base text-slate-400">
+            Kalau kamu mengalami salah satu di atas —{" "}
+            <span className="font-semibold text-white">sudah saatnya punya toko online sendiri.</span>
           </motion.p>
         </div>
       </Section>
