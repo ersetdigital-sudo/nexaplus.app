@@ -92,7 +92,7 @@ export default function TentangKamiPage() {
           <ul className="mt-4 space-y-3">
             {misi.map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-blue-600" />
+                <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-orange-600" />
                 <span className="text-base text-slate-600 md:text-lg">{item}</span>
               </li>
             ))}
@@ -100,7 +100,7 @@ export default function TentangKamiPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-14 rounded-xl border border-blue-100 bg-blue-50 px-6 py-6 text-center">
+        <div className="mt-14 rounded-xl border border-orange-100 bg-orange-50 px-6 py-6 text-center">
           <p className="text-base font-medium text-slate-800 md:text-lg">
             Siap membangun website untuk bisnis Anda?
           </p>
@@ -109,7 +109,7 @@ export default function TentangKamiPage() {
               href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 items-center rounded-[6px] bg-blue-600 px-5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 transition-colors"
+              className="inline-flex h-10 items-center rounded-[6px] bg-orange-600 px-5 text-sm font-medium text-white shadow-sm hover:bg-orange-700 transition-colors"
             >
               Konsultasi Gratis
             </a>

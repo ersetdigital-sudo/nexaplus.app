@@ -27,7 +27,7 @@ export function TrustSection() {
               key={point}
               className="inline-flex items-center gap-1.5 text-sm text-slate-700"
             >
-              <Check className="h-4 w-4 text-blue-600" aria-hidden="true" />
+              <Check className="h-4 w-4 text-orange-600" aria-hidden="true" />
               {point}
             </span>
           ))}

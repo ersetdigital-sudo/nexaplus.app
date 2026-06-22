@@ -243,11 +243,11 @@ function PreviewPOS() {
             <div className="flex h-5 flex-1 items-center rounded-md bg-slate-800 px-2 border border-slate-600">
               <span className="text-[6px] text-slate-500">🔍 Scan barcode atau ketik nama...</span>
             </div>
-            <span className="rounded-md bg-blue-600 px-1.5 py-1 text-[6px] font-medium text-white">📷 Scan</span>
+            <span className="rounded-md bg-orange-600 px-1.5 py-1 text-[6px] font-medium text-white">📷 Scan</span>
           </div>
           <div className="flex gap-1 mb-2">
             {["☕ Minuman", "🍞 Makanan", "🍪 Snack", "🧊 Dingin"].map((c, i) => (
-              <span key={c} className={`rounded-md px-1.5 py-0.5 text-[6px] font-medium ${i === 0 ? "bg-blue-600 text-white" : "bg-slate-800 text-slate-400 border border-slate-700"}`}>{c}</span>
+              <span key={c} className={`rounded-md px-1.5 py-0.5 text-[6px] font-medium ${i === 0 ? "bg-orange-600 text-white" : "bg-slate-800 text-slate-400 border border-slate-700"}`}>{c}</span>
             ))}
           </div>
           <div className="grid grid-cols-4 gap-1.5 flex-1 overflow-hidden">
@@ -261,7 +261,7 @@ function PreviewPOS() {
               { n: "Roti Bakar", p: "18K", emoji: "🍞" },
               { n: "Mineral", p: "5K", emoji: "💧" },
             ].map((item) => (
-              <div key={item.n} className="rounded-lg bg-slate-800 border border-slate-700 p-1.5 text-center hover:border-blue-500 transition-colors cursor-pointer flex flex-col items-center justify-center">
+              <div key={item.n} className="rounded-lg bg-slate-800 border border-slate-700 p-1.5 text-center hover:border-orange-500 transition-colors cursor-pointer flex flex-col items-center justify-center">
                 <span className="text-[12px] mb-0.5">{item.emoji}</span>
                 <p className="text-[5.5px] text-slate-300 truncate w-full">{item.n}</p>
                 <p className="text-[7px] font-bold text-white mt-0.5">Rp{item.p}</p>
@@ -314,7 +314,7 @@ function PreviewInventory() {
       <div className="w-[20%] bg-slate-900 flex flex-col">
         <div className="px-2 py-2 border-b border-slate-800">
           <div className="flex items-center gap-1">
-            <div className="h-3.5 w-3.5 rounded bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
+            <div className="h-3.5 w-3.5 rounded bg-gradient-to-br from-orange-400 to-indigo-500 flex items-center justify-center">
               <span className="text-[5px] font-bold text-white">S</span>
             </div>
             <span className="text-[7px] font-bold text-white">StokKu</span>
@@ -330,7 +330,7 @@ function PreviewInventory() {
             { icon: "📋", label: "Laporan", active: false },
             { icon: "👥", label: "Supplier", active: false },
           ].map((m) => (
-            <div key={m.label} className={`flex items-center gap-1 rounded-md px-1.5 py-1 ${m.active ? "bg-blue-600 shadow-sm shadow-blue-500/30" : "hover:bg-slate-800"}`}>
+            <div key={m.label} className={`flex items-center gap-1 rounded-md px-1.5 py-1 ${m.active ? "bg-orange-600 shadow-sm shadow-orange-500/30" : "hover:bg-slate-800"}`}>
               <span className="text-[6px]">{m.icon}</span>
               <span className={`text-[5.5px] ${m.active ? "text-white font-bold" : "text-slate-400 font-medium"}`}>{m.label}</span>
             </div>
@@ -347,7 +347,7 @@ function PreviewInventory() {
             <div className="flex h-4 items-center rounded-md bg-slate-100 px-2 border border-slate-200">
               <span className="text-[5.5px] text-slate-500">🔍 Cari SKU atau nama...</span>
             </div>
-            <span className="rounded-md bg-blue-600 px-2 py-0.5 text-[6px] font-bold text-white shadow-sm">+ Tambah Produk</span>
+            <span className="rounded-md bg-orange-600 px-2 py-0.5 text-[6px] font-bold text-white shadow-sm">+ Tambah Produk</span>
           </div>
         </div>
         <div className="mx-3 mt-1.5 flex items-center gap-1.5 rounded-md bg-amber-50 border border-amber-200 px-2 py-1">
@@ -356,7 +356,7 @@ function PreviewInventory() {
         </div>
         <div className="grid grid-cols-4 gap-2 px-3 py-2">
           {[
-            { label: "Total SKU", val: "348", color: "text-blue-600", bg: "bg-blue-50 border-blue-100" },
+            { label: "Total SKU", val: "348", color: "text-orange-600", bg: "bg-orange-50 border-orange-100" },
             { label: "Stok Masuk", val: "1.250", color: "text-green-600", bg: "bg-green-50 border-green-100" },
             { label: "Stok Menipis", val: "12", color: "text-amber-600", bg: "bg-amber-50 border-amber-100" },
             { label: "Stok Habis", val: "3", color: "text-red-600", bg: "bg-red-50 border-red-100" },
@@ -386,7 +386,7 @@ function PreviewInventory() {
                 { sku: "SP-021", n: "Sneakers Canvas", s: "8", st: "Menipis", c: "bg-amber-100 text-amber-700" },
               ].map((r) => (
                 <tr key={r.sku} className="border-b border-slate-50">
-                  <td className="py-1 px-2 text-[5.5px] text-blue-600 font-mono">{r.sku}</td>
+                  <td className="py-1 px-2 text-[5.5px] text-orange-600 font-mono">{r.sku}</td>
                   <td className="py-1 px-2 text-[6px] text-slate-800">{r.n}</td>
                   <td className="py-1 px-2 text-right text-[6.5px] font-bold text-slate-900">{r.s}</td>
                   <td className="py-1 px-2 text-center"><span className={`rounded-full px-1.5 py-0.5 text-[5px] font-bold ${r.c}`}>{r.st}</span></td>
@@ -464,8 +464,8 @@ export function LayananSection() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex flex-col items-center gap-1.5 rounded-xl border p-3 text-xs font-medium transition-all md:flex-row md:gap-2 md:rounded-full md:px-4 md:py-2 md:text-sm ${
                     activeTab === tab.id
-                      ? "border-blue-600 bg-blue-600 text-white shadow-sm shadow-blue-200"
-                      : "border-[#E4E4E7] bg-white text-slate-500 hover:border-blue-600 hover:text-blue-600"
+                      ? "border-orange-600 bg-orange-600 text-white shadow-sm shadow-orange-200"
+                      : "border-[#E4E4E7] bg-white text-slate-500 hover:border-orange-600 hover:text-orange-600"
                   }`}
                 >
                   <Icon className={`h-4 w-4 md:hidden ${activeTab === tab.id ? "text-white" : "text-slate-400"}`} />
@@ -488,7 +488,7 @@ export function LayananSection() {
           {/* Info — shows second on mobile */}
           <div className="order-2 md:order-1 rounded-2xl border border-slate-200 bg-white p-5 md:rounded-none md:border-0 md:bg-transparent md:p-0">
             {/* Tag */}
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+            <span className="inline-flex items-center gap-1 rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">
               <active.icon className="h-3 w-3" />
               {active.tag}
             </span>
@@ -500,7 +500,7 @@ export function LayananSection() {
             <ul className="mt-5 space-y-2.5">
               {active.features.map((f) => (
                 <li key={f} className="flex items-start gap-2">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-orange-600" aria-hidden="true" />
                   <span className="text-sm text-slate-700">{f}</span>
                 </li>
               ))}
@@ -510,7 +510,7 @@ export function LayananSection() {
             {active.detailHref && (
               <Link
                 href={active.detailHref}
-                className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors"
               >
                 Lihat detail layanan
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

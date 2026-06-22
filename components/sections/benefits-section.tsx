@@ -40,14 +40,14 @@ export function BenefitsSection() {
             return (
               <AnimatedCard
                 key={benefit.id}
-                className="p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-200/50"
+                className="p-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-orange-200/50"
                 hoverScale={1.05}
               >
                 <div className="flex flex-col gap-3">
                   {Icon && (
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50">
                       <Icon
-                        className="h-5 w-5 text-blue-600"
+                        className="h-5 w-5 text-orange-600"
                         aria-hidden="true"
                       />
                     </div>

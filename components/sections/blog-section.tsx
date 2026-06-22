@@ -78,7 +78,7 @@ export function BlogSection() {
         {/* Blog posts grid */}
         {loading ? (
           <div className="flex justify-center py-12">
-            <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-orange-600 border-t-transparent" />
           </div>
         ) : filteredPosts.length > 0 ? (
           <>
@@ -89,7 +89,7 @@ export function BlogSection() {
                   href={`/blog/${post.slug}`}
                   className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-blue-500/30 via-sky-400/20 to-blue-600/30">
+                  <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-orange-500/30 via-sky-400/20 to-orange-600/30">
                     {post.cover_image ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img

@@ -42,7 +42,7 @@ export function Breadcrumb({ items, variant = "dark" }: BreadcrumbProps) {
                   itemProp="item"
                   className={`transition-colors ${
                     isLight
-                      ? "text-slate-500 hover:text-blue-600"
+                      ? "text-slate-500 hover:text-orange-600"
                       : "text-slate-400 hover:text-white"
                   }`}
                 >

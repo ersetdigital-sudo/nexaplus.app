@@ -45,7 +45,7 @@ export default function AdminPortfolioPage() {
         </div>
         <Link
           href="/admin/portfolio/new"
-          className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-orange-700 transition-colors"
         >
           <Plus className="h-4 w-4" />
           Tambah Portfolio
@@ -55,7 +55,7 @@ export default function AdminPortfolioPage() {
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {loading ? (
           <div className="col-span-full flex justify-center py-12">
-            <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+            <div className="h-6 w-6 animate-spin rounded-full border-2 border-orange-600 border-t-transparent" />
           </div>
         ) : items.length > 0 ? (
           items.map((item) => (
@@ -68,7 +68,7 @@ export default function AdminPortfolioPage() {
               )}
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+                  <span className="rounded-full bg-orange-50 px-2.5 py-0.5 text-xs font-medium text-orange-700">
                     {item.category}
                   </span>
                   <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
@@ -80,7 +80,7 @@ export default function AdminPortfolioPage() {
                 <h3 className="text-sm font-semibold text-slate-900">{item.name}</h3>
                 <p className="mt-1 text-xs text-slate-500 line-clamp-2">{item.description}</p>
                 {item.url && (
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-2 block text-xs text-blue-600 hover:underline truncate">
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-2 block text-xs text-orange-600 hover:underline truncate">
                     {item.url}
                   </a>
                 )}

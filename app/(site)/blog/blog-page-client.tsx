@@ -62,7 +62,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari artikel..."
-              className="w-full rounded-lg border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full rounded-lg border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
             />
           </div>
 
@@ -74,7 +74,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
                 onClick={() => setActiveCategory(cat)}
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                   activeCategory === cat
-                    ? "bg-blue-600 text-white"
+                    ? "bg-orange-600 text-white"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                 }`}
               >
@@ -99,7 +99,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:shadow-lg hover:-translate-y-1"
               >
                 {/* Thumbnail */}
-                <div className="relative aspect-[1200/630] w-full overflow-hidden bg-gradient-to-br from-blue-600/20 via-sky-500/10 to-indigo-600/20">
+                <div className="relative aspect-[1200/630] w-full overflow-hidden bg-gradient-to-br from-orange-600/20 via-sky-500/10 to-indigo-600/20">
                   {post.cover_image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -119,7 +119,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-3 flex items-center gap-3">
-                    <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+                    <span className="rounded-full bg-orange-50 px-2.5 py-0.5 text-xs font-semibold text-orange-700">
                       {post.category}
                     </span>
                     <span className="text-xs text-slate-400">
@@ -127,7 +127,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
                     </span>
                   </div>
 
-                  <h2 className="mb-2 text-lg font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                  <h2 className="mb-2 text-lg font-bold text-slate-900 line-clamp-2 group-hover:text-orange-600 transition-colors">
                     {post.title}
                   </h2>
 
@@ -135,7 +135,7 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
                     {post.excerpt}
                   </p>
 
-                  <span className="mt-4 text-sm font-medium text-blue-600 group-hover:underline">
+                  <span className="mt-4 text-sm font-medium text-orange-600 group-hover:underline">
                     Baca selengkapnya →
                   </span>
                 </div>

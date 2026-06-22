@@ -17,7 +17,7 @@ export default async function Image() {
           justifyContent: 'center',
           alignItems: 'center',
           padding: '60px 80px',
-          background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%)',
+          background: 'linear-gradient(135deg, #7a3500 0%, #FF7A00 50%, #FF9A33 100%)',
           fontFamily: 'sans-serif',
           textAlign: 'center',
         }}
@@ -34,7 +34,7 @@ export default async function Image() {
             justifyContent: 'center',
             fontSize: '36px',
             fontWeight: 800,
-            color: '#2563eb',
+            color: '#FF7A00',
             marginBottom: '32px',
           }}
         >

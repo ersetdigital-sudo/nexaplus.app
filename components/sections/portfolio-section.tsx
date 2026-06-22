@@ -75,9 +75,9 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
               loading="lazy"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-50 to-sky-50 transition-transform duration-300 group-hover:scale-105">
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-orange-50 to-sky-50 transition-transform duration-300 group-hover:scale-105">
               <div className="text-center">
-                <span className="block text-3xl font-bold text-blue-600/60">
+                <span className="block text-3xl font-bold text-orange-600/60">
                   {item.name.charAt(0)}
                 </span>
                 <span className="mt-1 block text-xs text-slate-400">
@@ -94,7 +94,7 @@ function PortfolioCard({ item }: { item: (typeof portfolioItems)[number] }) {
             animate={{ opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.2 }}
           >
-            <span className="rounded-[6px] bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm">
+            <span className="rounded-[6px] bg-orange-600 px-4 py-2 text-sm font-medium text-white shadow-sm">
               {item.url ? "Kunjungi Website" : "Lihat Detail"}
             </span>
           </motion.div>

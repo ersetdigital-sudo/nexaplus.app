@@ -62,12 +62,12 @@ export function TokoOnlineLanding() {
   return (
     <div className="overflow-hidden">
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-orange-500/10 blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-indigo-500/10 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-blue-600/5 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-orange-600/5 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-24">
@@ -93,17 +93,17 @@ export function TokoOnlineLanding() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 mb-6"
+              className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 mb-6"
             >
-              <ShoppingCart className="h-4 w-4 text-blue-400" />
-              <span className="text-sm font-medium text-blue-300">
+              <ShoppingCart className="h-4 w-4 text-orange-400" />
+              <span className="text-sm font-medium text-orange-300">
                 Jasa Pembuatan Website Toko Online
               </span>
             </motion.div>
 
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
               Wujudkan Toko Online Profesional Anda{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-cyan-400">
                 Tanpa Ribet
               </span>
             </h1>
@@ -117,7 +117,7 @@ export function TokoOnlineLanding() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500 hover:shadow-blue-500/40 transition-all"
+                className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-600/30 hover:bg-orange-500 hover:shadow-orange-500/40 transition-all"
               >
                 Konsultasi Gratis Sekarang
                 <ArrowRight className="h-4 w-4" />
@@ -138,11 +138,11 @@ export function TokoOnlineLanding() {
               className="mt-12 flex flex-wrap items-center gap-6 text-sm text-slate-400"
             >
               <span className="flex items-center gap-1.5">
-                <Package className="h-4 w-4 text-blue-400" />
+                <Package className="h-4 w-4 text-orange-400" />
                 50+ Toko Online Diluncurkan
               </span>
               <span className="flex items-center gap-1.5">
-                <Clock className="h-4 w-4 text-blue-400" />
+                <Clock className="h-4 w-4 text-orange-400" />
                 3 Tahun Pengalaman
               </span>
               <span className="flex items-center gap-1.5">
@@ -215,10 +215,10 @@ export function TokoOnlineLanding() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="group relative rounded-2xl border border-slate-200 bg-white p-6 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300"
+                className="group relative rounded-2xl border border-slate-200 bg-white p-6 hover:border-orange-200 hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                  <item.icon className="h-6 w-6 text-blue-600" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 group-hover:bg-orange-100 transition-colors">
+                  <item.icon className="h-6 w-6 text-orange-600" />
                 </div>
                 <h3 className="mt-4 text-base font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
@@ -252,10 +252,10 @@ export function TokoOnlineLanding() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100/50 border border-slate-200 p-8 hover:from-blue-50/50 hover:to-indigo-50/30 hover:border-blue-200 transition-all duration-500"
+                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100/50 border border-slate-200 p-8 hover:from-orange-50/50 hover:to-indigo-50/30 hover:border-orange-200 transition-all duration-500"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-200">
-                  <item.icon className="h-7 w-7 text-blue-600" />
+                  <item.icon className="h-7 w-7 text-orange-600" />
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
@@ -286,9 +286,9 @@ export function TokoOnlineLanding() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="rounded-2xl border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm p-6 hover:border-blue-500/30 hover:bg-slate-800 transition-all"
+                className="rounded-2xl border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm p-6 hover:border-orange-500/30 hover:bg-slate-800 transition-all"
               >
-                <CheckCircle className="h-6 w-6 text-blue-400 mb-3" />
+                <CheckCircle className="h-6 w-6 text-orange-400 mb-3" />
                 <h3 className="text-base font-bold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -318,7 +318,7 @@ export function TokoOnlineLanding() {
                 variants={fadeUp}
                 className="relative text-center"
               >
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600 text-white text-xl font-bold shadow-lg shadow-blue-600/20 mb-5">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-600 text-white text-xl font-bold shadow-lg shadow-orange-600/20 mb-5">
                   {item.step}
                 </div>
                 <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
@@ -358,7 +358,7 @@ export function TokoOnlineLanding() {
               <ul className="mt-6 space-y-3">
                 {["Hingga 50 produk", "Desain responsif mobile-first", "Integrasi 1 payment gateway", "Cek ongkir otomatis", "Domain custom (.com)", "Hosting 1 tahun", "SSL gratis"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -374,8 +374,8 @@ export function TokoOnlineLanding() {
             </motion.div>
 
             {/* Professional */}
-            <motion.div variants={fadeUp} className="relative rounded-2xl border-2 border-blue-600 bg-white p-8 shadow-xl shadow-blue-100/50">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white">
+            <motion.div variants={fadeUp} className="relative rounded-2xl border-2 border-orange-600 bg-white p-8 shadow-xl shadow-orange-100/50">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-orange-600 px-4 py-1 text-xs font-semibold text-white">
                 Paling Populer
               </div>
               <h3 className="text-lg font-bold text-slate-900">Professional</h3>
@@ -387,7 +387,7 @@ export function TokoOnlineLanding() {
               <ul className="mt-6 space-y-3">
                 {["Produk unlimited", "Desain premium custom", "Multi payment gateway", "Dashboard admin lengkap", "Integrasi ongkir 15+ kurir", "Wishlist & lacak pesanan", "SEO optimized", "Support 30 hari"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -396,7 +396,7 @@ export function TokoOnlineLanding() {
                 href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Professional%20Website%20Toko%20Online.%20Bisa%20info%20lebih%20lanjut%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 flex h-11 w-full items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white hover:bg-blue-700 transition-colors shadow-sm"
+                className="mt-8 flex h-11 w-full items-center justify-center rounded-full bg-orange-600 text-sm font-semibold text-white hover:bg-orange-700 transition-colors shadow-sm"
               >
                 Konsultasi Paket Professional
               </a>
@@ -412,7 +412,7 @@ export function TokoOnlineLanding() {
               <ul className="mt-6 space-y-3">
                 {["Semua fitur Professional", "Desain 100% custom", "Integrasi API kustom", "Multi-admin & role", "Analytics dashboard", "Priority support", "Maintenance bulanan", "Konsultasi arsitektur"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -515,7 +515,7 @@ export function TokoOnlineLanding() {
       <LayananCrossLinks currentSlug="toko-online" />
 
       {/* ===== CTA FINAL ===== */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-gradient-to-br from-orange-600 via-orange-700 to-indigo-800 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
@@ -531,17 +531,17 @@ export function TokoOnlineLanding() {
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">
               Siap Punya Toko Online Sendiri?
             </h2>
-            <p className="mt-5 text-lg text-blue-100 max-w-xl mx-auto">
+            <p className="mt-5 text-lg text-orange-100 max-w-xl mx-auto">
               Jangan tunda lagi. Setiap hari tanpa website adalah hari yang kamu biarkan calon pembeli pergi ke kompetitor.
             </p>
-            <p className="mt-3 text-sm text-blue-200">
+            <p className="mt-3 text-sm text-orange-200">
               Konsultasi pertama gratis. Tanpa komitmen, tanpa tekanan.
             </p>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-blue-700 shadow-xl hover:bg-blue-50 transition-colors"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-orange-700 shadow-xl hover:bg-orange-50 transition-colors"
             >
               <MessageCircle className="h-5 w-5" />
               Chat WhatsApp Sekarang

@@ -8,12 +8,12 @@
 @theme {
   --color-background: #FFFFFF;
   --color-surface: #FAFAFA;
-  --color-primary: #2563EB;
-  --color-secondary: #0EA5E9;
-  --color-accent: #06B6D4;
+  --color-primary: #FF7A00;
+  --color-secondary: #FF9A33;
+  --color-accent: #FFB366;
   --color-text: #09090B;
   --color-text-muted: #71717A;
-  --color-fg-brand: #2563EB;
+  --color-fg-brand: #FF7A00;
 
   --font-sans: "Lato", sans-serif;
 
@@ -39,7 +39,7 @@
 }
 
 /* ========================================
-   DESIGN TOKENS (Clean DS + NexaPlus blue)
+   DESIGN TOKENS (Clean DS + NexaPlus orange)
    ======================================== */
 :root {
   /* Spacing scale — 4px base grid */
@@ -75,8 +75,8 @@
   --neutral-tertiary-soft: #F4F4F5;
 
   /* Brand gradients */
-  --gradient-primary: linear-gradient(135deg, #2563EB, #0EA5E9);
-  --gradient-accent: linear-gradient(135deg, #2563EB, #06B6D4);
+  --gradient-primary: linear-gradient(135deg, #FF7A00, #FF9A33);
+  --gradient-accent: linear-gradient(135deg, #FF7A00, #FFB366);
 }
 
 /* ========================================
@@ -173,7 +173,7 @@ h3, h4, h5, h6 {
 /* Focus — brand ring */
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #2563EB;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #FF7A00;
 }
 
 /* Transitions — 150ms default */

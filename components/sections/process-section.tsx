@@ -7,7 +7,7 @@ import { processSteps } from "@/data/process-steps";
 
 const stepIcons = [MessageSquare, ClipboardList, Palette, Code2, RefreshCw, Rocket];
 const stepColors = [
-  "from-blue-500 to-blue-600",
+  "from-orange-500 to-orange-600",
   "from-sky-500 to-sky-600",
   "from-violet-500 to-violet-600",
   "from-indigo-500 to-indigo-600",

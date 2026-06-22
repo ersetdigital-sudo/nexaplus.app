@@ -95,7 +95,7 @@ export default function AdminSettingsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+        <div className="h-6 w-6 animate-spin rounded-full border-2 border-orange-600 border-t-transparent" />
       </div>
     );
   }
@@ -118,7 +118,7 @@ export default function AdminSettingsPage() {
               href="https://openagentic.id/api-keys"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-orange-600 hover:underline"
             >
               openagentic.id/api-keys
             </a>
@@ -136,7 +136,7 @@ export default function AdminSettingsPage() {
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   placeholder="Masukkan API key Anda"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 pr-12 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 pr-12 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500"
                 />
                 <button
                   type="button"
@@ -160,7 +160,7 @@ export default function AdminSettingsPage() {
                 <select
                   value={model}
                   onChange={(e) => setModel(e.target.value)}
-                  className="flex-1 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="flex-1 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500"
                 >
                   {models.length > 0 ? (
                     (() => {
@@ -215,7 +215,7 @@ export default function AdminSettingsPage() {
           <button
             onClick={handleSave}
             disabled={saving}
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-700 disabled:opacity-50 transition-colors"
           >
             {saving ? (
               <Loader2 className="h-4 w-4 animate-spin" />

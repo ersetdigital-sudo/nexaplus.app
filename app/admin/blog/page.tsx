@@ -42,7 +42,7 @@ export default function AdminBlogPage() {
         </div>
         <Link
           href="/admin/blog/new"
-          className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-orange-700 transition-colors"
         >
           <Plus className="h-4 w-4" />
           Tulis Artikel
@@ -52,7 +52,7 @@ export default function AdminBlogPage() {
       <div className="mt-6 rounded-xl border border-slate-200 bg-white overflow-hidden">
         {loading ? (
           <div className="px-5 py-12 text-center">
-            <div className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-blue-600 border-t-transparent" />
+            <div className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-orange-600 border-t-transparent" />
           </div>
         ) : posts.length > 0 ? (
           <table className="w-full">
@@ -73,7 +73,7 @@ export default function AdminBlogPage() {
                     <p className="text-xs text-slate-400 mt-0.5">/{post.slug}</p>
                   </td>
                   <td className="px-5 py-4">
-                    <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+                    <span className="rounded-full bg-orange-50 px-2.5 py-0.5 text-xs font-medium text-orange-700">
                       {post.category}
                     </span>
                   </td>

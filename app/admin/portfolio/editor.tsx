@@ -101,7 +101,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
         <button
           onClick={handleSave}
           disabled={saving || !name || !description}
-          className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-2 text-sm font-medium text-white hover:bg-orange-700 disabled:opacity-50 transition-colors"
         >
           <Save className="h-4 w-4" />
           {saving ? "Menyimpan..." : "Simpan"}
@@ -115,7 +115,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
             type="text"
             value={name}
             onChange={(e) => handleNameChange(e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
             placeholder="Nama website/project"
           />
         </div>
@@ -126,7 +126,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
             type="text"
             value={slug}
             onChange={(e) => setSlug(e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
             placeholder="nama-project"
           />
         </div>
@@ -136,7 +136,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
@@ -150,7 +150,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={4}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-blue-500 focus:outline-none resize-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-orange-500 focus:outline-none resize-none"
             placeholder="Deskripsi singkat tentang project ini..."
           />
         </div>
@@ -161,7 +161,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
             placeholder="https://example.com"
           />
         </div>
@@ -172,7 +172,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
             type="text"
             value={screenshot}
             onChange={(e) => setScreenshot(e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
             placeholder="/images/portfolio/screenshot.webp"
           />
         </div>
@@ -183,7 +183,7 @@ export function PortfolioEditor({ item }: { item?: PortfolioItem }) {
             id="published"
             checked={published}
             onChange={(e) => setPublished(e.target.checked)}
-            className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            className="h-4 w-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
           />
           <label htmlFor="published" className="text-sm text-slate-700">Tampilkan di website (Published)</label>
         </div>

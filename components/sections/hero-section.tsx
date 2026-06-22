@@ -17,7 +17,7 @@ export function HeroSection() {
     <SectionWrapper id="beranda" className="py-20 md:py-28 lg:py-36">
       <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
         {/* Badge */}
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-medium text-blue-700">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1 text-xs font-medium text-orange-700">
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
           Dipercaya 80+ Bisnis di Indonesia
         </span>

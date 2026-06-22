@@ -31,11 +31,11 @@ export default function AdminDashboardPage() {
       <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <Link
           href="/admin/blog"
-          className="rounded-xl border border-slate-200 bg-white p-6 hover:border-blue-200 hover:shadow-sm transition-all"
+          className="rounded-xl border border-slate-200 bg-white p-6 hover:border-orange-200 hover:shadow-sm transition-all"
         >
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
-              <FileText className="h-6 w-6 text-blue-600" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-50">
+              <FileText className="h-6 w-6 text-orange-600" />
             </div>
             <div>
               <p className="text-2xl font-bold text-slate-900">{blogCount}</p>
@@ -46,7 +46,7 @@ export default function AdminDashboardPage() {
 
         <Link
           href="/admin/portfolio"
-          className="rounded-xl border border-slate-200 bg-white p-6 hover:border-blue-200 hover:shadow-sm transition-all"
+          className="rounded-xl border border-slate-200 bg-white p-6 hover:border-orange-200 hover:shadow-sm transition-all"
         >
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50">

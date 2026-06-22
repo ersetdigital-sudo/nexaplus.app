@@ -198,7 +198,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
         <button
           onClick={() => setShowPreview(!showPreview)}
           className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-            showPreview ? "bg-blue-50 text-blue-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+            showPreview ? "bg-orange-50 text-orange-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
           }`}
         >
           <Eye className="h-4 w-4" />
@@ -209,7 +209,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
       {showPreview ? (
         /* Preview Mode */
         <div className="rounded-xl border border-slate-200 bg-white p-8">
-          <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 mb-4">{category}</span>
+          <span className="inline-block rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700 mb-4">{category}</span>
           <h1 className="text-3xl font-bold text-slate-900 mb-4">{title || "Judul Artikel"}</h1>
           <p className="text-slate-500 mb-6">{excerpt || "Excerpt artikel..."}</p>
           <hr className="mb-6" />
@@ -231,7 +231,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
               placeholder="Masukkan judul atau topik artikel"
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500"
             />
           </div>
 
@@ -278,7 +278,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
               value={coverImage}
               onChange={(e) => setCoverImage(e.target.value)}
               placeholder="https://example.com/image.jpg"
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500"
             />
             <p className="mt-1.5 text-xs text-slate-400">Ukuran ideal: 1200 x 630 px (rasio 1.91:1)</p>
             {coverImage && (
@@ -295,7 +295,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>{cat}</option>
@@ -334,7 +334,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
                   onChange={(e) => setMetaTitle(e.target.value)}
                   maxLength={60}
                   placeholder="Judul untuk mesin pencari (ideal max 60 karakter)"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none"
                 />
               </div>
               <div>
@@ -350,7 +350,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
                   maxLength={160}
                   rows={3}
                   placeholder="Deskripsi untuk mesin pencari (ideal max 160 karakter)"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none resize-none"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none resize-none"
                 />
               </div>
               <div>
@@ -360,7 +360,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
                   onChange={(e) => setExcerpt(e.target.value)}
                   rows={2}
                   placeholder="Ringkasan singkat artikel untuk preview di homepage"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none resize-none"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none resize-none"
                 />
               </div>
             </div>
@@ -373,7 +373,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
               <select
                 value={status}
                 onChange={(e) => setStatus(e.target.value as "draft" | "published")}
-                className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 focus:border-blue-500 focus:outline-none"
+                className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 focus:border-orange-500 focus:outline-none"
               >
                 <option value="draft">Draft</option>
                 <option value="published">Published</option>
@@ -389,7 +389,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
               <button
                 onClick={handleSave}
                 disabled={saving || !title || !content}
-                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-700 disabled:opacity-50 transition-colors"
               >
                 {saving ? "Menyimpan..." : "Simpan Artikel"}
               </button>
@@ -413,7 +413,7 @@ export function BlogEditor({ post }: { post?: BlogPost }) {
               onChange={(e) => setReviseInstruction(e.target.value)}
               rows={4}
               placeholder="Contoh: Buat lebih singkat, tambahkan contoh, ubah tone menjadi lebih formal..."
-              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
+              className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm placeholder:text-slate-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 resize-none"
               autoFocus
             />
             <div className="mt-4 flex items-center justify-end gap-3">

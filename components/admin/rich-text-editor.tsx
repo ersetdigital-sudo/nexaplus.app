@@ -37,7 +37,7 @@ export function RichTextEditor({ content, onChange, placeholder, onRevise, isRev
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: "text-blue-600 underline",
+          class: "text-orange-600 underline",
         },
       }),
       Table.configure({
@@ -100,7 +100,7 @@ export function RichTextEditor({ content, onChange, placeholder, onRevise, isRev
       title={title}
       className={`rounded-md p-1.5 transition-colors ${
         active
-          ? "bg-blue-100 text-blue-700"
+          ? "bg-orange-100 text-orange-700"
           : "text-slate-500 hover:bg-slate-100 hover:text-slate-700"
       }`}
     >

@@ -19,7 +19,7 @@ function TestimonialPhoto({ name, photo }: { name: string; photo: string }) {
 
   if (hasError) {
     return (
-      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-sky-400 text-sm font-bold text-white">
+      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-sky-400 text-sm font-bold text-white">
         {initials}
       </div>
     );
@@ -55,7 +55,7 @@ export function TestimonialSection() {
               key={t.id}
               className="min-w-[280px] max-w-[300px] snap-start rounded-[8px] border border-[#E4E4E7] bg-white p-5 shadow-sm flex-shrink-0"
             >
-              <Quote className="h-6 w-6 text-blue-100 mb-3" aria-hidden="true" />
+              <Quote className="h-6 w-6 text-orange-100 mb-3" aria-hidden="true" />
               <StarRating rating={t.rating} className="mb-3" />
               <p className="text-[13px] leading-relaxed text-slate-700 mb-4">
                 &ldquo;{t.review}&rdquo;
@@ -78,7 +78,7 @@ export function TestimonialSection() {
               key={t.id}
               className="rounded-[8px] border border-[#E4E4E7] bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
             >
-              <Quote className="h-6 w-6 text-blue-100 mb-3" aria-hidden="true" />
+              <Quote className="h-6 w-6 text-orange-100 mb-3" aria-hidden="true" />
               <StarRating rating={t.rating} className="mb-3" />
               <p className="text-[13px] leading-relaxed text-slate-700 mb-4">
                 &ldquo;{t.review}&rdquo;

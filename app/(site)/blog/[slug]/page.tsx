@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <div className="flex items-center gap-3 mb-5">
-            <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
               {post.category}
             </span>
             <time
@@ -161,7 +161,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-5
               prose-li:text-slate-600 prose-li:leading-relaxed
               prose-strong:text-slate-900
-              prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
+              prose-a:text-orange-600 prose-a:no-underline hover:prose-a:underline"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex h-10 items-center rounded-[6px] bg-blue-600 px-5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 transition-colors"
+              className="mt-5 inline-flex h-10 items-center rounded-[6px] bg-orange-600 px-5 text-sm font-medium text-white shadow-sm hover:bg-orange-700 transition-colors"
             >
               Konsultasi Gratis
             </a>

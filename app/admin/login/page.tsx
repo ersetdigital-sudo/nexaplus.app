@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-50">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-orange-600 border-t-transparent" />
       </div>
     );
   }
@@ -65,7 +65,7 @@ export default function AdminLoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
                 placeholder="admin@nexaplus.app"
                 required
               />
@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
                 placeholder="••••••••"
                 required
               />
@@ -93,7 +93,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-lg bg-blue-600 py-2.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+              className="w-full rounded-lg bg-orange-600 py-2.5 text-sm font-medium text-white hover:bg-orange-700 disabled:opacity-50 transition-colors"
             >
               {loading ? "Memproses..." : "Masuk"}
             </button>

@@ -34,9 +34,9 @@ export function SolutionSection() {
             return (
               <div
                 key={b.title}
-                className="group rounded-[8px] border border-[#E4E4E7] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-150 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.06)] hover:border-blue-200"
+                className="group rounded-[8px] border border-[#E4E4E7] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-150 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.06)] hover:border-orange-200"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-100">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600 transition-colors group-hover:bg-orange-100">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <h3 className="card-title mt-3 font-semibold text-slate-900">{b.title}</h3>

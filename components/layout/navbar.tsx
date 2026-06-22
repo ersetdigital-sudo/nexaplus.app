@@ -187,12 +187,12 @@ export function Navbar() {
                         </AnimatePresence>
                         {activeIndex === index && hoveredIndex === null && (
                           <motion.span
-                            className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/20' : 'bg-blue-50'}`}
+                            className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/20' : 'bg-orange-50'}`}
                             layoutId="navbar-active"
                             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                           />
                         )}
-                        <span className={`relative z-10 ${activeIndex === index ? (isLightMode ? 'text-white' : 'text-blue-600') : ''}`}>
+                        <span className={`relative z-10 ${activeIndex === index ? (isLightMode ? 'text-white' : 'text-orange-600') : ''}`}>
                           {link.label}
                         </span>
                         <ChevronDown className={`relative z-10 h-3.5 w-3.5 transition-transform duration-200 ${showLayanan ? 'rotate-180' : ''}`} />
@@ -215,14 +215,14 @@ export function Navbar() {
                                 <Link
                                   key={item.href}
                                   href={item.href}
-                                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-blue-50/70"
+                                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-orange-50/70"
                                   onClick={() => setShowLayanan(false)}
                                 >
-                                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                                    <item.icon className="h-4.5 w-4.5 text-blue-600" />
+                                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-orange-50 group-hover:bg-orange-100 transition-colors">
+                                    <item.icon className="h-4.5 w-4.5 text-orange-600" />
                                   </div>
                                   <div>
-                                    <p className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                    <p className="text-sm font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
                                       {item.title}
                                     </p>
                                     <p className="text-xs text-slate-500 mt-0.5">
@@ -263,12 +263,12 @@ export function Navbar() {
                     </AnimatePresence>
                     {activeIndex === index && hoveredIndex === null && (
                       <motion.span
-                        className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/20' : 'bg-blue-50'}`}
+                        className={`absolute inset-0 rounded-full ${isLightMode ? 'bg-white/20' : 'bg-orange-50'}`}
                         layoutId="navbar-active"
                         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                       />
                     )}
-                    <span className={`relative z-10 ${activeIndex === index ? (isLightMode ? 'text-white' : 'text-blue-600') : ''}`}>
+                    <span className={`relative z-10 ${activeIndex === index ? (isLightMode ? 'text-white' : 'text-orange-600') : ''}`}>
                       {link.label}
                     </span>
                   </a>
@@ -341,7 +341,7 @@ export function Navbar() {
                                 onClick={() => setMobileLayananOpen(!mobileLayananOpen)}
                                 className={`flex h-12 w-full items-center justify-between rounded-xl px-4 text-[15px] font-medium transition-colors ${
                                   activeIndex === index
-                                    ? 'bg-blue-50 text-blue-600'
+                                    ? 'bg-orange-50 text-orange-600'
                                     : 'text-slate-700 hover:bg-slate-50'
                                 }`}
                               >
@@ -364,9 +364,9 @@ export function Navbar() {
                                           key={item.href}
                                           href={item.href}
                                           onClick={() => setIsOpen(false)}
-                                          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors"
                                         >
-                                          <item.icon className="h-4 w-4 text-blue-500" />
+                                          <item.icon className="h-4 w-4 text-orange-500" />
                                           {item.title}
                                         </Link>
                                       ))}
@@ -385,8 +385,8 @@ export function Navbar() {
                             onClick={(e) => handleLinkClick(e, link.href, index)}
                             className={`flex h-12 items-center rounded-xl px-4 text-[15px] font-medium transition-colors ${
                               activeIndex === index
-                                ? 'bg-blue-50 text-blue-600'
-                                : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600'
+                                ? 'bg-orange-50 text-orange-600'
+                                : 'text-slate-700 hover:bg-slate-50 hover:text-orange-600'
                             }`}
                           >
                             {link.label}

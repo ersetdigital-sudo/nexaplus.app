@@ -56,7 +56,7 @@ export default function AdminLayout({
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-orange-600 border-t-transparent" />
       </div>
     );
   }
@@ -78,7 +78,7 @@ export default function AdminLayout({
       <aside className="w-64 border-r border-slate-200 bg-white flex flex-col">
         <div className="px-6 py-5 border-b border-slate-100">
           <Link href="/" className="text-lg font-bold text-slate-900">
-            Nexa<span className="text-blue-600">Plus</span>
+            Nexa<span className="text-orange-600">Plus</span>
           </Link>
           <p className="text-xs text-slate-400 mt-0.5">Admin Dashboard</p>
         </div>
@@ -93,7 +93,7 @@ export default function AdminLayout({
                 href={item.href}
                 className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-blue-50 text-blue-700"
+                    ? "bg-orange-50 text-orange-700"
                     : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                 }`}
               >

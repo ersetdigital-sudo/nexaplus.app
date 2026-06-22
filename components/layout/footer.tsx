@@ -52,7 +52,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-blue-600"
+                    className="text-sm text-slate-600 transition-colors hover:text-orange-600"
                   >
                     {link.label}
                   </Link>
@@ -81,7 +81,7 @@ export function Footer() {
                   <li key={service.id}>
                     <Link
                       href={href}
-                      className="text-sm text-slate-600 transition-colors hover:text-blue-600"
+                      className="text-sm text-slate-600 transition-colors hover:text-orange-600"
                     >
                       {service.title}
                     </Link>
@@ -108,7 +108,7 @@ export function Footer() {
                   href={`https://wa.me/${siteConfig.whatsapp.number}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                  className="text-sm text-slate-600 hover:text-orange-600 transition-colors"
                 >
                   +{siteConfig.whatsapp.number}
                 </a>
@@ -116,7 +116,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                  className="text-sm text-slate-600 hover:text-orange-600 transition-colors"
                 >
                   {siteConfig.contact.email}
                 </a>
@@ -135,7 +135,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`NexaPlus di ${social.platform}`}
-                    className="text-slate-500 transition-colors hover:text-blue-600"
+                    className="text-slate-500 transition-colors hover:text-orange-600"
                   >
                     <Icon className="h-5 w-5" />
                   </a>

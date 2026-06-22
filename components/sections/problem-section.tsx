@@ -80,7 +80,7 @@ export function ProblemSection() {
           })}
         </div>
 
-        <p className="mt-10 rounded-xl border border-blue-100 bg-blue-50 px-6 py-5 text-center text-base text-slate-700 md:text-lg">
+        <p className="mt-10 rounded-xl border border-orange-100 bg-orange-50 px-6 py-5 text-center text-base text-slate-700 md:text-lg">
           Jika ingin membangun bisnis yang lebih kuat dalam jangka panjang,
           Anda membutuhkan aset digital yang benar-benar milik sendiri.
         </p>
