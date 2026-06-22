@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   ShoppingCart,
   Smartphone,
@@ -142,16 +143,21 @@ export function TokoOnlineLanding() {
               </motion.div>
             </motion.div>
 
-            {/* Hero image placeholder - right side */}
+            {/* Hero image */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="hidden lg:flex items-center justify-center"
             >
-              <div className="relative w-full max-w-md aspect-square bg-slate-100 rounded-3xl flex items-center justify-center">
-                <ShoppingCart className="h-24 w-24 text-slate-300" />
-              </div>
+              <Image
+                src="/images/hero-toko.png"
+                alt="Website toko online profesional"
+                width={600}
+                height={600}
+                className="w-full h-auto"
+                priority
+              />
             </motion.div>
           </div>
         </div>
