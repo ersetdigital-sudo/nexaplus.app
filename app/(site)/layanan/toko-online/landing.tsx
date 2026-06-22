@@ -338,27 +338,30 @@ export function TokoOnlineLanding() {
       <Section id="harga" className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+            <span className="text-sm font-semibold uppercase tracking-widest text-orange-500">
+              Harga
+            </span>
+            <h2 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>
               Investasi untuk Bisnis Kamu
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-base text-slate-600">
               Pilih paket yang sesuai kebutuhan & budget.
             </p>
           </motion.div>
 
-          <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          <motion.div variants={stagger} className="grid grid-cols-1 gap-6 md:grid-cols-3 md:items-stretch">
             {/* Starter */}
-            <motion.div variants={fadeUp} className="rounded-2xl border border-slate-200 bg-white p-8 hover:shadow-lg transition-shadow">
+            <motion.div variants={fadeUp} className="flex flex-col rounded-2xl border border-slate-200 bg-white p-8">
               <h3 className="text-lg font-bold text-slate-900">Starter</h3>
               <p className="mt-1 text-sm text-slate-500">Cocok untuk UMKM & bisnis baru</p>
               <div className="mt-5">
                 <span className="text-3xl font-extrabold text-slate-900">Rp 1.500.000</span>
                 <span className="text-sm text-slate-500"> /proyek</span>
               </div>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-6 flex-1 space-y-3">
                 {["Hingga 50 produk", "Desain responsif mobile-first", "Integrasi 1 payment gateway", "Cek ongkir otomatis", "Domain custom (.com)", "Hosting 1 tahun", "SSL gratis"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-orange-500 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -367,27 +370,27 @@ export function TokoOnlineLanding() {
                 href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Starter%20Website%20Toko%20Online.%20Bisa%20info%20lebih%20lanjut%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 flex h-11 w-full items-center justify-center rounded-full border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                className="mt-8 flex h-12 w-full items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
               >
                 Konsultasi Paket Starter
               </a>
             </motion.div>
 
-            {/* Professional */}
-            <motion.div variants={fadeUp} className="relative rounded-2xl border-2 border-orange-600 bg-white p-8 shadow-xl shadow-orange-100/50">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-orange-600 px-4 py-1 text-xs font-semibold text-white">
+            {/* Professional — Dark card */}
+            <motion.div variants={fadeUp} className="relative flex flex-col rounded-2xl bg-slate-900 p-8 shadow-2xl md:-my-4">
+              <div className="absolute top-5 right-5 rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold text-white">
                 Paling Populer
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Professional</h3>
-              <p className="mt-1 text-sm text-slate-500">Untuk bisnis yang ingin scale</p>
+              <h3 className="text-lg font-bold text-white">Professional</h3>
+              <p className="mt-1 text-sm text-slate-400">Untuk bisnis yang ingin scale</p>
               <div className="mt-5">
-                <span className="text-3xl font-extrabold text-slate-900">Rp 3.500.000</span>
-                <span className="text-sm text-slate-500"> /proyek</span>
+                <span className="text-3xl font-extrabold text-orange-400">Rp 3.500.000</span>
+                <span className="text-sm text-slate-400"> /proyek</span>
               </div>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-6 flex-1 space-y-3">
                 {["Produk unlimited", "Desain premium custom", "Multi payment gateway", "Dashboard admin lengkap", "Integrasi ongkir 15+ kurir", "Wishlist & lacak pesanan", "SEO optimized", "Support 30 hari"].map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <CheckCircle className="h-4 w-4 text-orange-400 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -396,23 +399,23 @@ export function TokoOnlineLanding() {
                 href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Professional%20Website%20Toko%20Online.%20Bisa%20info%20lebih%20lanjut%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 flex h-11 w-full items-center justify-center rounded-full bg-orange-600 text-sm font-semibold text-white hover:bg-orange-700 transition-colors shadow-sm"
+                className="mt-8 flex h-12 w-full items-center justify-center rounded-full bg-orange-500 text-sm font-semibold text-white hover:bg-orange-600 transition-colors"
               >
                 Konsultasi Paket Professional
               </a>
             </motion.div>
 
             {/* Enterprise */}
-            <motion.div variants={fadeUp} className="rounded-2xl border border-slate-200 bg-white p-8 hover:shadow-lg transition-shadow">
+            <motion.div variants={fadeUp} className="flex flex-col rounded-2xl border border-slate-200 bg-white p-8">
               <h3 className="text-lg font-bold text-slate-900">Enterprise</h3>
               <p className="mt-1 text-sm text-slate-500">Full custom sesuai kebutuhan</p>
               <div className="mt-5">
                 <span className="text-3xl font-extrabold text-slate-900">Custom</span>
               </div>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-6 flex-1 space-y-3">
                 {["Semua fitur Professional", "Desain 100% custom", "Integrasi API kustom", "Multi-admin & role", "Analytics dashboard", "Priority support", "Maintenance bulanan", "Konsultasi arsitektur"].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <CheckCircle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-orange-500 mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -421,7 +424,7 @@ export function TokoOnlineLanding() {
                 href="https://wa.me/6281573059442?text=Halo%20NexaPlus%2C%20saya%20tertarik%20dengan%20paket%20Enterprise%20Website%20Toko%20Online.%20Bisa%20diskusi%20kebutuhan%20custom%20saya%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 flex h-11 w-full items-center justify-center rounded-full border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+                className="mt-8 flex h-12 w-full items-center justify-center rounded-full border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
               >
                 Hubungi Kami
               </a>
