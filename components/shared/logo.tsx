@@ -14,7 +14,7 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
         alt="NexaPlus"
         width={200}
         height={48}
-        className="h-9 w-auto object-contain"
+        className="h-7 w-auto object-contain"
         priority
         unoptimized
       />
