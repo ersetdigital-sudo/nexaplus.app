@@ -1,5 +1,4 @@
 import { HeroSection } from '@/components/sections/hero-section';
-import { TrustSection } from '@/components/sections/trust-section';
 import { ProblemSection } from '@/components/sections/problem-section';
 import { SolutionSection } from '@/components/sections/solution-section';
 import { LayananSection } from '@/components/sections/layanan-section';
@@ -26,7 +25,6 @@ export default function Home() {
         }}
       />
       <HeroSection />
-      <TrustSection />
       <ProblemSection />
       <SolutionSection />
       <LayananSection />
