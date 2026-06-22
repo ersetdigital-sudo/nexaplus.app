@@ -16,7 +16,6 @@ import {
   Clock,
   Wallet,
   Search,
-  Package,
 } from "lucide-react";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { LayananCrossLinks } from "@/components/shared/layanan-cross-links";
@@ -61,19 +60,11 @@ export function TokoOnlineLanding() {
   return (
     <div className="overflow-hidden">
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-orange-500/10 blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-indigo-500/10 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-orange-600/5 blur-3xl" />
-        </div>
-
+      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
         <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-24">
           {/* Breadcrumb */}
           <div className="mb-8">
             <Breadcrumb
-              variant="dark"
               items={[
                 { label: "Home", href: "/" },
                 { label: "Layanan", href: "/#layanan" },
@@ -82,74 +73,87 @@ export function TokoOnlineLanding() {
             />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 mb-6"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <ShoppingCart className="h-4 w-4 text-orange-400" />
-              <span className="text-sm font-medium text-orange-300">
-                Jasa Pembuatan Website Toko Online
-              </span>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 rounded-full bg-orange-50 border border-orange-200 px-4 py-1.5 mb-6"
+              >
+                <ShoppingCart className="h-4 w-4 text-orange-500" />
+                <span className="text-sm font-medium text-orange-700">
+                  Jasa Pembuatan Website Toko Online
+                </span>
+              </motion.div>
+
+              <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-[1.1]" style={{ fontFamily: "var(--font-heading)" }}>
+                Wujudkan Toko Online{" "}
+                <span className="text-orange-500 italic">Profesional</span>{" "}
+                Anda Tanpa Ribet
+              </h1>
+
+              <p className="mt-6 text-base text-slate-600 leading-relaxed max-w-lg">
+                NexaPlus hadir untuk pemilik usaha yang ingin jualan online dengan website sendiri yang cepat, cantik, dan siap terima pesanan — tanpa perlu paham teknologi.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-3.5 text-sm font-semibold text-white hover:bg-orange-600 transition-all"
+                >
+                  Konsultasi Gratis Sekarang
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="#harga"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-3.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-all"
+                >
+                  Lihat Paket Harga
+                </a>
+              </div>
+
+              {/* Social proof */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-500"
+              >
+                <span className="flex items-center gap-1.5">
+                  <span className="text-lg font-bold text-slate-900">50+</span>
+                  <span className="text-xs text-slate-500">Toko Online Diluncurkan</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="text-lg font-bold text-slate-900">3 Thn</span>
+                  <span className="text-xs text-slate-500">Pengalaman</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="text-lg font-bold text-slate-900">4.9</span>
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <span className="text-xs text-slate-500">Rating dari Klien</span>
+                </span>
+              </motion.div>
             </motion.div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
-              Wujudkan Toko Online Profesional Anda{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-cyan-400">
-                Tanpa Ribet
-              </span>
-            </h1>
-
-            <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl">
-              NexaPlus hadir untuk pemilik usaha yang ingin jualan online dengan website sendiri yang cepat, cantik, dan siap terima pesanan — tanpa perlu paham teknologi.
-            </p>
-
-            <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-600/30 hover:bg-orange-500 hover:shadow-orange-500/40 transition-all"
-              >
-                Konsultasi Gratis Sekarang
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#harga"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-600 px-7 py-3.5 text-sm font-medium text-slate-300 hover:bg-white/5 hover:border-slate-500 transition-all"
-              >
-                Lihat Paket Harga
-              </a>
-            </div>
-
-            {/* Social proof */}
+            {/* Hero image placeholder - right side */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="mt-12 flex flex-wrap items-center gap-6 text-sm text-slate-400"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="hidden lg:flex items-center justify-center"
             >
-              <span className="flex items-center gap-1.5">
-                <Package className="h-4 w-4 text-orange-400" />
-                50+ Toko Online Diluncurkan
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="h-4 w-4 text-orange-400" />
-                3 Tahun Pengalaman
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Star className="h-4 w-4 text-yellow-400" />
-                Rating 4.9 dari Klien
-              </span>
+              <div className="relative w-full max-w-md aspect-square bg-slate-100 rounded-3xl flex items-center justify-center">
+                <ShoppingCart className="h-24 w-24 text-slate-300" />
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
