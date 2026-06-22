@@ -21,7 +21,7 @@ const layananItems = [
 ];
 
 // Pages with dark hero sections
-const darkHeroPages = ['/layanan/toko-online', '/layanan/landing-page', '/layanan/company-profile', '/layanan/website-sekolah', '/layanan/website-pemerintahan', '/layanan/website-organisasi'];
+const darkHeroPages = ['/layanan/landing-page', '/layanan/company-profile', '/layanan/website-sekolah', '/layanan/website-pemerintahan', '/layanan/website-organisasi'];
 
 export function Navbar() {
   const pathname = usePathname();
