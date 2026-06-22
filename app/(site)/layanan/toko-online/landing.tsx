@@ -521,35 +521,27 @@ export function TokoOnlineLanding() {
       <LayananCrossLinks currentSlug="toko-online" />
 
       {/* ===== CTA FINAL ===== */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-br from-orange-600 via-orange-700 to-indigo-800 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto max-w-3xl px-5 sm:px-6 text-center">
+      <section className="px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-slate-900 px-6 py-16 sm:px-12 sm:py-20 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl" style={{ fontFamily: "var(--font-heading)" }}>
               Siap Punya Toko Online Sendiri?
             </h2>
-            <p className="mt-5 text-lg text-orange-100 max-w-xl mx-auto">
-              Jangan tunda lagi. Setiap hari tanpa website adalah hari yang kamu biarkan calon pembeli pergi ke kompetitor.
-            </p>
-            <p className="mt-3 text-sm text-orange-200">
-              Konsultasi pertama gratis. Tanpa komitmen, tanpa tekanan.
+            <p className="mx-auto mt-5 max-w-xl text-base text-slate-400">
+              Jangan tunda lagi. Setiap hari tanpa website adalah hari yang kamu biarkan calon pembeli pergi ke kompetitor. Konsultasi pertama gratis. Tanpa komitmen, tanpa tekanan.
             </p>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-orange-700 shadow-xl hover:bg-orange-50 transition-colors"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-3.5 text-sm font-semibold text-white hover:bg-orange-600 transition-colors"
             >
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-4 w-4" />
               Chat WhatsApp Sekarang
             </a>
           </motion.div>
