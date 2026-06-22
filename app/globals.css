@@ -195,3 +195,9 @@ button, a, input, [role="button"] {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* Marquee animation for company profile trust section */
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
