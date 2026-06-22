@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Lato } from "next/font/google";
+import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import {
@@ -7,11 +7,18 @@ import {
   generateLocalBusinessSchema,
 } from "@/lib/schema-markup";
 
-const lato = Lato({
+const sora = Sora({
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["600", "700", "800"],
   display: "swap",
-  variable: "--font-lato",
+  variable: "--font-sora",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const viewport: Viewport = {
@@ -74,7 +81,7 @@ export default function RootLayout({
   const localBusinessSchema = generateLocalBusinessSchema();
 
   return (
-    <html lang="id" className={cn("font-sans", lato.variable)}>
+    <html lang="id" className={cn("font-sans", sora.variable, inter.variable)}>
       <head>
         <script
           type="application/ld+json"

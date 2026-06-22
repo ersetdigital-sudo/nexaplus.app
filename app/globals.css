@@ -15,7 +15,8 @@
   --color-text-muted: #71717A;
   --color-fg-brand: #FF7A00;
 
-  --font-sans: "Lato", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Sora", sans-serif;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -100,6 +101,7 @@ body {
    TYPOGRAPHY SYSTEM (Lato, mobile-first)
    ======================================== */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   font-weight: 700;
 }
 
