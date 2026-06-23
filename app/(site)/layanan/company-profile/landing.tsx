@@ -59,7 +59,7 @@ export function CompanyProfileLanding() {
                 Bukan sekadar website biasa. Kami membangun website company profile dengan desain custom, loading cepat, responsif di semua perangkat, dan SEO-ready — supaya bisnis Anda tampil kredibel dan mudah ditemukan calon klien.
               </p>
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center gap-2 rounded-xl px-7 py-4 font-semibold text-black bg-orange-500 hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center gap-2 rounded-xl px-7 py-4 font-semibold text-white bg-orange-500 hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">
                   Mulai Proyek Anda <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="#portfolio" className="inline-flex justify-center items-center gap-2 rounded-xl px-7 py-4 font-semibold text-white border border-white/20 hover:bg-white/5 transition">
@@ -234,7 +234,7 @@ export function CompanyProfileLanding() {
                   <li key={f} className="flex gap-2"><span className="text-orange-500">✓</span> {f}</li>
                 ))}
               </ul>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex justify-center rounded-xl px-6 py-3 font-semibold text-black bg-orange-500 hover:bg-orange-600 transition">Pilih Business</a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex justify-center rounded-xl px-6 py-3 font-semibold text-white bg-orange-500 hover:bg-orange-600 transition">Pilih Business</a>
             </motion.div>
             {/* Premium */}
             <motion.div variants={fadeUp} className="rounded-3xl border border-black/10 p-8 flex flex-col">
@@ -317,7 +317,7 @@ export function CompanyProfileLanding() {
               <span className="flex items-center gap-3">✅ Respons cepat di jam kerja</span>
             </div>
             <div className="mt-8">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl px-7 py-4 font-semibold text-black bg-orange-500 hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl px-7 py-4 font-semibold text-white bg-orange-500 hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">
                 <MessageCircle className="h-5 w-5" />
                 Chat WhatsApp Sekarang
               </a>
