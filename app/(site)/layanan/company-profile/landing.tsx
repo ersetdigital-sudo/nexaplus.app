@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { CheckCircle, Star, ArrowRight, MessageCircle } from "lucide-react";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { LayananCrossLinks } from "@/components/shared/layanan-cross-links";
@@ -72,9 +73,7 @@ export function CompanyProfileLanding() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="relative hidden lg:block">
-              <div className="w-full aspect-[4/3] rounded-3xl border border-white/10 bg-white/5 flex items-center justify-center">
-                <span className="text-6xl">💼</span>
-              </div>
+              <Image src="/images/hero-compro.png" alt="Mockup website company profile profesional di laptop dan smartphone" width={700} height={525} className="w-full rounded-3xl border border-white/10" priority />
               <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-2xl hidden sm:block">
                 <div className="text-2xl font-extrabold text-orange-500" style={{ fontFamily: "var(--font-heading)" }}>100%</div>
                 <div className="text-xs text-black/60 font-medium">responsif di mobile,<br />tablet &amp; desktop</div>
@@ -186,6 +185,14 @@ export function CompanyProfileLanding() {
               <h2 className="font-extrabold text-white text-3xl sm:text-4xl leading-tight" style={{ fontFamily: "var(--font-heading)" }}>Website yang berbicara sendiri</h2>
             </div>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white text-sm font-semibold inline-flex items-center gap-2">Diskusikan proyek Anda →</a>
+          </motion.div>
+          <motion.div variants={stagger} className="grid md:grid-cols-2 gap-6">
+            <motion.div variants={fadeUp} className="rounded-3xl overflow-hidden border border-white/10">
+              <Image src="/images/porto-compro-1.png" alt="Desain website company profile perusahaan modern" width={800} height={500} className="w-full h-full object-cover" />
+            </motion.div>
+            <motion.div variants={fadeUp} className="rounded-3xl overflow-hidden border border-white/10">
+              <Image src="/images/porto-compro-2.png" alt="Website company profile responsif di laptop, tablet, dan smartphone" width={800} height={500} className="w-full h-full object-cover" />
+            </motion.div>
           </motion.div>
           <div className="grid sm:grid-cols-3 gap-6 mt-10 text-center">
             <motion.div variants={fadeUp}><div className="font-extrabold text-4xl sm:text-5xl text-white" style={{ fontFamily: "var(--font-heading)" }}>180+</div><p className="text-white/50 text-sm mt-1">Proyek selesai</p></motion.div>
