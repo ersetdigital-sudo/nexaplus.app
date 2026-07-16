@@ -28,6 +28,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://nexaplus.app/sitemap.xml',
+    sitemap: 'https://nexaplus.web.id/sitemap.xml',
   };
 }

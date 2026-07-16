@@ -30,8 +30,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
   description:
-    "Jasa pembuatan website profesional di Indonesia. Toko online, landing page, company profile, dan website sekolah. Mulai dari Rp 500.000, hosting gratis.",
-  metadataBase: new URL("https://nexaplus.app"),
+    "Jasa pembuatan website profesional: toko online, landing page, company profile, website sekolah. Mulai Rp 500rb — hosting + SSL gratis 1 tahun. Konsultasi gratis via WhatsApp.",
+  metadataBase: new URL("https://nexaplus.web.id"),
   keywords: [
     "jasa pembuatan website",
     "jasa pembuatan website profesional",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
     description:
-      "Jasa pembuatan website profesional di Indonesia. Toko online, landing page, company profile, dan website sekolah. Mulai dari Rp 500.000, hosting gratis.",
-    url: "https://nexaplus.app",
+      "Jasa pembuatan website profesional: toko online, landing page, company profile, website sekolah. Mulai Rp 500rb — hosting + SSL gratis 1 tahun. Konsultasi gratis via WhatsApp.",
+    url: "https://nexaplus.web.id",
     siteName: "NexaPlus",
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://nexaplus.app",
+    canonical: "https://nexaplus.web.id",
   },
   robots: {
     index: true,
@@ -94,7 +94,7 @@ export default function RootLayout({
                 {
                   "@type": "WebSite",
                   "name": "NexaPlus",
-                  "url": "https://nexaplus.app",
+                  "url": "https://nexaplus.web.id",
                   "description": "Jasa pembuatan website profesional di Indonesia",
                   "publisher": { "@type": "Organization", "name": "NexaPlus" }
                 }

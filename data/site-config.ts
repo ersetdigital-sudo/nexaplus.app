@@ -1,13 +1,13 @@
 export const siteConfig = {
   name: 'NexaPlus',
-  url: 'https://nexaplus.app',
+  url: 'https://nexaplus.web.id',
   whatsapp: {
     number: '6281573059442',
     defaultMessage: 'Halo NexaPlus, saya tertarik dengan jasa pembuatan website.',
   },
   meta: {
     title: 'Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus',
-    description: 'Jasa pembuatan website profesional di Indonesia. Toko online, landing page, company profile, dan website sekolah. Mulai dari Rp 500.000, hosting gratis.',
+    description: 'Jasa pembuatan website profesional: toko online, landing page, company profile, website sekolah. Mulai Rp 500rb — hosting + SSL gratis 1 tahun. Konsultasi gratis via WhatsApp.',
     ogImage: '/images/og-image.jpg',
   },
   address: {
