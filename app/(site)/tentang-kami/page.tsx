@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "NexaPlus adalah jasa pembuatan website profesional yang membantu UMKM, organisasi, sekolah, dan berbagai jenis bisnis memiliki website modern, cepat, dan SEO friendly.",
   alternates: {
-    canonical: "https://nexaplus.app/tentang-kami",
+    canonical: "https://nexaplus.web.id/tentang-kami",
   },
   openGraph: {
     title: "Tentang Kami — NexaPlus",
     description:
       "Jasa pembuatan website profesional untuk UMKM, organisasi, dan bisnis di Indonesia. Partner digital terpercaya sejak hari pertama.",
-    url: "https://nexaplus.app/tentang-kami",
+    url: "https://nexaplus.web.id/tentang-kami",
   },
 };
 

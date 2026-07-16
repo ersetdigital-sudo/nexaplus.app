@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://nexaplus.app/layanan/company-profile",
+    canonical: "https://nexaplus.web.id/layanan/company-profile",
   },
 };
 

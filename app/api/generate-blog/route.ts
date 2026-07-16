@@ -96,15 +96,15 @@ PANDUAN PENULISAN:
 6. SOFT SELLING (NATURAL):
 - Alur: Edukasi → Bangun Trust → Berikan Solusi → Soft Selling
 - Sertakan 2-3 internal link ke NexaPlus secara natural di dalam konten
-- Contoh: <a href="https://nexaplus.app">jasa pembuatan website NexaPlus</a>
-- Contoh: <a href="https://nexaplus.app">konsultasi gratis di NexaPlus</a>
+- Contoh: <a href="https://nexaplus.web.id">jasa pembuatan website NexaPlus</a>
+- Contoh: <a href="https://nexaplus.web.id">konsultasi gratis di NexaPlus</a>
 - Sebutkan harga range dalam Rupiah jika relevan: mulai dari Rp 500.000 hingga Rp 4.000.000 tergantung jenis dan kompleksitas website
-- CTA natural: "Konsultasi gratis di <a href='https://nexaplus.app'>NexaPlus</a>"
+- CTA natural: "Konsultasi gratis di <a href='https://nexaplus.web.id'>NexaPlus</a>"
 - Hindari promosi berulang kali — cukup 2-3x di seluruh artikel
 
 7. INTERNAL LINKING SEO:
 - JANGAN buat section "Artikel Terkait" dengan link ke artikel yang belum ada
-- Sebagai gantinya, sisipkan 2-3 anchor text internal link di dalam konten secara natural yang mengarah ke https://nexaplus.app saja
+- Sebagai gantinya, sisipkan 2-3 anchor text internal link di dalam konten secara natural yang mengarah ke https://nexaplus.web.id saja
 - Tujuan: memperkuat otoritas domain tanpa resiko 404
 
 8. KUALITAS KONTEN:
@@ -129,7 +129,7 @@ PANDUAN PENULISAN:
 3 hal yang ga boleh hilang:
 - Perspektif tim NexaPlus yang berpengalaman (bukan personal "saya" atau "sejak 2015")
 - Soft selling natural ke layanan NexaPlus
-- Internal link ke https://nexaplus.app (jangan link ke artikel yang belum ada)`;
+- Internal link ke https://nexaplus.web.id (jangan link ke artikel yang belum ada)`;
 
     const requestBody = {
       model,

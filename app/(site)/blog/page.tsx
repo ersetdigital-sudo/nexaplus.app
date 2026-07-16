@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://nexaplus.app/blog",
+    canonical: "https://nexaplus.web.id/blog",
   },
 };
 

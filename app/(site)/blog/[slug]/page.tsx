@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       images: post.cover_image ? [post.cover_image] : undefined,
     },
     alternates: {
-      canonical: `https://nexaplus.app/blog/${post.slug}`,
+      canonical: `https://nexaplus.web.id/blog/${post.slug}`,
     },
   };
 }
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     excerpt: post.meta_description || post.excerpt,
     publishedDate,
     modifiedDate: post.updated_at ? new Date(post.updated_at) : undefined,
-    url: `https://nexaplus.app/blog/${post.slug}`,
+    url: `https://nexaplus.web.id/blog/${post.slug}`,
     image: post.cover_image || undefined,
   });
 

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PortfolioPageProps): Promise<
       images: [{ url: item.screenshot, width: 1200, height: 630, alt: item.name }],
     },
     alternates: {
-      canonical: `https://nexaplus.app/portfolio/${item.slug}`,
+      canonical: `https://nexaplus.web.id/portfolio/${item.slug}`,
     },
   };
 }

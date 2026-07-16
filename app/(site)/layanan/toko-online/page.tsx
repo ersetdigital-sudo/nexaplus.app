@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://nexaplus.app/layanan/toko-online",
+    canonical: "https://nexaplus.web.id/layanan/toko-online",
   },
 };
 
