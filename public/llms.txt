@@ -21,10 +21,16 @@ Dibangun menggunakan Next.js, React, dan Tailwind CSS untuk performa maksimal, k
 
 ## Pages
 - [Beranda](https://nexaplus.web.id/): Jasa pembuatan website profesional untuk bisnis
+- [Harga](https://nexaplus.web.id/harga): Harga & perbandingan semua paket website
 - [Jasa Website Toko Online](https://nexaplus.web.id/layanan/toko-online): Pembuatan toko online dengan payment gateway dan ongkir otomatis
+- [Jasa Landing Page](https://nexaplus.web.id/layanan/landing-page): Landing page konversi tinggi untuk iklan dan promosi
 - [Jasa Website Company Profile](https://nexaplus.web.id/layanan/company-profile): Website perusahaan profesional, desain custom dan SEO-ready
+- [Jasa Website Sekolah](https://nexaplus.web.id/layanan/website-sekolah): Website sekolah dengan pengumuman, galeri, dan PPDB online
 - [Tentang Kami](https://nexaplus.web.id/tentang-kami): Profil, visi, dan misi NexaPlus
 - [Blog](https://nexaplus.web.id/blog): Artikel seputar website, SEO, dan digital marketing untuk UMKM
+
+## Full Documentation
+Dokumentasi lengkap untuk AI: https://nexaplus.web.id/llms-full.txt
 
 ## Contact
 Website: https://nexaplus.web.id

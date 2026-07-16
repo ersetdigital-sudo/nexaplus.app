@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 
 import { Badge } from "@/components/ui/badge";
@@ -91,11 +92,12 @@ export function BlogSection() {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-orange-500/30 via-sky-400/20 to-orange-600/30">
                     {post.cover_image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={post.cover_image}
+                      <Image
+                        src={post.cover_image || "/placeholder.svg"}
                         alt={post.title}
-                        className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" decoding="async"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform group-hover:scale-105"
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center transition-transform group-hover:scale-105">

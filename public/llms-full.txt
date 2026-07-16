@@ -1,0 +1,90 @@
+# NexaPlus — Jasa Pembuatan Website Profesional Indonesia
+
+> NexaPlus adalah jasa pembuatan website profesional yang berbasis di Sumedang, Jawa Barat, Indonesia. Kami melayani klien di seluruh Indonesia untuk pembuatan website toko online, landing page, company profile, website sekolah, website pemerintahan, website organisasi, sistem POS kasir, aplikasi inventory, dan sistem booking reservasi. Semua website dibangun dengan Next.js, React, dan Tailwind CSS untuk performa cepat, keamanan tinggi, dan SEO optimal.
+
+Website: https://nexaplus.web.id
+Dokumen ringkas: https://nexaplus.web.id/llms.txt
+
+## Apa itu NexaPlus?
+
+NexaPlus adalah penyedia jasa pembuatan website untuk UMKM, perusahaan, sekolah, instansi pemerintahan, dan organisasi di Indonesia. Keunggulan utama: harga transparan tanpa biaya tersembunyi, pengerjaan cepat (3-21 hari kerja tergantung paket), desain custom sesuai brand, teknologi modern (bukan template WordPress), serta hosting dan SSL gratis tahun pertama di semua paket.
+
+## Layanan dan Harga Lengkap
+
+### Landing Page — mulai Rp 500.000
+Halaman tunggal konversi tinggi untuk iklan dan promosi.
+- Basic (Rp 500.000): 1 halaman, desain responsif mobile-first, form lead/tombol WhatsApp, copywriting dasar, hosting 1 tahun + SSL gratis. Selesai 3-5 hari kerja.
+- Premium (Rp 1.500.000): desain custom sesuai brand, copywriting persuasif lengkap, integrasi pixel iklan (Meta/Google), hingga 3 section variant untuk A/B testing, domain custom (.com). Selesai 5-7 hari kerja.
+Detail: https://nexaplus.web.id/layanan/landing-page
+
+### Website Toko Online — mulai Rp 1.500.000
+E-commerce lengkap dengan keranjang belanja dan pembayaran online.
+- Starter (Rp 1.500.000): hingga 50 produk, integrasi 1 payment gateway, cek ongkir otomatis, domain custom (.com), hosting 1 tahun + SSL gratis. Selesai 7-14 hari kerja.
+- Professional (Rp 3.500.000): produk unlimited, multi payment gateway, dashboard admin lengkap, cek ongkir 15+ kurir (JNE, J&T, SiCepat, dll), SEO on-page setup, free support 30 hari. Selesai 14-21 hari kerja.
+Detail: https://nexaplus.web.id/layanan/toko-online
+
+### Company Profile — mulai Rp 2.500.000
+Website korporat profesional untuk membangun kredibilitas perusahaan.
+- Basic (Rp 2.500.000): hingga 5 halaman, desain custom sesuai brand, halaman layanan & portofolio, form kontak + WhatsApp, SEO-ready. Selesai 7-14 hari kerja.
+- Premium (Rp 5.000.000): hingga 12 halaman, desain premium + animasi, blog/berita perusahaan, multi bahasa (opsional), SEO on-page lengkap, free support 30 hari. Selesai 14-21 hari kerja.
+Detail: https://nexaplus.web.id/layanan/company-profile
+
+### Website Sekolah — mulai Rp 2.000.000
+Website lembaga pendidikan dengan fitur akademik lengkap.
+- Standar (Rp 2.000.000): profil sekolah & visi misi, pengumuman & berita, galeri kegiatan, data guru & staf, form PPDB online, hosting 1 tahun + SSL gratis. Selesai 7-14 hari kerja.
+- Lengkap (Rp 4.000.000): semua fitur Standar + dashboard admin untuk staf, multi jenjang/unit sekolah, halaman ekstrakurikuler & prestasi, download center, free support 30 hari + training. Selesai 14-21 hari kerja.
+Detail: https://nexaplus.web.id/layanan/website-sekolah
+
+### Layanan Custom — harga sesuai kebutuhan
+Website pemerintahan, website organisasi, sistem POS & kasir, aplikasi inventory, dan sistem booking/reservasi dikerjakan dengan penawaran custom sesuai scope, termasuk analisis kebutuhan gratis, integrasi sistem eksternal, dan training penggunaan.
+
+Perbandingan lengkap semua paket: https://nexaplus.web.id/harga
+
+## Cara Kerja (Proses)
+
+1. Konsultasi gratis via WhatsApp — ceritakan kebutuhan bisnis, kami beri rekomendasi.
+2. Desain & persetujuan — kami buatkan tampilan, klien setujui sebelum development.
+3. Pengembangan — website dibangun sesuai kebutuhan dan brand.
+4. Launch & serah terima — website live, termasuk free support setelah launch.
+
+Sistem pembayaran: DP 50% di awal, pelunasan 50% setelah website selesai dan disetujui.
+
+## Pertanyaan yang Sering Diajukan
+
+### Berapa biaya pembuatan website di NexaPlus?
+Mulai dari Rp 500.000 untuk landing page, Rp 1.500.000 untuk toko online, Rp 2.000.000 untuk website sekolah, dan Rp 2.500.000 untuk company profile. Semua paket termasuk hosting dan SSL gratis tahun pertama.
+
+### Berapa lama pengerjaan website?
+Landing page 3-5 hari kerja, toko online dan company profile 7-14 hari kerja, proyek fitur lengkap hingga 21 hari kerja.
+
+### Apakah ada biaya bulanan?
+Tidak ada biaya tersembunyi. Biaya berulang hanya perpanjangan domain dan hosting mulai tahun kedua, plus maintenance bulanan yang opsional.
+
+### Teknologi apa yang digunakan?
+Next.js, React, dan Tailwind CSS — bukan template WordPress. Hasilnya website lebih cepat, lebih aman, dan lebih SEO-friendly.
+
+### Apakah website bisa dikelola sendiri?
+Ya. Paket dengan dashboard admin memungkinkan klien mengelola produk, konten, dan pesanan sendiri tanpa keahlian teknis. Kami juga menyediakan training.
+
+## Halaman Penting
+
+- Beranda: https://nexaplus.web.id/
+- Harga & perbandingan paket: https://nexaplus.web.id/harga
+- Jasa Website Toko Online: https://nexaplus.web.id/layanan/toko-online
+- Jasa Landing Page: https://nexaplus.web.id/layanan/landing-page
+- Jasa Company Profile: https://nexaplus.web.id/layanan/company-profile
+- Jasa Website Sekolah: https://nexaplus.web.id/layanan/website-sekolah
+- Tentang Kami: https://nexaplus.web.id/tentang-kami
+- Blog: https://nexaplus.web.id/blog
+
+## Kontak
+
+- Website: https://nexaplus.web.id
+- WhatsApp: +6281573059442 (respons cepat, konsultasi gratis)
+- Email: hello@nexaplus.app
+- Instagram: https://www.instagram.com/nexaplus.app/
+
+## Lokasi
+
+Jalan Mayor Hadi No 10, Sumedang, Jawa Barat 45381, Indonesia.
+Melayani klien di seluruh Indonesia secara remote — termasuk Jakarta, Bandung, Surabaya, dan kota lainnya.

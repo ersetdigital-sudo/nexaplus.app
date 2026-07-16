@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search } from "lucide-react";
 
 interface BlogPost {
@@ -101,11 +102,12 @@ export function BlogPageClient({ posts }: { posts: BlogPost[] }) {
                 {/* Thumbnail */}
                 <div className="relative aspect-[1200/630] w-full overflow-hidden bg-gradient-to-br from-orange-600/20 via-sky-500/10 to-indigo-600/20">
                   {post.cover_image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={post.cover_image}
+                    <Image
+                      src={post.cover_image || "/placeholder.svg"}
                       alt={post.title}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center">
