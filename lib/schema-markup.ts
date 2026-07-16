@@ -54,14 +54,21 @@ export interface SchemaFAQPage {
 
 export interface SchemaArticle {
   '@context': 'https://schema.org';
-  '@type': 'Article';
+  '@type': 'BlogPosting';
   headline: string;
   description: string;
   datePublished: string;
   dateModified?: string;
   url?: string;
   image?: string;
-  author: { '@type': 'Organization'; name: string };
+  inLanguage: string;
+  mainEntityOfPage?: { '@type': 'WebPage'; '@id': string };
+  author: { '@type': 'Organization'; name: string; url: string };
+  publisher: {
+    '@type': 'Organization';
+    name: string;
+    logo: { '@type': 'ImageObject'; url: string };
+  };
 }
 
 // --- Input types ---
@@ -105,13 +112,28 @@ function validateRequiredString(value: unknown, fieldName: string): string {
 export function generateOrganizationSchema() {
   return {
     '@type': 'Organization',
+    '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/logo.png`,
+    },
+    description: siteConfig.meta.description,
+    email: siteConfig.contact.email,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: `+${siteConfig.whatsapp.number}`,
       contactType: 'customer service',
+      availableLanguage: ['Indonesian'],
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postalCode,
+      addressCountry: siteConfig.address.country,
     },
     sameAs: siteConfig.contact.socialLinks.map((link) => link.url),
   };
@@ -123,11 +145,15 @@ export function generateOrganizationSchema() {
 export function generateLocalBusinessSchema() {
   return {
     '@type': 'LocalBusiness',
+    '@id': `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
     description: siteConfig.meta.description,
     url: siteConfig.url,
     image: `${siteConfig.url}/images/logo.png`,
+    email: siteConfig.contact.email,
     telephone: `+${siteConfig.whatsapp.number}`,
+    sameAs: siteConfig.contact.socialLinks.map((link) => link.url),
+    parentOrganization: { '@id': `${siteConfig.url}/#organization` },
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
@@ -210,13 +236,23 @@ export function generateArticleSchema(post: ArticleInput): SchemaArticle {
 
   const schema: SchemaArticle = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline,
     description,
     datePublished: post.publishedDate.toISOString(),
+    inLanguage: 'id-ID',
     author: {
       '@type': 'Organization',
       name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/images/logo.png`,
+      },
     },
   };
 
@@ -225,6 +261,7 @@ export function generateArticleSchema(post: ArticleInput): SchemaArticle {
   }
   if (post.url) {
     schema.url = post.url;
+    schema.mainEntityOfPage = { '@type': 'WebPage', '@id': post.url };
   }
   if (post.image) {
     schema.image = post.image;

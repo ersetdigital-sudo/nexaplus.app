@@ -6,6 +6,7 @@ import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
 } from "@/lib/schema-markup";
+import { siteConfig } from "@/data/site-config";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -28,10 +29,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
+  title: {
+    default: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
+    template: "%s | NexaPlus",
+  },
   description:
     "Jasa pembuatan website profesional: toko online, landing page, company profile, website sekolah. Mulai Rp 500rb — hosting + SSL gratis 1 tahun. Konsultasi gratis via WhatsApp.",
   metadataBase: new URL("https://nexaplus.web.id"),
+  applicationName: "NexaPlus",
+  authors: [{ name: "NexaPlus", url: "https://nexaplus.web.id" }],
+  creator: "NexaPlus",
+  publisher: "NexaPlus",
   keywords: [
     "jasa pembuatan website",
     "jasa pembuatan website profesional",
@@ -48,16 +56,14 @@ export const metadata: Metadata = {
       "Jasa pembuatan website profesional: toko online, landing page, company profile, website sekolah. Mulai Rp 500rb — hosting + SSL gratis 1 tahun. Konsultasi gratis via WhatsApp.",
     url: "https://nexaplus.web.id",
     siteName: "NexaPlus",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "NexaPlus - Jasa Pembuatan Website Profesional",
-      },
-    ],
     locale: "id_ID",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jasa Pembuatan Website Profesional untuk Bisnis | NexaPlus",
+    description:
+      "Jasa pembuatan website profesional: toko online, landing page, company profile, website sekolah. Mulai Rp 500rb — hosting + SSL gratis 1 tahun.",
   },
   alternates: {
     canonical: "https://nexaplus.web.id",
@@ -65,6 +71,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/favicon.png",
@@ -93,12 +106,15 @@ export default function RootLayout({
                 localBusinessSchema,
                 {
                   "@type": "WebSite",
-                  "name": "NexaPlus",
-                  "url": "https://nexaplus.web.id",
-                  "description": "Jasa pembuatan website profesional di Indonesia",
-                  "publisher": { "@type": "Organization", "name": "NexaPlus" }
-                }
-              ]
+                  "@id": `${siteConfig.url}/#website`,
+                  name: "NexaPlus",
+                  url: siteConfig.url,
+                  description:
+                    "Jasa pembuatan website profesional di Indonesia untuk UMKM, sekolah, organisasi, dan perusahaan.",
+                  inLanguage: "id-ID",
+                  publisher: { "@id": `${siteConfig.url}/#organization` },
+                },
+              ],
             }),
           }}
         />
